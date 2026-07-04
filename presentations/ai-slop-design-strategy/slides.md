@@ -1,200 +1,27 @@
 ---
-marp: true
-theme: ai-slop-escape
-paginate: true
-size: 16:9
-footer: 'AIスロップを避けるデザイン戦略 | takanorip'
-style: |
-  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
-  section {
-    font-family: 'IBM Plex Sans JP', sans-serif;
-    background: #f7f4ef;
-    color: #1a1814;
-    padding: 56px 72px;
-    font-size: 28px;
-    line-height: 1.55;
-  }
-
-  section.lead {
-    background: #1a1814;
-    color: #f7f4ef;
-    justify-content: center;
-  }
-
-  section.lead h1 {
-    font-family: 'Instrument Serif', serif;
-    font-size: 2.4em;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    margin-bottom: 0.3em;
-  }
-
-  section.lead p {
-    font-size: 0.85em;
-    opacity: 0.75;
-  }
-
-  section.invert {
-    background: #1a1814;
-    color: #f7f4ef;
-  }
-
-  section.accent {
-    background: #c45c26;
-    color: #f7f4ef;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-  }
-
-  h2 {
-    font-size: 1.55em;
-    margin-bottom: 0.6em;
-    border-bottom: 2px solid #c45c26;
-    padding-bottom: 0.15em;
-    display: inline-block;
-  }
-
-  section.invert h2,
-  section.lead h2,
-  section.accent h2 {
-    border-bottom-color: rgba(247, 244, 239, 0.4);
-  }
-
-  h3 {
-    font-size: 1.1em;
-    margin-top: 0.8em;
-    color: #c45c26;
-  }
-
-  section.invert h3,
-  section.lead h3,
-  section.accent h3 {
-    color: #e8a87c;
-  }
-
-  strong {
-    color: #c45c26;
-    font-weight: 700;
-  }
-
-  section.invert strong,
-  section.lead strong,
-  section.accent strong {
-    color: #e8a87c;
-  }
-
-  em {
-    font-family: 'Instrument Serif', serif;
-    font-style: italic;
-  }
-
-  blockquote {
-    border-left: 4px solid #c45c26;
-    padding: 0.2em 0 0.2em 1em;
-    margin: 0.8em 0;
-    font-size: 0.92em;
-    background: rgba(196, 92, 38, 0.06);
-  }
-
-  section.invert blockquote,
-  section.lead blockquote {
-    background: rgba(247, 244, 239, 0.06);
-    border-left-color: #e8a87c;
-  }
-
-  code {
-    font-family: 'IBM Plex Mono', monospace;
-    background: rgba(26, 24, 20, 0.08);
-    padding: 0.1em 0.35em;
-    border-radius: 3px;
-    font-size: 0.82em;
-  }
-
-  section.invert code,
-  section.lead code {
-    background: rgba(247, 244, 239, 0.12);
-  }
-
-  ul, ol {
-    margin: 0.4em 0;
-  }
-
-  li {
-    margin: 0.35em 0;
-  }
-
-  li::marker {
-    color: #c45c26;
-  }
-
-  table {
-    font-size: 0.72em;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 0.5em;
-  }
-
-  th {
-    background: #1a1814;
-    color: #f7f4ef;
-    padding: 0.5em 0.8em;
-    text-align: left;
-    font-weight: 500;
-  }
-
-  td {
-    padding: 0.45em 0.8em;
-    border-bottom: 1px solid rgba(26, 24, 20, 0.12);
-  }
-
-  .cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
-    font-size: 0.82em;
-  }
-
-  .tag {
-    display: inline-block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65em;
-    background: #1a1814;
-    color: #f7f4ef;
-    padding: 0.2em 0.6em;
-    margin-right: 0.4em;
-    letter-spacing: 0.04em;
-  }
-
-  section.lead .tag {
-    background: #c45c26;
-  }
-
-  .small {
-    font-size: 0.75em;
-    opacity: 0.8;
-  }
-
-  .highlight-box {
-    background: #1a1814;
-    color: #f7f4ef;
-    padding: 1em 1.2em;
-    font-size: 0.88em;
-    margin-top: 0.8em;
-  }
-
-  footer {
-    font-size: 0.45em;
-    opacity: 0.5;
-  }
+theme: default
+title: AIスロップなデザインを避けるためのデザイン戦略
+author: takanorip
+info: |
+  Kanmu, inc. Design Manager
+  https://takanorip.com
+class: text-left
+highlighter: shiki
+transition: slide-left
+mdc: true
+css: unocss
+drawings:
+  persist: false
+fonts:
+  sans: IBM Plex Sans JP
+  mono: IBM Plex Mono
+  serif: Instrument Serif
 ---
 
-<!-- _class: lead -->
+---
+layout: cover
+class: lead text-center
+---
 
 <span class="tag">DESIGN STRATEGY</span>
 
@@ -204,8 +31,9 @@ style: |
 2026
 
 ---
-
-<!-- _class: lead -->
+layout: center
+class: lead
+---
 
 ## 今日の問い
 
@@ -227,8 +55,8 @@ style: |
 6. **チェックリストと次の一手**
 
 ---
-
-<!-- _class: invert -->
+class: invert
+---
 
 ## 1. AIスロップとは
 
@@ -272,8 +100,8 @@ style: |
 > 最終的にユーザーが見る画面を検証する。
 
 ---
-
-<!-- _class: accent -->
+class: accent
+---
 
 ## 2. なぜ起きるのか
 
@@ -281,7 +109,7 @@ style: |
 
 LLMは訓練データの**最頻パターン**に収束する
 
-```
+```txt
 「プロフェッショナルなLPを作って」
         ↓
   学習データの統計的平均
@@ -292,12 +120,10 @@ LLMは訓練データの**最頻パターン**に収束する
 **1つのプロンプトが3つの仕事を同時にやっている**のが根本原因
 
 ---
+layout: two-cols
+---
 
 ## 1プロンプトが担う3つの仕事
-
-<div class="cols">
-
-<div>
 
 ### ① テイストの決定
 「どんな雰囲気か」
@@ -308,9 +134,7 @@ LLMは訓練データの**最頻パターン**に収束する
 ### ③ 仕様の確定
 「トークン・コンポーネント・ルール」
 
-</div>
-
-<div>
+::right::
 
 ### 結果
 
@@ -319,10 +143,6 @@ AIは**最初の推測**を返す
 
 → 探索がスキップされる  
 → 平均値がそのまま出荷される
-
-</div>
-
-</div>
 
 ---
 
@@ -338,8 +158,8 @@ AIは**最初の推測**を返す
    Linear の Magic Blue、Tailwind UI のデフォルトが「正解」として再生産される
 
 ---
-
-<!-- _class: invert -->
+class: invert
+---
 
 ## 3. なぜ問題なのか
 
@@ -387,16 +207,16 @@ AIに「かっこいいデザイン」を頼む前に、
 
 ## Strategy → Design の4段階
 
-```
+```txt
 ① 戦略（Strategy）
    何を作るか / 誰に / どんな形容詞で
-   
+
 ② 方向性（Direction）
    複数の異なる美学を探索・比較
-   
+
 ③ 仕様（Spec）
    選んだ方向をトークン・ルールに落とす
-   
+
 ④ 実装（Code）
    仕様に沿って生成・実装
 ```
@@ -423,12 +243,14 @@ AIに「かっこいいデザイン」を頼む前に、
 ## ② 方向性：探索を省略しない
 
 ### Before（スロップルート）
-```
+
+```txt
 プロンプト1発 → 最初の出力を採用 → 実装
 ```
 
 ### After（戦略ルート）
-```
+
+```txt
 戦略ブリーフ → 3〜5方向を並列生成 → 比較・選択 → 仕様化 → 実装
 ```
 
@@ -455,7 +277,7 @@ AIに「かっこいいデザイン」を頼む前に、
 
 ### プロジェクトルートに置く1ファイル
 
-```markdown
+````md
 # Design Spec
 
 ## Brand Essence
@@ -482,7 +304,7 @@ AIに「かっこいいデザイン」を頼む前に、
 
 ## Avoid
 - Inter, purple gradients, 3-column hero grids
-```
+````
 
 ---
 
@@ -504,7 +326,7 @@ AIに「かっこいいデザイン」を頼む前に、
 
 ### AIへの指示構造
 
-```
+```txt
 Goal:     何を作るか
 Layout:   情報の優先順位と構造
 Content:  実際のテキスト・データ
@@ -513,20 +335,21 @@ References: 美学の系譜（サイトの丸パクリではない）
 ```
 
 ### 生成後の検証ステップを必ず入れる
+
 1. レンダリング結果のスクリーンショット確認
 2. コントラスト・階層・タイポの計測
 3. 「指紋チェックリスト」との照合
 4. 人間による最終判断
 
 ---
-
-<!-- _class: invert -->
+class: invert
+---
 
 ## 5. 実践ワークフロー
 
 ### 推奨：Artifact Chain
 
-```
+```txt
 Brief（戦略）
   ↓
 Directions（3〜5案）
@@ -546,12 +369,10 @@ Ship
 → 次のプロジェクトへの資産になる
 
 ---
+layout: two-cols
+---
 
 ## チーム向け：3つの役割分担
-
-<div class="cols">
-
-<div>
 
 ### デザイナー
 - 戦略ブリーフの作成
@@ -559,9 +380,7 @@ Ship
 - DESIGN.md の策定
 - 最終Auditと判断
 
-</div>
-
-<div>
+::right::
 
 ### エンジニア
 - DESIGN.md をコードに反映
@@ -573,21 +392,19 @@ Ship
 - 探索フェーズの時間確保
 - ブランド判断のエスカレーション
 
-</div>
-
-</div>
-
 ---
 
 ## プロンプト設計：Avoid List の書き方
 
 ### ❌ 弱い禁止
-```
+
+```txt
 「かっこよく、モダンに」
 ```
 
 ### ✅ 強い禁止
-```
+
+```txt
 Avoid:
 - Font: Inter, Roboto, Arial, system-ui as primary
 - Color: purple/indigo/violet gradients
@@ -620,8 +437,6 @@ Avoid:
 
 ## 組織戦略：Design System の再定義
 
-### 従来の          →  AI時代
-
 | 従来 | AI時代 |
 |-----|--------|
 | コンポーネントカタログ | **判断のカタログ** |
@@ -650,8 +465,8 @@ Avoid:
 > **「判断を先にした」というプロセス**を借りる
 
 ---
-
-<!-- _class: accent -->
+class: accent
+---
 
 ## 6. 指紋チェックリスト
 
@@ -682,8 +497,9 @@ Avoid:
 3. **仕様を正とする** — DESIGN.md + Audit を工程に組み込む
 
 ---
-
-<!-- _class: lead -->
+layout: center
+class: lead
+---
 
 ## 最後に
 
@@ -694,8 +510,9 @@ Avoid:
 ただし、**プロセスを設計しない限り、両立しない。**
 
 ---
-
-<!-- _class: lead -->
+layout: cover
+class: lead text-center
+---
 
 # ありがとうございました
 
@@ -706,8 +523,8 @@ https://takanorip.com
 質問・ディスカッション
 
 ---
-
-<!-- _class: invert -->
+class: invert
+---
 
 ## 付録：参考リソース
 
@@ -720,4 +537,5 @@ https://takanorip.com
 | Zenn: AIスロップから脱出する | 日本語の実践解説 |
 
 ### キーワード
+
 `distributional convergence` / `DESIGN.md` / `artifact chain` / `AI Blue`

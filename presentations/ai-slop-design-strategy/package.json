@@ -1,0 +1,14 @@
+{
+  "name": "ai-slop-design-strategy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md",
+    "export": "slidev export slides.md"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^51.4.0",
+    "@slidev/theme-default": "^0.25.0"
+  }
+}

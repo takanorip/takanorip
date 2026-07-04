@@ -117,7 +117,8 @@
 
 ## 準備物チェックリスト
 
-- [ ] Marp CLI or VS Code Marp拡張でPDF/HTML出力
+- [ ] Slidev でプレビュー確認（`npm run dev`）
+- [ ] 必要なら PDF エクスポート（`npm run export`）
 - [ ] デモ用：同条件のAI出力比較（制約なし vs DESIGN.md）
 - [ ] 指紋チェックリストのPDF配布版
 - [ ] タイマー（セクションごと）
