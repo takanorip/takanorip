@@ -1,200 +1,14 @@
 ---
-marp: true
-theme: ai-slop-escape
+theme: default
+title: AIスロップを避けるデザイン戦略
+info: |
+  Kanmu, inc. Design Manager takanorip 向けの登壇スライド一式です。
+aspectRatio: 16/9
+canvasWidth: 1280
 paginate: true
-size: 16:9
-footer: 'AIスロップを避けるデザイン戦略 | takanorip'
-style: |
-  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
-  section {
-    font-family: 'IBM Plex Sans JP', sans-serif;
-    background: #f7f4ef;
-    color: #1a1814;
-    padding: 56px 72px;
-    font-size: 28px;
-    line-height: 1.55;
-  }
-
-  section.lead {
-    background: #1a1814;
-    color: #f7f4ef;
-    justify-content: center;
-  }
-
-  section.lead h1 {
-    font-family: 'Instrument Serif', serif;
-    font-size: 2.4em;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    margin-bottom: 0.3em;
-  }
-
-  section.lead p {
-    font-size: 0.85em;
-    opacity: 0.75;
-  }
-
-  section.invert {
-    background: #1a1814;
-    color: #f7f4ef;
-  }
-
-  section.accent {
-    background: #c45c26;
-    color: #f7f4ef;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-  }
-
-  h2 {
-    font-size: 1.55em;
-    margin-bottom: 0.6em;
-    border-bottom: 2px solid #c45c26;
-    padding-bottom: 0.15em;
-    display: inline-block;
-  }
-
-  section.invert h2,
-  section.lead h2,
-  section.accent h2 {
-    border-bottom-color: rgba(247, 244, 239, 0.4);
-  }
-
-  h3 {
-    font-size: 1.1em;
-    margin-top: 0.8em;
-    color: #c45c26;
-  }
-
-  section.invert h3,
-  section.lead h3,
-  section.accent h3 {
-    color: #e8a87c;
-  }
-
-  strong {
-    color: #c45c26;
-    font-weight: 700;
-  }
-
-  section.invert strong,
-  section.lead strong,
-  section.accent strong {
-    color: #e8a87c;
-  }
-
-  em {
-    font-family: 'Instrument Serif', serif;
-    font-style: italic;
-  }
-
-  blockquote {
-    border-left: 4px solid #c45c26;
-    padding: 0.2em 0 0.2em 1em;
-    margin: 0.8em 0;
-    font-size: 0.92em;
-    background: rgba(196, 92, 38, 0.06);
-  }
-
-  section.invert blockquote,
-  section.lead blockquote {
-    background: rgba(247, 244, 239, 0.06);
-    border-left-color: #e8a87c;
-  }
-
-  code {
-    font-family: 'IBM Plex Mono', monospace;
-    background: rgba(26, 24, 20, 0.08);
-    padding: 0.1em 0.35em;
-    border-radius: 3px;
-    font-size: 0.82em;
-  }
-
-  section.invert code,
-  section.lead code {
-    background: rgba(247, 244, 239, 0.12);
-  }
-
-  ul, ol {
-    margin: 0.4em 0;
-  }
-
-  li {
-    margin: 0.35em 0;
-  }
-
-  li::marker {
-    color: #c45c26;
-  }
-
-  table {
-    font-size: 0.72em;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 0.5em;
-  }
-
-  th {
-    background: #1a1814;
-    color: #f7f4ef;
-    padding: 0.5em 0.8em;
-    text-align: left;
-    font-weight: 500;
-  }
-
-  td {
-    padding: 0.45em 0.8em;
-    border-bottom: 1px solid rgba(26, 24, 20, 0.12);
-  }
-
-  .cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
-    font-size: 0.82em;
-  }
-
-  .tag {
-    display: inline-block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65em;
-    background: #1a1814;
-    color: #f7f4ef;
-    padding: 0.2em 0.6em;
-    margin-right: 0.4em;
-    letter-spacing: 0.04em;
-  }
-
-  section.lead .tag {
-    background: #c45c26;
-  }
-
-  .small {
-    font-size: 0.75em;
-    opacity: 0.8;
-  }
-
-  .highlight-box {
-    background: #1a1814;
-    color: #f7f4ef;
-    padding: 1em 1.2em;
-    font-size: 0.88em;
-    margin-top: 0.8em;
-  }
-
-  footer {
-    font-size: 0.45em;
-    opacity: 0.5;
-  }
+layout: center
+class: lead
 ---
-
-<!-- _class: lead -->
 
 <span class="tag">DESIGN STRATEGY</span>
 
@@ -204,8 +18,9 @@ style: |
 2026
 
 ---
-
-<!-- _class: lead -->
+layout: center
+class: lead
+---
 
 ## 今日の問い
 
@@ -227,8 +42,8 @@ style: |
 6. **チェックリストと次の一手**
 
 ---
-
-<!-- _class: invert -->
+class: invert
+---
 
 ## 1. AIスロップとは
 
@@ -272,8 +87,8 @@ style: |
 > 最終的にユーザーが見る画面を検証する。
 
 ---
-
-<!-- _class: accent -->
+class: accent
+---
 
 ## 2. なぜ起きるのか
 
@@ -338,8 +153,8 @@ AIは**最初の推測**を返す
    Linear の Magic Blue、Tailwind UI のデフォルトが「正解」として再生産される
 
 ---
-
-<!-- _class: invert -->
+class: invert
+---
 
 ## 3. なぜ問題なのか
 
@@ -519,8 +334,8 @@ References: 美学の系譜（サイトの丸パクリではない）
 4. 人間による最終判断
 
 ---
-
-<!-- _class: invert -->
+class: invert
+---
 
 ## 5. 実践ワークフロー
 
@@ -650,8 +465,8 @@ Avoid:
 > **「判断を先にした」というプロセス**を借りる
 
 ---
-
-<!-- _class: accent -->
+class: accent
+---
 
 ## 6. 指紋チェックリスト
 
@@ -682,8 +497,9 @@ Avoid:
 3. **仕様を正とする** — DESIGN.md + Audit を工程に組み込む
 
 ---
-
-<!-- _class: lead -->
+layout: center
+class: lead
+---
 
 ## 最後に
 
@@ -694,8 +510,9 @@ Avoid:
 ただし、**プロセスを設計しない限り、両立しない。**
 
 ---
-
-<!-- _class: lead -->
+layout: center
+class: lead
+---
 
 # ありがとうございました
 
@@ -706,8 +523,8 @@ https://takanorip.com
 質問・ディスカッション
 
 ---
-
-<!-- _class: invert -->
+class: invert
+---
 
 ## 付録：参考リソース
 
