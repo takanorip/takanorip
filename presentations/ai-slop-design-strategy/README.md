@@ -2,17 +2,18 @@
 
 Kanmu, inc. Design Manager **takanorip** 向けの登壇スライド一式です。
 
+[tahta](https://tahta.cagdas.io/) — Slidev 向けデザインシステムを採用しています。
+
 ## ファイル構成
 
 | ファイル | 内容 |
 |---------|------|
-| `slides.md` | Slidev形式の本編スライド（35枚） |
-| `styles/index.css` | カスタムテーマ（Instrument Serif + IBM Plex Sans JP） |
-| `package.json` | Slidev 依存関係とスクリプト |
+| `slides.md` | Slidev + tahta 形式の本編スライド |
+| `package.json` | Slidev CLI・tahta テーマ・スクリプト |
 | `speaker-notes.md` | 登壇者ノート（時間配分・Q&A・デモ案） |
 | `fingerprint-checklist.md` | 出荷前チェックリスト（配布用） |
 
-## プレビュー（Slidev）
+## プレビュー（Slidev + tahta）
 
 ```bash
 cd presentations/ai-slop-design-strategy
@@ -21,6 +22,17 @@ npm run dev
 ```
 
 ブラウザで `http://localhost:3030` が開きます。
+
+### バリアントの変更
+
+`slides.md` 先頭の `themeConfig.variant` を変更すると、全体のビジュアルが切り替わります。
+
+```yaml
+themeConfig:
+  variant: press   # editorial | brutalist | soft | minimal | paper | atelier | notebook | lagoon | boardroom | signal | muse | poster
+```
+
+[tahta ライブエクスプローラー](https://tahta.cagdas.io/) で全13バリアントを確認できます。
 
 ### ショートカット
 
@@ -31,6 +43,12 @@ npm run dev
 | プレゼンターモード | `Alt+P` |
 | 概要表示 | `O` |
 | 全画面 | `F` |
+
+## 品質チェック
+
+```bash
+npm run lint   # tahta-lint でスライド契約を検証
+```
 
 ## エクスポート
 
@@ -44,9 +62,10 @@ npm run export
 
 ## カスタマイズ
 
-- **テーマ**: `styles/index.css` を編集
-- **著者・タイトル**: `slides.md` 先頭の front matter を編集
+- **バリアント**: `slides.md` の `themeConfig.variant`
+- **アクセント色**: `themeConfig.accent: '#c45c26'`
 - **時間調整**: `speaker-notes.md` の時間配分を参照
+- **レイアウト一覧**: `node_modules/slidev-theme-tahta/AGENTS.md`
 
 ## ライセンス
 
