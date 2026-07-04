@@ -2,18 +2,19 @@
 
 Kanmu, inc. Design Manager **takanorip** 向けの登壇スライド一式です。
 
-[tahta](https://tahta.cagdas.io/) — Slidev 向けデザインシステムを採用しています。
+**Slidev** 形式（Markdown + frontmatter）で記述されています。
 
 ## ファイル構成
 
 | ファイル | 内容 |
 |---------|------|
-| `slides.md` | Slidev + tahta 形式の本編スライド |
-| `package.json` | Slidev CLI・tahta テーマ・スクリプト |
-| `speaker-notes.md` | 登壇者ノート（時間配分・Q&A・デモ案） |
-| `fingerprint-checklist.md` | 出荷前チェックリスト（配布用） |
+| `slides.md` | Slidev 形式の本編スライド（35枚） |
+| `styles/index.css` | カスタムテーマ |
+| `package.json` | Slidev CLI とスクリプト |
+| `speaker-notes.md` | 登壇者ノート |
+| `fingerprint-checklist.md` | 出荷前チェックリスト |
 
-## プレビュー（Slidev + tahta）
+## プレビュー
 
 ```bash
 cd presentations/ai-slop-design-strategy
@@ -22,17 +23,6 @@ npm run dev
 ```
 
 ブラウザで `http://localhost:3030` が開きます。
-
-### バリアントの変更
-
-`slides.md` 先頭の `themeConfig.variant` を変更すると、全体のビジュアルが切り替わります。
-
-```yaml
-themeConfig:
-  variant: press   # editorial | brutalist | soft | minimal | paper | atelier | notebook | lagoon | boardroom | signal | muse | poster
-```
-
-[tahta ライブエクスプローラー](https://tahta.cagdas.io/) で全13バリアントを確認できます。
 
 ### ショートカット
 
@@ -44,29 +34,37 @@ themeConfig:
 | 概要表示 | `O` |
 | 全画面 | `F` |
 
-## 品質チェック
+## Slidev 形式について
 
-```bash
-npm run lint   # tahta-lint でスライド契約を検証
+各スライドは `---` で区切り、frontmatter でレイアウトを指定します。
+
+```markdown
+---
+layout: two-cols
+---
+
+# 左カラム
+
+::right::
+
+# 右カラム
 ```
+
+利用可能なレイアウト: `cover` / `center` / `two-cols` / `default` など（[Slidev ドキュメント](https://sli.dev/guide/)）
 
 ## エクスポート
 
 ```bash
-# 静的サイト（dist/）
-npm run build
-
-# PDF（Playwright/Chromium が必要）
-npm run export
+npm run build   # 静的サイト（dist/）
+npm run export  # PDF
 ```
 
 ## カスタマイズ
 
-- **バリアント**: `slides.md` の `themeConfig.variant`
-- **アクセント色**: `themeConfig.accent: '#c45c26'`
-- **時間調整**: `speaker-notes.md` の時間配分を参照
-- **レイアウト一覧**: `node_modules/slidev-theme-tahta/AGENTS.md`
+- **テーマ**: `styles/index.css` を編集
+- **フォント・トランジション**: `slides.md` 先頭の front matter
+- **時間調整**: `speaker-notes.md`
 
 ## ライセンス
 
-登壇・社内共有・改変は自由に行ってください。出典明記は任意です。
+登壇・社内共有・改変は自由に行ってください。

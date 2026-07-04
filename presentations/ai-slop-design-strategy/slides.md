@@ -1,255 +1,283 @@
 ---
-theme: slidev-theme-tahta
+theme: default
 title: AIスロップなデザインを避けるためのデザイン戦略
 author: takanorip
 info: |
   Kanmu, inc. Design Manager
   https://takanorip.com
-themeConfig:
-  variant: press
+class: text-left
+highlighter: shiki
+transition: slide-left
+mdc: true
+css: unocss
+drawings:
+  persist: false
+fonts:
+  sans: IBM Plex Sans JP
+  mono: IBM Plex Mono
+  serif: Instrument Serif
+---
+
+---
 layout: cover
-kicker: DESIGN STRATEGY · 2026
-subtitle: takanorip — Kanmu, inc. Design Manager
+class: lead text-center
 ---
 
----
-layout: lead
-kicker: 今日の問い
-title: AIで作ったのに、なぜ<em>全部同じ</em>に見えるのか？
-subtitle: そして——意図的に違うデザインを組織で再現するには？
----
+<span class="tag">DESIGN STRATEGY</span>
+
+# AIスロップなデザインを<br/>避けるためのデザイン戦略
+
+**takanorip** — Kanmu, inc. Design Manager  
+2026
 
 ---
-layout: agenda
-title: アジェンダ
-items:
-  - { topic: AIスロップとは, desc: 症状の特定 }
-  - { topic: なぜ起きるのか, desc: 分布収束という構造 }
-  - { topic: なぜ問題なのか, desc: ビジネスとブランドへの影響 }
-  - { topic: デザイン戦略, desc: 回避のためのフレームワーク }
-  - { topic: 実践ワークフロー, desc: チームで回す方法 }
-  - { topic: チェックリスト, desc: 出荷前の確認と次の一手 }
+layout: center
+class: lead
 ---
 
----
-layout: section
-index: "01"
-kicker: Part one
-title: AIスロップとは
----
+## 今日の問い
+
+> 「AIで作ったのに、<br/>なぜ全部同じに見えるのか？」
+
+そして——
+
+> 「**意図的に**違うデザインを<br/>組織で再現するには？」
 
 ---
-layout: define
-kicker: 定義
-term: AI Slop（AIスロップ）
-definition: AI生成コンテンツが統計的な<span class="accent2">「平均」</span>に収束し、個性・文脈・意図が失われた見分けのつかない出力
-points:
-  - デザイン領域では「AI Blue」とも呼ばれる
-  - 壊れているわけではない — 動くし、出荷もできる
-  - ただ、何も言っていない
----
+
+## アジェンダ
+
+1. **AIスロップとは何か** — 症状の特定
+2. **なぜ起きるのか** — 分布収束という構造
+3. **なぜ問題なのか** — ビジネスとブランドへの影響
+4. **デザイン戦略のフレームワーク** — 回避のための設計
+5. **実践ワークフロー** — チームで回す方法
+6. **チェックリストと次の一手**
 
 ---
-layout: reference
-kicker: 指紋
-title: 複数が<em>同時に</em>出現したら、ほぼ確実にスロップ
-groups:
-  - title: ビジュアル
-    items:
-      - { term: 色, desc: 紫〜インディゴのグラデーション、暗いヒーロー＋グロー }
-      - { term: タイポ, desc: Inter / Roboto / system-ui 一本勝負 }
-      - { term: 装飾, desc: ガラスモーフィズム、過剰な角丸、グラデ文字 }
-  - title: 構造・コピー
-    items:
-      - { term: レイアウト, desc: ヒーロー → 3カラム機能カード → CTA }
-      - { term: アイコン, desc: 絵文字行、Lucide/Heroicons の並び }
-      - { term: コピー, desc: 「革新的」「次世代」「シームレスな体験」 }
+class: invert
 ---
 
----
-layout: columns
-title: 見分け方
-kicker: 目 vs 計測
-columns:
-  - title: 目視で見る「クラスター」
-    items:
-      - 指紋がセットで出るか
-      - 1つだけなら問題ない
-  - title: 計測で確認する「品質」
-    items:
-      - CTAコントラスト比 4.5:1 以上
-      - タイプスケールの一貫性
-      - レンダリング結果の検証
----
+## 1. AIスロップとは
+
+**AI Slop** — AI生成コンテンツが統計的な「平均」に収束し、  
+個性・文脈・意図が失われた**見分けのつかない出力**
+
+デザイン領域では **「AI Blue」** とも呼ばれる
+
+> 壊れているわけではない。  
+> 動くし、レスポンシブで、出荷もできる。  
+> **ただ、何も言っていない。**
 
 ---
-layout: statement
-kicker: 原則
-title: スタイルシートを信じるな。ユーザーが見る<em>画面</em>を検証する。
----
+
+## AIスロップの「指紋」
+
+複数が**同時に**出現したら、ほぼ確実にスロップ
+
+| カテゴリ | 典型的なパターン |
+|---------|----------------|
+| **色** | 紫〜インディゴのグラデーション、暗いヒーロー＋グロー |
+| **タイポ** | Inter / Roboto / system-ui 一本勝負 |
+| **レイアウト** | ヒーロー → 3カラム機能カード → CTA |
+| **装飾** | ガラスモーフィズム、過剰な角丸（16px+）、グラデ文字 |
+| **アイコン** | ✨🚀🔒 の絵文字行、Lucide/Heroicons の並び |
+| **コピー** | 「革新的」「次世代」「シームレスな体験」 |
 
 ---
-layout: section
-index: "02"
-kicker: Part two
-title: なぜ起きるのか
----
+
+## 見分け方：目 vs 計測
+
+### 目視で見る「クラスター」
+上記の指紋が**セット**で出るか
+
+### 計測で確認する「品質」
+- CTAのコントラスト比（WCAG 4.5:1 以上）
+- タイプスケールの一貫性
+- 実際にレンダリングされた値（CSSトークン ≠ 画面）
+
+> **スタイルシートを信じるなふりをしない。**  
+> 最終的にユーザーが見る画面を検証する。
 
 ---
-layout: define
-kicker: 構造的原因
-term: 分布収束（Distributional Convergence）
-definition: LLMは訓練データの<span class="accent2">最頻パターン</span>に収束する
-points:
-  - 「プロフェッショナルなLPを作って」→ 統計的平均
-  - Inter + 紫グラデ + 3カード
-  - 1つのプロンプトが3つの仕事を同時にやっている
+class: accent
 ---
 
----
-layout: vs
-title: 1プロンプトが担う3つの仕事
-left:
-  title: 同時にやろうとする
-  items:
-    - ① テイストの決定
-    - ② 選択肢の探索
-    - ③ 仕様の確定
-right:
-  title: 結果
-  items:
-    - AIは最初の推測を返す
-    - 探索がスキップされる
-    - 平均値がそのまま出荷される
----
+## 2. なぜ起きるのか
+
+### 分布収束（Distributional Convergence）
+
+LLMは訓練データの**最頻パターン**に収束する
+
+```txt
+「プロフェッショナルなLPを作って」
+        ↓
+  学習データの統計的平均
+        ↓
+  Inter + 紫グラデ + 3カード
+```
+
+**1つのプロンプトが3つの仕事を同時にやっている**のが根本原因
 
 ---
-layout: panels
-kicker: さらに悪化
-title: 3つの要因
-panels:
-  - { icon: "lucide:layers", title: Model Collapse, items: ["AI出力が再学習データに", "分布の裾が消える"] }
-  - { icon: "lucide:ban", title: Anti-Slopのパラドックス, items: ["全員が同じ禁止リスト", "それ自体が次のスロップに"] }
-  - { icon: "lucide:share-2", title: 参照の伝播, items: ["Linear Magic Blue", "Tailwind UI デフォルト"] }
+layout: two-cols
 ---
 
----
-layout: section
-index: "03"
-kicker: Part three
-title: なぜ問題なのか
----
+## 1プロンプトが担う3つの仕事
+
+### ① テイストの決定
+「どんな雰囲気か」
+
+### ② 選択肢の探索
+「他にどんな方向性があるか」
+
+### ③ 仕様の確定
+「トークン・コンポーネント・ルール」
+
+::right::
+
+### 結果
+
+3つを同時にやると、  
+AIは**最初の推測**を返す
+
+→ 探索がスキップされる  
+→ 平均値がそのまま出荷される
 
 ---
-layout: columns
-title: 3つの視点
-columns:
-  - title: ユーザー
-    items:
-      - 「どこかで見た」感 → 信頼低下
-      - ブランドを覚えられない
-  - title: ビジネス
-    items:
-      - 差別化できない → CVR・LTV
-      - 修正コスト → 品質負債
-  - title: デザイン組織
-    items:
-      - 判断が後付け修正に退化
-      - DSがAI平均のラッパーに
----
+
+## さらに悪化する3つの要因
+
+1. **Model Collapse**  
+   AI出力が再学習データに入る → 分布の裾が消える → 個性が出にくい
+
+2. **Anti-Slopのパラドックス**  
+   全員が同じ「禁止リスト」を使う → それ自体が次のスロップになる
+
+3. **参照の伝播**  
+   Linear の Magic Blue、Tailwind UI のデフォルトが「正解」として再生産される
 
 ---
-layout: compare
-kicker: 罠
-title: 「速い」≠「良い」
-columns: [項目, 速くできること, 失われやすいこと]
-rows:
-  - { metric: レイアウト, before: 生成, after: ブランド固有性 }
-  - { metric: 実装, before: コンポーネント, after: 情報設計 }
-  - { metric: コピー, before: 下書き, after: Voiceとトーン }
-  - { metric: 量産, before: バリエーション, after: 選択と却下 }
+class: invert
 ---
 
----
-layout: section
-index: "04"
-kicker: Part four
-title: デザイン戦略のフレームワーク
----
+## 3. なぜ問題なのか
+
+### ユーザー視点
+- 「どこかで見た」感 → **信頼の低下**
+- ブランドを覚えられない → **想起率の消失**
+
+### ビジネス視点
+- 差別化できない → **CVR・LTVへの間接的ダメージ**
+- 修正コストの増大 → 「AIで速くなったはず」が**品質負債**に
+
+### デザイン組織視点
+- デザイナーの判断が**後付けの修正**に退化
+- Design System の意味が「AIの平均を包むラッパー」になる
 
 ---
-layout: bigtype
-kicker: 核心原則
-title: 美学を先に選ぶな。<em>戦略</em>を先に決めろ。
-subtitle: 何のための、誰のための、どんな印象を与えるのかを言語化する
----
+
+## 「速い」≠「良い」の罠
+
+<div class="highlight-box">
+
+**AIスロップは、速度の代償として「意味」を失っている**
+
+| 速くできること | 失われやすいこと |
+|--------------|----------------|
+| レイアウト生成 | ブランドの固有性 |
+| コンポーネント実装 | 文脈に即した情報設計 |
+| コピーの下書き | 声（Voice）とトーン |
+| バリエーション量産 | 意図的な選択と却下 |
+
+</div>
 
 ---
-layout: steps
-kicker: Strategy → Design
-title: 4段階
-steps:
-  - { title: 戦略, desc: 何を作るか / 誰に / 形容詞, icon: "lucide:compass" }
-  - { title: 方向性, desc: 複数の美学を探索・比較, icon: "lucide:git-branch" }
-  - { title: 仕様, desc: トークン・ルールに落とす, icon: "lucide:file-text" }
-  - { title: 実装, desc: 仕様に沿って生成, icon: "lucide:code" }
----
+
+## 4. デザイン戦略のフレームワーク
+
+### 核心原則
+
+> **美学を先に選ぶな。戦略を先に決めろ。**
+
+AIに「かっこいいデザイン」を頼む前に、  
+**何のための、誰のための、どんな印象を与える**のかを言語化する
 
 ---
-layout: default
-kicker: ① 戦略
-title: 最低限決める5項目
----
 
-<v-clicks>
+## Strategy → Design の4段階
 
-- **プロダクトの本質** — 何を解決するか（1文）
-- **オーディエンス** — 誰が、どんな文脈で使うか
-- **ブランド形容詞** — 3〜5語（例：精密・静か・信頼）
-- **避ける形容詞** — 3〜5語（例：派手・汎用的）
-- **参照の軸** — 美学の系譜（サイト名ではない）
+```txt
+① 戦略（Strategy）
+   何を作るか / 誰に / どんな形容詞で
 
-</v-clicks>
+② 方向性（Direction）
+   複数の異なる美学を探索・比較
 
-<!-- 「モダンでクリーン」は禁止ワード。全員の平均値と一致する。 -->
+③ 仕様（Spec）
+   選んだ方向をトークン・ルールに落とす
 
----
-layout: vs
-kicker: ② 方向性
-title: 探索を省略しない
-left:
-  title: Before（スロップルート）
-  items:
-    - プロンプト1発
-    - 最初の出力を採用
-    - 実装
-right:
-  title: After（戦略ルート）
-  items:
-    - 戦略ブリーフ
-    - 3〜5方向を並列生成
-    - 比較・選択 → 仕様化 → 実装
----
+④ 実装（Code）
+   仕様に沿って生成・実装
+```
+
+**③を飛ばすと、毎回①からやり直しになる**
 
 ---
-layout: reference
-kicker: 方向性探索
-title: 美学の系譜を選ぶ
-items:
-  - { term: A · スイスエディトリアル, desc: B2B SaaS、データ重視 }
-  - { term: B · 90年代DevTools, desc: DevTools、CLI系 }
-  - { term: C · 日本の町案内, desc: ローカルサービス }
-  - { term: D · 美術館キャプション, desc: コンテンツ・メディア }
-  - { term: E · 工業製品の銘板, desc: ハードウェア、インフラ }
----
+
+## ① 戦略：言葉で縛る
+
+### 最低限決める5項目
+
+1. **プロダクトの本質** — 何を解決するか（1文）
+2. **オーディエンス** — 誰が、どんな文脈で使うか
+3. **ブランド形容詞** — 3〜5語（例：*精密・静か・信頼*）
+4. **避ける形容詞** — 3〜5語（例：*派手・汎用的・遊び心過多*）
+5. **参照の軸** — 業界・文化・媒体（サイト名ではなく**美学の系譜**）
+
+> 「モダンでクリーン」は**禁止ワード**。  
+> 全員の平均値と一致する。
 
 ---
-layout: code
-kicker: ③ 仕様
-title: DESIGN.md を正とする
+
+## ② 方向性：探索を省略しない
+
+### Before（スロップルート）
+
+```txt
+プロンプト1発 → 最初の出力を採用 → 実装
+```
+
+### After（戦略ルート）
+
+```txt
+戦略ブリーフ → 3〜5方向を並列生成 → 比較・選択 → 仕様化 → 実装
+```
+
+**選択肢を見ずに決めたデザインは、AIの推測を承認しただけ**
+
 ---
 
-```markdown
+## 方向性探索の具体例
+
+| 方向 | 美学の系譜 | 向いている文脈 |
+|-----|-----------|--------------|
+| A | スイスのエディトリアル | B2B SaaS、データ重視 |
+| B | 1990年代の開発者ツール | DevTools、CLI系 |
+| C | 日本の町案内・看板 | ローカルサービス |
+| D | 美術館のキャプション | コンテンツ・メディア |
+| E | 工業製品の銘板 | ハードウェア、インフラ |
+
+**2つの系譜をリミックス**するのも有効  
+（例：「スイスエディトリアル × 90年代DevTools」）
+
+---
+
+## ③ 仕様：DESIGN.md を正とする
+
+### プロジェクトルートに置く1ファイル
+
+````md
 # Design Spec
 
 ## Brand Essence
@@ -258,215 +286,256 @@ title: DESIGN.md を正とする
 ## Typography
 - Display: [具体フォント名]
 - Body: [具体フォント名]
+- Scale: 14 / 16 / 20 / 28 / 40
 
 ## Color
 - Primary: #______
 - Surface: #______
+- Accent: #______
+
+## Layout Rules
+- Max width: 1120px
+- Grid: 12 columns
+- Spacing unit: 4px
+
+## Components
+- Button: [variant定義]
+- Card: border only, no shadow stack
 
 ## Avoid
 - Inter, purple gradients, 3-column hero grids
-```
+````
 
 ---
-layout: feature
-kicker: 仕様
-title: 含めるべき7要素
-features:
-  - { icon: "lucide:sparkles", title: Brand Essence, desc: 形容詞と禁止形容詞 }
-  - { icon: "lucide:type", title: Typography, desc: フォント・スケール }
-  - { icon: "lucide:palette", title: Color, desc: 具体HEX、グラデ方針 }
-  - { icon: "lucide:layout-grid", title: Layout, desc: グリッド、余白ルール }
-  - { icon: "lucide:component", title: Components, desc: ボタン、カード等 }
-  - { icon: "lucide:play", title: Motion, desc: イージング、duration }
-  - { icon: "lucide:shield-ban", title: Avoid List, desc: 明示的な禁止事項 }
----
+
+## 仕様に含めるべき7要素
+
+1. **Brand Essence** — 形容詞と禁止形容詞
+2. **Typography** — フォント名・スケール・ウェイト
+3. **Color** — 具体HEX、グラデーション方針
+4. **Spacing & Layout** — グリッド、最大幅、余白ルール
+5. **Components** — ボタン、カード、フォームのバリアント
+6. **Motion** — イージング、duration、使う場面
+7. **Avoid List** — 明示的な禁止事項
+
+> **トークンは「数」ではなく「判断の結晶」**
 
 ---
-layout: code
-kicker: ④ 実装
-title: 制約付き生成
----
+
+## ④ 実装：制約付き生成
+
+### AIへの指示構造
 
 ```txt
-Goal:        何を作るか
-Layout:      情報の優先順位と構造
-Content:     実際のテキスト・データ
+Goal:     何を作るか
+Layout:   情報の優先順位と構造
+Content:  実際のテキスト・データ
 Constraints: DESIGN.md + Avoid List
-References:  美学の系譜
+References: 美学の系譜（サイトの丸パクリではない）
 ```
 
----
-layout: steps
-kicker: 検証
-title: 生成後の4ステップ
-steps:
-  - { title: スクリーンショット確認, icon: "lucide:scan-eye" }
-  - { title: コントラスト・階層・タイポ計測, icon: "lucide:gauge" }
-  - { title: 指紋チェックリスト照合, icon: "lucide:list-checks" }
-  - { title: 人間による最終判断, icon: "lucide:user-check" }
----
+### 生成後の検証ステップを必ず入れる
+
+1. レンダリング結果のスクリーンショット確認
+2. コントラスト・階層・タイポの計測
+3. 「指紋チェックリスト」との照合
+4. 人間による最終判断
 
 ---
-layout: section
-index: "05"
-kicker: Part five
-title: 実践ワークフロー
+class: invert
 ---
 
----
-layout: steps
-kicker: Artifact Chain
-title: 推奨ワークフロー
-steps:
-  - { title: Brief, desc: 戦略, icon: "lucide:file-pen" }
-  - { title: Directions, desc: 3〜5案, icon: "lucide:git-branch" }
-  - { title: Selection, desc: 選択・理由の記録, icon: "lucide:check-circle" }
-  - { title: DESIGN.md, desc: 仕様, icon: "lucide:file-text" }
-  - { title: Implementation, desc: AI + 人間, icon: "lucide:code" }
-  - { title: Audit, desc: 指紋チェック + 計測, icon: "lucide:search" }
-  - { title: Ship, icon: "lucide:rocket" }
----
+## 5. 実践ワークフロー
+
+### 推奨：Artifact Chain
+
+```txt
+Brief（戦略）
+  ↓
+Directions（3〜5案）
+  ↓
+Selection（選択・理由の記録）
+  ↓
+DESIGN.md（仕様）
+  ↓
+Implementation（AI + 人間）
+  ↓
+Audit（指紋チェック + 計測）
+  ↓
+Ship
+```
+
+**各段階のアウトプットをファイルとして残す**  
+→ 次のプロジェクトへの資産になる
 
 ---
-layout: panels
-kicker: 役割分担
-title: 3つの役割
-panels:
-  - { icon: "lucide:palette", title: デザイナー, items: ["戦略ブリーフ", "方向性探索", "DESIGN.md", "最終Audit"] }
-  - { icon: "lucide:terminal", title: エンジニア, items: ["DESIGN.md反映", "制約適用", "a11y検証自動化"] }
-  - { icon: "lucide:users", title: PM / ディレクター, items: ["平均でOK圧力を防ぐ", "探索時間確保", "判断エスカレーション"] }
+layout: two-cols
 ---
 
----
-layout: vs
-kicker: プロンプト設計
-title: Avoid List の書き方
-left:
-  title: ❌ 弱い禁止
-  items:
-    - 「かっこよく、モダンに」
-    - 抽象的な指示
-    - 平均値と一致
-right:
-  title: ✅ 強い禁止
-  items:
-    - Font: Inter, Roboto 禁止
-    - Color: purple/indigo gradients 禁止
-    - Layout: hero + 3 cards 禁止
----
+## チーム向け：3つの役割分担
+
+### デザイナー
+- 戦略ブリーフの作成
+- 方向性の探索・選択
+- DESIGN.md の策定
+- 最終Auditと判断
+
+::right::
+
+### エンジニア
+- DESIGN.md をコードに反映
+- AI生成コードの制約適用
+- 計測・a11y検証の自動化
+
+### PM / ディレクター
+- 「平均でOK」の圧力を防ぐ
+- 探索フェーズの時間確保
+- ブランド判断のエスカレーション
 
 ---
-layout: reference
-kicker: 実践
-title: スロップ回避の12テクニック（1/2）
-items:
-  - { term: "1", desc: フォントを最初に決める — 最も効果が高い }
-  - { term: "2", desc: グラデーションは意味を持たせる }
-  - { term: "3", desc: 写真・スクショは「実物」を使う }
-  - { term: "4", desc: 余白を恐れない }
-  - { term: "5", desc: 角丸・影は1箇所だけ }
-  - { term: "6", desc: アイコンセットを意図的に選ぶ }
----
+
+## プロンプト設計：Avoid List の書き方
+
+### ❌ 弱い禁止
+
+```txt
+「かっこよく、モダンに」
+```
+
+### ✅ 強い禁止
+
+```txt
+Avoid:
+- Font: Inter, Roboto, Arial, system-ui as primary
+- Color: purple/indigo/violet gradients
+- Layout: hero + 3 equal feature cards + CTA
+- Decoration: glassmorphism, gradient text, glow shadows
+- Icons: emoji as feature icons, Lucide defaults
+- Motion: bounce easing, animate everything
+```
+
+**禁止は「固定リスト」ではなく、収束メカニズムへの対抗として更新する**
 
 ---
-layout: reference
-kicker: 実践
-title: スロップ回避の12テクニック（2/2）
-items:
-  - { term: "7", desc: コピーを人間が書き直す }
-  - { term: "8", desc: ダーク/ライトを文脈で選ぶ }
-  - { term: "9", desc: モーションは1アクション1意図 }
-  - { term: "10", desc: 業界別ルールを持つ }
-  - { term: "11", desc: DESIGN.md をリポジトリの正とする }
-  - { term: "12", desc: 出荷前に指紋チェックリストを回す }
----
+
+## スロップ回避の12の実践テクニック
+
+1. **フォントを最初に決める** — 最も効果が高い差別化
+2. **グラデーションを使うなら意味を持たせる** — 装飾グラデは禁止
+3. **写真・スクショは「実物」を使う** — ストック写真は即バレ
+4. **余白を恐れない** — AIは詰めがち
+5. **角丸・影は1箇所だけ** — border + shadow の二重装飾を避ける
+6. **アイコンセットを意図的に選ぶ** — デフォルトLucideをそのまま使わない
+7. **コピーを人間が書き直す** — AI文体は平均値
+8. **ダーク/ライトを文脈で選ぶ** — 暗いヒーローはデフォルトではない
+9. **モーションは1アクション1意図** — 全部動かさない
+10. **業界別ルールを持つ** — SaaS / EC / メディアで同じにしない
+11. **DESIGN.md をリポジトリの正とする**
+12. **出荷前に指紋チェックリストを回す**
 
 ---
-layout: compare
-kicker: 組織戦略
-title: Design System の再定義
-columns: [従来, AI時代]
-rows:
-  - { metric: カタログ, before: コンポーネント, after: 判断のカタログ }
-  - { metric: トークン, before: 色とフォントの辞書, after: 選択理由つき }
-  - { metric: 役割, before: デザイナーが作る, after: 制約を設計する }
-  - { metric: 一貫性, before: 同じ見た目, after: 同じ判断基準 }
----
+
+## 組織戦略：Design System の再定義
+
+| 従来 | AI時代 |
+|-----|--------|
+| コンポーネントカタログ | **判断のカタログ** |
+| 色とフォントの辞書 | **選択理由つきのトークン** |
+| デザイナーが作る | **デザイナーが制約を設計する** |
+| 一貫性 = 同じ見た目 | 一貫性 = **同じ判断基準** |
+
+> Design System は「AIの平均を包むラッパー」ではなく、  
+> **「AIが迷わないための判断基準書」** であるべき
 
 ---
-layout: feature
-kicker: ケーススタディ
-title: 脱スロップの共通パターン
-features:
-  - { icon: "lucide:type", title: タイポグラフィ, desc: カスタムまたは選び抜いた字体 }
-  - { icon: "lucide:droplet", title: 1色, desc: グラデーション頼みではない }
-  - { icon: "lucide:image", title: 実物, desc: プロダクトスクショ、抽象イラストではない }
-  - { icon: "lucide:maximize", title: 余白, desc: 意図的な情報密度 }
-  - { icon: "lucide:play", title: モーション, desc: 控えめだが意味がある }
----
+
+## ケーススタディ：脱スロップの構造
+
+### 共通パターン（Linear / Stripe / Vercel 等）
+
+- **カスタムまたは選び抜いたタイポグラフィ**
+- **ブランド固有の1色**（グラデーション頼みではない）
+- **実プロダクトのスクショ**（抽象イラストではない）
+- **意図的な余白と情報密度**
+- **控えめだが意味のあるモーション**
+
+### 重要：表面をコピーしない
+
+> 彼らの**色やフォント**を借りるのではなく、  
+> **「判断を先にした」というプロセス**を借りる
 
 ---
-layout: statement
-kicker: 重要
-title: 色やフォントを<em>借りる</em>のではなく、「判断を先にした」プロセスを借りる。
+class: accent
 ---
 
----
-layout: section
-index: "06"
-kicker: Part six
-title: 指紋チェックリスト
----
+## 6. 指紋チェックリスト
+
+出荷前に5分で回す
+
+- [ ] Inter / Roboto / system-ui が主フォントになっていないか
+- [ ] 紫〜インディゴのグラデーションが主役になっていないか
+- [ ] ヒーロー → 3等分カード → CTA のみの構成か
+- [ ] ガラスカード + グロー影が並んでいないか
+- [ ] 絵文字が機能アイコン代わりになっていないか
+- [ ] CTAのコントラスト比 4.5:1 を満たしているか
+- [ ] コピーが「革新的」「次世代」で埋まっていないか
+- [ ] DESIGN.md との整合が取れているか
+- [ ] **「どこかで見た」と言われないか**（最終人間判断）
 
 ---
-layout: reference
-kicker: 出荷前 · 5分
-title: 指紋チェックリスト
-items:
-  - { term: タイポ, desc: Inter / Roboto / system-ui が主フォントでないか }
-  - { term: 色, desc: 紫〜インディゴのグラデーションが主役でないか }
-  - { term: レイアウト, desc: ヒーロー → 3等分カード → CTA のみか }
-  - { term: 装飾, desc: ガラスカード + グロー影が並んでいないか }
-  - { term: アイコン, desc: 絵文字が機能アイコン代わりでないか }
-  - { term: a11y, desc: CTAコントラスト比 4.5:1 を満たすか }
-  - { term: コピー, desc: 「革新的」「次世代」で埋まっていないか }
-  - { term: 仕様, desc: DESIGN.md との整合が取れているか }
-  - { term: 最終, desc: 「どこかで見た」と言われないか }
----
+
+## まとめ
+
+### AIスロップは「ツールの問題」ではない
+
+> **使い手の思考の深さが、結果の質を決める**
+
+### 3つの行動
+
+1. **戦略を先に** — 形容詞と禁止形容詞で縛る
+2. **探索を省略しない** — 1発生成を承認しない
+3. **仕様を正とする** — DESIGN.md + Audit を工程に組み込む
 
 ---
-layout: panels
-kicker: まとめ
-title: 3つの行動
-panels:
-  - { icon: "lucide:compass", title: 戦略を先に, items: ["形容詞で縛る", "禁止形容詞も定義"] }
-  - { icon: "lucide:git-branch", title: 探索を省略しない, items: ["1発生成を承認しない", "3〜5方向を比較"] }
-  - { icon: "lucide:file-check", title: 仕様を正とする, items: ["DESIGN.md", "Auditを工程に"] }
+layout: center
+class: lead
 ---
 
----
-layout: bigtype
-kicker: 最後に
-title: AIは<em>平均</em>を出す装置。デザイナーは<em>選択</em>する存在。
-subtitle: 速さと個性は両立できる — プロセスを設計しない限り、両立しない。
----
+## 最後に
+
+> AIは**平均を出す装置**  
+> デザイナーは**選択する存在**
+
+**速さと個性は両立できる。**  
+ただし、**プロセスを設計しない限り、両立しない。**
 
 ---
-layout: end
-title: ありがとうございました
-subtitle: 質問・ディスカッション
-contact: takanorip.com
+layout: cover
+class: lead text-center
 ---
 
+# ありがとうございました
+
+**takanorip**  
+Kanmu, inc. Design Manager  
+https://takanorip.com
+
+質問・ディスカッション
+
 ---
-layout: reference
-kicker: 付録
-title: 参考リソース
-items:
-  - { term: Anthropic, desc: Prompting for frontend aesthetics }
-  - { term: Anthropic, desc: frontend-design Skill }
-  - { term: OpenAI, desc: Designing delightful frontends }
-  - { term: Superdesign, desc: Why AI Design Looks Generic }
-  - { term: Zenn, desc: AIスロップから脱出する }
-  - { term: tahta, desc: tahta.cagdas.io — 本資料のテーマ }
+class: invert
 ---
+
+## 付録：参考リソース
+
+| リソース | 内容 |
+|---------|------|
+| Anthropic *Prompting for frontend aesthetics* | 公式のanti-slopプロンプト集 |
+| Anthropic *frontend-design* Skill | 強制差別化スキル |
+| OpenAI *Designing delightful frontends* | 制約付きUI生成ガイド |
+| Superdesign *Why AI Design Looks Generic* | Artifact Chain ワークフロー |
+| Zenn: AIスロップから脱出する | 日本語の実践解説 |
+
+### キーワード
+
+`distributional convergence` / `DESIGN.md` / `artifact chain` / `AI Blue`

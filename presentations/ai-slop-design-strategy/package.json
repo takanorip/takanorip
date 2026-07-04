@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "slidev slides.md --open",
     "build": "slidev build slides.md",
-    "export": "slidev export slides.md",
-    "lint": "tahta-lint slides.md"
+    "export": "slidev export slides.md"
   },
   "devDependencies": {
     "@slidev/cli": "^51.4.0",
-    "slidev-theme-tahta": "^0.13.1"
+    "@slidev/theme-default": "^0.25.0"
   }
 }
