@@ -8,7 +8,7 @@ Kanmu, inc. Design Manager **takanorip** 向けの登壇スライド一式です
 
 | ファイル | 内容 |
 |---------|------|
-| `slides.md` | Slidev 形式の本編スライド（35枚） |
+| `slides.md` | Slidev 形式の本編スライド（33枚） |
 | `styles/index.css` | カスタムテーマ |
 | `package.json` | Slidev CLI とスクリプト |
 | `speaker-notes.md` | 登壇者ノート |
