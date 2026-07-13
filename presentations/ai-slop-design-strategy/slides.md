@@ -5,22 +5,19 @@ author: takanorip
 info: |
   Kanmu, inc. Design Manager
   https://takanorip.com
-class: text-left
+class: lead text-center
 highlighter: shiki
-transition: slide-left
+colorSchema: dark
+transition: fade
 mdc: true
 css: unocss
 drawings:
   persist: false
 fonts:
-  sans: IBM Plex Sans JP
-  mono: IBM Plex Mono
-  serif: Instrument Serif
----
-
----
+  sans: Zen Kaku Gothic New
+  mono: M PLUS 1 Code
+  serif: Shippori Mincho B1
 layout: cover
-class: lead text-center
 ---
 
 <span class="tag">DESIGN STRATEGY</span>
@@ -54,7 +51,7 @@ class: lead
 6. **カンムでの取り組み**
 
 ---
-class: invert
+class: chapter
 ---
 
 ## 1. AIスロップなデザイン =「哲学」がないデザイン
@@ -122,7 +119,7 @@ AIは、空白を埋めるのが得意。
 しかし、空白に「思想」を入れることはできない。
 
 ---
-class: invert
+class: chapter
 ---
 
 ## 2. 原因① — デザイン哲学を言語化できていない
@@ -206,7 +203,7 @@ AIは「らしさ」の背後にある判断履歴を知らない。
 | 絵文字禁止 | トーンの境界線はどこか |
 
 ---
-class: invert
+class: chapter
 ---
 
 ## 3. 原因② — AIに任せる作業領域が間違っている
@@ -298,7 +295,7 @@ AIに人格を与えすぎると、責任の所在が曖昧になる。
 > **「私たちはその出力を採用した」** と言える状態にする。
 
 ---
-class: invert
+class: chapter
 ---
 
 ## 4. 人間が哲学を持ち、AIが効率化するデザインプロセス
@@ -467,7 +464,7 @@ class: accent
 > 人間が選び、AIが整え、人間が責任を持つ。
 
 ---
-class: invert
+class: chapter
 ---
 
 ## 5. デザインハーネスという幻想
@@ -563,7 +560,7 @@ AI時代には、こういう誘惑がある。
 これらはルールではなく、まだ言語化されていない宿題。
 
 ---
-class: invert
+class: chapter
 ---
 
 ## 6. カンムでの取り組み

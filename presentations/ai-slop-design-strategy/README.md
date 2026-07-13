@@ -4,12 +4,15 @@ Kanmu, inc. Design Manager **takanorip** 向けの登壇スライド一式です
 
 **Slidev** 形式（Markdown + frontmatter）で記述されています。
 
+テーマは自作の **「墨と朱（Sumi & Shu）」**。判断基準は `DESIGN.md` に言語化してあります（この資料の主張を、資料自身で実践するため）。
+
 ## ファイル構成
 
 | ファイル | 内容 |
 |---------|------|
 | `slides.md` | Slidev 形式の本編スライド（33枚） |
-| `styles/index.css` | カスタムテーマ |
+| `DESIGN.md` | このスライド自身のデザイン仕様（判断基準） |
+| `styles/index.css` | カスタムテーマ「墨と朱」 |
 | `package.json` | Slidev CLI とスクリプト |
 | `speaker-notes.md` | 登壇者ノート |
 | `fingerprint-checklist.md` | 出荷前チェックリスト |
@@ -61,7 +64,9 @@ npm run export  # PDF
 
 ## カスタマイズ
 
-- **テーマ**: `styles/index.css` を編集
+- **デザインの判断基準**: まず `DESIGN.md` を読む・更新する
+- **テーマ実装**: `styles/index.css` を編集
+- **スライドの役割クラス**: 通常（墨）/ `class: chapter`（生成り・章区切り）/ `class: accent`（朱・主張）
 - **フォント・トランジション**: `slides.md` 先頭の front matter
 - **時間調整**: `speaker-notes.md`
 
