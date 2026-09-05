@@ -35,6 +35,11 @@ body,
   margin: 0;
 }
 
+.slidev-layout h1 + p {
+  opacity: 1 !important;
+  margin-top: 0.4em;
+}
+
 .slidev-layout h1 {
   font-size: 2.15em;
 }
@@ -198,76 +203,77 @@ body,
   letter-spacing: -0.04em;
 }
 
-.cover {
+.slidev-layout.cover {
+  display: flex !important;
+  flex-direction: column;
   justify-content: flex-end !important;
-  padding: 56px 72px 64px !important;
+  padding: 56px 72px 72px !important;
 }
 
-.cover h1 {
+.slidev-layout.cover h1 {
   font-size: 2.35em;
   max-width: 14em;
 }
 
-.section {
+.slidev-layout.section,
+.slidev-layout.statement {
+  display: flex !important;
+  flex-direction: column;
   justify-content: center !important;
 }
 
-.section .chap {
+.chap {
   font-size: 120px;
   font-weight: 800;
   color: var(--key);
   line-height: 0.9;
   letter-spacing: -0.06em;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 
-.section h1 {
+.slidev-layout.section h1 {
   font-size: 1.8em;
 }
 
-.statement {
-  justify-content: center !important;
-}
-
-.statement h1,
-.statement blockquote,
-.statement .line {
+.slidev-layout.statement h1,
+.slidev-layout.statement blockquote,
+.slidev-layout.statement .line {
   font-size: 2em;
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.25;
 }
 
-.statement.tight h1 {
+.slidev-layout.statement.tight h1 {
   font-size: 2.4em;
 }
 
-.key-slide {
+.slidev-layout.key-slide {
   background: var(--key) !important;
   color: #f4f8fc !important;
 }
 
-.key-slide h1,
-.key-slide strong {
+.slidev-layout.key-slide h1,
+.slidev-layout.key-slide strong {
   color: var(--accent) !important;
 }
 
-.key-slide .kicker {
+.slidev-layout.key-slide .kicker {
   color: #f4f8fc;
 }
 
-.accent-slide {
+.slidev-layout.accent-slide {
   background: var(--accent) !important;
   color: #001319 !important;
 }
 
-.accent-slide h1,
-.accent-slide .line,
-.accent-slide strong {
+.slidev-layout.accent-slide h1,
+.slidev-layout.accent-slide .line,
+.slidev-layout.accent-slide strong {
   color: #001319 !important;
 }
 
-.accent-slide .kicker {
+.slidev-layout.accent-slide .kicker {
   color: #0064ca;
 }
 

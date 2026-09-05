@@ -13,16 +13,15 @@ canvasWidth: 980
 fonts:
   sans: LINE Seed JP
   weights: '400,700,800'
-class: cover
 ---
 
 <!--
-30分 / フロントエンドカンファレンス関西2026
+layout: cover
 -->
 
-# 今さら理解する<br>ウェブフォント<span class="hl">2026</span>
-
 <p class="kicker">FRONTEND CONFERENCE KANSAI 2026</p>
+
+# 今さら理解する<br>ウェブフォント<span class="hl">2026</span>
 
 <p class="muted" style="margin-top: 28px;">
 takanorip — Kanmu, inc. Design Manager
@@ -46,30 +45,27 @@ takanorip — Kanmu, inc. Design Manager
 </div>
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">QUESTION</p>
 
 # みなさん、<br>ウェブフォント<br>使ってますか？
 
 ---
+layout: key
+---
 
-<!--
-class: key-slide statement
--->
 
 <p class="kicker">よくある評判</p>
 
 # 重い。<br>ずれる。<br>目の敵。
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">でも</p>
 
@@ -153,10 +149,9 @@ class: statement
 </div>
 
 ---
+layout: accent
+---
 
-<!--
-class: accent-slide statement
--->
 
 <p class="kicker">05 — ウェブフォント</p>
 
@@ -174,10 +169,9 @@ class: accent-slide statement
 </p>
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">WEB</p>
 
@@ -213,10 +207,9 @@ class: statement
 </p>
 
 ---
+layout: key
+---
 
-<!--
-class: key-slide statement
--->
 
 # 見過ごされがちだが、<br>選べることには価値がある。
 
@@ -240,10 +233,9 @@ class: key-slide statement
 </ol>
 
 ---
+layout: section
+---
 
-<!--
-class: section
--->
 
 <p class="chap">01</p>
 
@@ -349,10 +341,9 @@ class: section
 </div>
 
 ---
+layout: section
+---
 
-<!--
-class: section
--->
 
 <p class="chap">02</p>
 
@@ -437,20 +428,18 @@ ascent / descent / 平均字幅が違うと、行の高さや折り返しが変�
 </p>
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">POINT</p>
 
 # 重い・ずれるは<br><span class="hl">設計で止められる</span>
 
 ---
+layout: section
+---
 
-<!--
-class: section
--->
 
 <p class="chap">03</p>
 
@@ -493,10 +482,9 @@ class: section
 </p>
 
 ---
+layout: key
+---
 
-<!--
-class: key-slide statement
--->
 
 <p class="kicker">UD FONT</p>
 
@@ -507,10 +495,9 @@ class: key-slide statement
 </p>
 
 ---
+layout: accent
+---
 
-<!--
-class: accent-slide statement
--->
 
 # それは、違う。
 
@@ -537,10 +524,9 @@ class: accent-slide statement
 </p>
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">UD</p>
 
@@ -574,10 +560,9 @@ class: statement
 </div>
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">LICENSE</p>
 
@@ -657,10 +642,9 @@ class: statement
 </div>
 
 ---
+layout: section
+---
 
-<!--
-class: section
--->
 
 <p class="chap">04</p>
 
@@ -718,10 +702,9 @@ Regular / Medium / Bold を3本配る代わりに、軸を1本持たせる。
 </p>
 
 ---
+layout: section
+---
 
-<!--
-class: section
--->
 
 <p class="chap">05</p>
 
@@ -816,10 +799,9 @@ body {
 </p>
 
 ---
+layout: section
+---
 
-<!--
-class: section
--->
 
 <p class="chap">06</p>
 
@@ -866,10 +848,9 @@ class: section
 ```
 
 ---
+layout: key
+---
 
-<!--
-class: key-slide
--->
 
 <p class="kicker">WHY IT MATTERS</p>
 
@@ -881,20 +862,18 @@ class: key-slide
 </p>
 
 ---
+layout: section
+---
 
-<!--
-class: section
--->
 
 <p class="chap">07</p>
 
 # 持ち帰り
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">01</p>
 
@@ -905,10 +884,9 @@ class: statement
 </p>
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">02</p>
 
@@ -919,10 +897,9 @@ class: statement
 </p>
 
 ---
+layout: statement
+---
 
-<!--
-class: statement
--->
 
 <p class="kicker">03</p>
 
@@ -933,17 +910,15 @@ class: statement
 </p>
 
 ---
+layout: accent
+---
 
-<!--
-class: accent-slide statement
--->
 
 # ウェブフォントについて<br>詳しくなって、<br>フロントエンドを<br>もっと楽しもう。
 
 ---
-<!--
-class: cover
--->
+layout: cover
+---
 
 <p class="kicker">THANK YOU</p>
 
