@@ -9,6 +9,7 @@
   --accent: #fdc400;
   --rule: #dfe4e6;
   --rule-soft: #eef1f2;
+  --fill: #f2f6f8;
 
   --pad-x: 76px;
   --pad-top: 86px;
@@ -267,8 +268,8 @@ body,
 }
 
 .card {
-  background: var(--paper);
-  border: 1px solid var(--rule);
+  background: var(--fill);
+  border: 0;
   border-radius: 16px;
   padding: 22px 24px;
 }
@@ -286,7 +287,8 @@ body,
 }
 
 .figure {
-  border: 1px solid var(--rule);
+  background: var(--fill);
+  border: 0;
   border-radius: 20px;
   padding: 28px 30px;
 }
@@ -302,7 +304,8 @@ body,
 
 .flow .box {
   flex: 1;
-  border: 1px solid var(--rule);
+  background: var(--fill);
+  border: 0;
   border-radius: 12px;
   padding: 18px 10px;
   text-align: center;
@@ -327,8 +330,8 @@ body,
 }
 
 .slidev-layout pre {
-  background: #fbfcfc !important;
-  border: 1px solid var(--rule);
+  background: var(--fill) !important;
+  border: 0;
   border-radius: 16px;
   padding: 22px 24px !important;
   font-size: 15px !important;
@@ -459,4 +462,11 @@ body,
 .slidev-layout footer {
   color: var(--ink-3);
   font-size: 12px;
+}
+
+.slidev-transition-enter-active,
+.slidev-transition-leave-active,
+[class*='slidev-transition'] {
+  animation: none !important;
+  transition: none !important;
 }

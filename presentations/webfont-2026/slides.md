@@ -6,7 +6,7 @@ info: |
   takanorip / Kanmu, inc. Design Manager
 drawings:
   persist: false
-transition: fade-out
+transition: none
 mdc: true
 colorSchema: light
 canvasWidth: 980
