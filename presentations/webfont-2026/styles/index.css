@@ -167,7 +167,7 @@ body,
 .marker {
   background: linear-gradient(transparent 58%, rgba(253, 196, 0, 0.72) 58%);
   padding: 0 0.06em;
-  font-weight: 700;
+  font-weight: inherit;
 }
 
 .hl {
