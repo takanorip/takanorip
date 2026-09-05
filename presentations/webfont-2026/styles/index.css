@@ -126,7 +126,7 @@ body,
 .slidev-layout p {
   margin: 0 0 1em;
   max-width: 34em;
-  line-height: 195%;
+  line-height: 195% !important;
 }
 
 .slidev-layout p:last-child {
@@ -185,7 +185,7 @@ body,
 .slidev-layout li {
   margin: 0.5em 0;
   padding-left: 0.2em;
-  line-height: 195%;
+  line-height: 195% !important;
 }
 
 .slidev-layout li::marker {
