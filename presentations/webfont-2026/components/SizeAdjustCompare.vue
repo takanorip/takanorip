@@ -51,7 +51,7 @@ const sample = 'ウェブフォント2026'
   left: 22px;
   top: 26px;
   font-size: 32px;
-  line-height: 1.2;
+  line-height: 120%;
   white-space: nowrap;
 }
 
@@ -73,7 +73,7 @@ const sample = 'ウェブフォント2026'
 .cap {
   margin: 12px 0 0;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 170%;
   color: #000;
 }
 </style>

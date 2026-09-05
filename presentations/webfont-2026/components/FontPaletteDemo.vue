@@ -48,7 +48,7 @@ const current = ref('brand')
 .pal-sample {
   font-family: Nabla, 'LINE Seed JP', sans-serif;
   font-size: 92px;
-  line-height: 1.1;
+  line-height: 110%;
   margin: 0 0 20px;
   letter-spacing: 0.04em;
 }

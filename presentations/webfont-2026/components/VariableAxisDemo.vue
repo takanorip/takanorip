@@ -36,7 +36,7 @@ const opsz = ref(48)
 .vf-jp {
   font-family: 'Noto Sans JP', 'LINE Seed JP', sans-serif;
   font-size: 40px;
-  line-height: 1.4;
+  line-height: 140%;
   margin: 0;
   color: #000;
 }
@@ -45,7 +45,7 @@ const opsz = ref(48)
   font-family: 'Roboto Flex', sans-serif;
   font-optical-sizing: none;
   font-size: 34px;
-  line-height: 1.3;
+  line-height: 130%;
   margin: 0 0 22px;
   color: #000;
 }

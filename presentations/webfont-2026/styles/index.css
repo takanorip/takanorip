@@ -29,7 +29,7 @@ body,
   font-family: 'LINE Seed JP', sans-serif;
   padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
   font-size: 19px;
-  line-height: 1.95;
+  line-height: 195%;
   font-weight: 400;
   letter-spacing: 0.01em;
   text-align: left !important;
@@ -98,7 +98,7 @@ body,
 .slidev-layout h1 {
   font-size: 38px;
   font-weight: 800;
-  line-height: 1.45;
+  line-height: 145%;
   letter-spacing: 0.005em;
   margin-bottom: 24px;
 }
@@ -106,14 +106,14 @@ body,
 .slidev-layout h2 {
   font-size: 28px;
   font-weight: 800;
-  line-height: 1.5;
+  line-height: 150%;
   margin-bottom: 18px;
 }
 
 .slidev-layout h3 {
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 160%;
   margin-bottom: 10px;
   color: var(--ink);
 }
@@ -162,13 +162,13 @@ body,
 .muted {
   color: var(--ink-2);
   font-size: 0.86em;
-  line-height: 1.85;
+  line-height: 185%;
 }
 
 .note {
   color: var(--ink-3);
   font-size: 0.72em;
-  line-height: 1.7;
+  line-height: 170%;
   margin-top: 1.4em;
 }
 
@@ -207,7 +207,7 @@ body,
   border-bottom: 1px solid var(--rule-soft);
   font-size: 20px;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 150%;
   margin: 0;
 }
 
@@ -258,7 +258,7 @@ body,
 .card p {
   margin: 0;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 180%;
   color: var(--ink-2);
 }
 
@@ -312,7 +312,7 @@ body,
   border-radius: 16px;
   padding: 22px 24px !important;
   font-size: 15px !important;
-  line-height: 1.75 !important;
+  line-height: 175% !important;
 }
 
 .slidev-layout pre code {
@@ -346,7 +346,7 @@ body,
 .slidev-layout td {
   padding: 11px 16px 11px 0;
   border-bottom: 1px solid var(--rule-soft);
-  line-height: 1.6;
+  line-height: 160%;
 }
 
 .slidev-layout tbody tr td:first-child {
@@ -365,7 +365,7 @@ body,
 .slidev-layout.cover h1 {
   font-size: 56px;
   font-weight: 800;
-  line-height: 1.32;
+  line-height: 132%;
   letter-spacing: 0.01em;
   margin-bottom: 26px;
 }
@@ -380,8 +380,8 @@ body,
   font-family: 'Roboto Flex', 'LINE Seed JP', sans-serif;
   font-size: 82px;
   font-weight: 800;
-  color: var(--key);
-  line-height: 1;
+  color: #0064ca;
+  line-height: 100%;
   letter-spacing: -0.02em;
   margin: 0 0 6px;
   max-width: none;
@@ -389,7 +389,7 @@ body,
 
 .slidev-layout.section h1 {
   font-size: 52px;
-  line-height: 1.3;
+  line-height: 130%;
   margin-bottom: 0;
 }
 
@@ -407,7 +407,7 @@ body,
 .slidev-layout.statement h1 {
   font-size: 50px;
   font-weight: 800;
-  line-height: 1.38;
+  line-height: 138%;
   margin-bottom: 0;
 }
 
