@@ -80,24 +80,9 @@ body,
   right: var(--pad-x);
 }
 
-.deck-chrome .meta.bl {
-  bottom: 24px;
-  left: var(--pad-x);
-}
-
 .deck-chrome .meta.br {
   bottom: 24px;
   right: var(--pad-x);
-}
-
-.deck-chrome .dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  background: var(--key);
-  margin-right: 9px;
-  transform: translateY(1px);
 }
 
 /* ---------- type ---------- */
