@@ -174,16 +174,6 @@ body,
   color: var(--key);
 }
 
-.kicker {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: var(--key);
-  margin: 0 0 14px;
-  max-width: none;
-}
-
 .muted {
   color: var(--ink-2);
   font-size: 0.86em;
@@ -393,10 +383,6 @@ body,
   margin-bottom: 26px;
 }
 
-.slidev-layout.cover .kicker {
-  margin-bottom: 20px;
-}
-
 .slidev-layout.section {
   display: flex !important;
   flex-direction: column;
@@ -444,17 +430,8 @@ body,
   font-size: 18px;
 }
 
-/* the two emphasis variants stay light, like the reference deck */
-.slidev-layout.key-slide .kicker {
-  color: var(--key);
-}
-
 .slidev-layout.accent-slide h1 {
   font-size: 58px;
-}
-
-.slidev-layout.accent-slide .kicker {
-  color: var(--ink-2);
 }
 
 /* ---------- slidev chrome ---------- */

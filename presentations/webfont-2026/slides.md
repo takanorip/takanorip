@@ -19,8 +19,6 @@ fonts:
 layout: cover
 -->
 
-<p class="kicker">FRONTEND CONFERENCE KANSAI 2026</p>
-
 # 今さら理解する<br>ウェブフォント<span class="hl">2026</span>
 
 <p class="muted">
@@ -28,8 +26,6 @@ takanorip — Kanmu, inc. Design Manager
 </p>
 
 ---
-
-<p class="kicker">WHO</p>
 
 # takanorip ／ 大木 尊紀
 
@@ -48,15 +44,11 @@ takanorip — Kanmu, inc. Design Manager
 layout: statement
 ---
 
-<p class="kicker">QUESTION</p>
-
 # みなさん、<br>ウェブフォント<br>使ってますか？
 
 ---
 layout: key
 ---
-
-<p class="kicker">よくある評判</p>
 
 # 重い。ずれる。<br><span class="marker">目の敵にされやすい。</span>
 
@@ -64,13 +56,9 @@ layout: key
 layout: statement
 ---
 
-<p class="kicker">でも</p>
-
 # 技術的にもデザイン的にも<br><span class="marker">とっても面白い</span>
 
 ---
-
-<p class="kicker">TODAY</p>
 
 # 今日は両面から見る
 
@@ -97,8 +85,6 @@ layout: section
 
 ---
 
-<p class="kicker">01 — 活版印刷</p>
-
 # 書体は、金属の在庫だった
 
 <p>
@@ -107,8 +93,6 @@ layout: section
 </p>
 
 ---
-
-<p class="kicker">02 — 写植</p>
 
 # 書体指定が、デザイン行為になる
 
@@ -119,8 +103,6 @@ layout: section
 
 ---
 
-<p class="kicker">03 — DTP</p>
-
 # フォントがソフトウェアになる
 
 <p>
@@ -129,8 +111,6 @@ layout: section
 </p>
 
 ---
-
-<p class="kicker">04 — 初期のWeb</p>
 
 # 印刷では当たり前だった選択が、<br>できなかった
 
@@ -149,13 +129,9 @@ layout: section
 layout: accent
 ---
 
-<p class="kicker">05 — ウェブフォント</p>
-
 # 選択できること自体が、<br><span class="marker">デザインの回復</span>である
 
 ---
-
-<p class="kicker">VALUE</p>
 
 # 書体は、紙・余白・色と同じ設計変数
 
@@ -169,8 +145,6 @@ Webは文字が主のメディアなので、影響はむしろ印刷より大�
 </p>
 
 ---
-
-<p class="kicker">USER BENEFIT</p>
 
 # ユーザーにも便益がある
 
@@ -203,8 +177,6 @@ layout: key
 
 ---
 
-<p class="kicker">AGENDA</p>
-
 # 今日の道筋
 
 <ol class="agenda-list">
@@ -226,8 +198,6 @@ layout: section
 
 ---
 
-<p class="kicker">WHAT</p>
-
 # ウェブフォントとは
 
 <p>
@@ -246,8 +216,6 @@ layout: section
 
 ---
 
-<p class="kicker">JP</p>
-
 # 日本語が重い、理由は単純
 
 <div class="cols">
@@ -262,8 +230,6 @@ layout: section
 </div>
 
 ---
-
-<p class="kicker">FORMAT</p>
 
 # まず WOFF2 で圧縮する
 
@@ -280,8 +246,6 @@ layout: section
 </p>
 
 ---
-
-<p class="kicker">SUBSET</p>
 
 # 使わない文字は、送らない
 
@@ -303,8 +267,6 @@ layout: section
 </p>
 
 ---
-
-<p class="kicker">HOW TO SHIP</p>
 
 # 届ける経路は、だいたい3つ
 
@@ -333,8 +295,6 @@ layout: section
 
 ---
 
-<p class="kicker">TWO FAILURES</p>
-
 # 見えないか、張り替わるか
 
 <div class="cols">
@@ -354,8 +314,6 @@ layout: section
 
 ---
 
-<p class="kicker">DISPLAY</p>
-
 # font-display で待ち方を決める
 
 | 値 | 見えるまで | 向く場面 |
@@ -366,8 +324,6 @@ layout: section
 | `block` | 隠して待つ | ほぼ使わない |
 
 ---
-
-<p class="kicker">METRICS</p>
 
 # ずれるのは、字形ではなく寸法
 
@@ -388,15 +344,11 @@ ascent / descent / 平均字幅が違うと、行の高さや折り返しが変�
 
 ---
 
-<p class="kicker">LIVE</p>
-
 # 寸法を寄せると、重なりが変わる
 
 <SizeAdjustCompare />
 
 ---
-
-<p class="kicker">PRELOAD</p>
 
 # クリティカルな1本は、先に取りにいく
 
@@ -412,8 +364,6 @@ ascent / descent / 平均字幅が違うと、行の高さや折り返しが変�
 layout: statement
 ---
 
-<p class="kicker">POINT</p>
-
 # 重い・ずれるは<br><span class="marker">設計で止められる</span>
 
 ---
@@ -425,8 +375,6 @@ layout: section
 # フォントの選び方
 
 ---
-
-<p class="kicker">IMPRESSION</p>
 
 # 書体は、印象の設計である
 
@@ -451,8 +399,6 @@ layout: section
 
 ---
 
-<p class="kicker">BUDGET</p>
-
 # サイトで使う系統は、最大2つ
 
 <p>
@@ -463,8 +409,6 @@ layout: section
 ---
 layout: key
 ---
-
-<p class="kicker">UD FONT</p>
 
 # UDフォント＝<br>誰にとっても読みやすいフォント
 
@@ -478,8 +422,6 @@ layout: accent
 
 ---
 
-<p class="kicker">WHAT UD IS</p>
-
 # 特定の読みにくさを想定した設計
 
 <p>
@@ -488,8 +430,6 @@ layout: accent
 </p>
 
 ---
-
-<p class="kicker">CONTEXT</p>
 
 # 読みやすさは、人・サイズ・媒体で変わる
 
@@ -502,13 +442,9 @@ layout: accent
 layout: statement
 ---
 
-<p class="kicker">UD</p>
-
 # 万人向けの<br>正解書体ではない
 
 ---
-
-<p class="kicker">COPYRIGHT</p>
 
 # フォントには、著作権がある
 
@@ -518,8 +454,6 @@ layout: statement
 </p>
 
 ---
-
-<p class="kicker">TWO LAYERS</p>
 
 # 書体と、フォントは別物
 
@@ -538,13 +472,9 @@ layout: statement
 layout: statement
 ---
 
-<p class="kicker">LICENSE</p>
-
 # デスクトップライセンス<br>≠ ウェブライセンス
 
 ---
-
-<p class="kicker">WHY WEB IS SPECIAL</p>
 
 # ウェブフォントは改変と再配布が前提
 
@@ -565,8 +495,6 @@ layout: statement
 
 ---
 
-<p class="kicker">SAFE PATH</p>
-
 # 安全な経路だけを使う
 
 <div class="cols-3">
@@ -586,8 +514,6 @@ layout: statement
 
 ---
 
-<p class="kicker">ACCIDENTS</p>
-
 # よくある事故
 
 1. **OS同梱フォント**をそのままサーバーに上げる
@@ -599,8 +525,6 @@ layout: statement
 </p>
 
 ---
-
-<p class="kicker">WHEN</p>
 
 # 使う／使わない
 
@@ -625,8 +549,6 @@ layout: section
 
 ---
 
-<p class="kicker">ONE FILE</p>
-
 # 1ファイルで、複数の声
 
 <p>
@@ -635,8 +557,6 @@ Regular / Medium / Bold を3本配る代わりに、軸を1本持たせます。
 </p>
 
 ---
-
-<p class="kicker">AXES</p>
 
 # よく使う軸
 
@@ -657,15 +577,11 @@ Regular / Medium / Bold を3本配る代わりに、軸を1本持たせます。
 
 ---
 
-<p class="kicker">LIVE</p>
-
 # 動かして見る
 
 <VariableAxisDemo />
 
 ---
-
-<p class="kicker">JP + VF</p>
 
 # 日本語は、まだ慎重でいい
 
@@ -683,8 +599,6 @@ layout: section
 # CSS Fonts Level 4
 
 ---
-
-<p class="kicker">LEVEL 4</p>
 
 # フォントを、もっと細かく制御する
 
@@ -705,15 +619,11 @@ layout: section
 
 ---
 
-<p class="kicker">PALETTE</p>
-
 # 色付きフォントの色を、CSSで持ち替える
 
 <FontPaletteDemo />
 
 ---
-
-<p class="kicker">OPTICAL + VARIATION</p>
 
 # 軸は、プロパティで触る
 
@@ -735,8 +645,6 @@ small {
 
 ---
 
-<p class="kicker">TECH</p>
-
 # 対応してないブラウザには、配らない
 
 ```css
@@ -752,8 +660,6 @@ small {
 </p>
 
 ---
-
-<p class="kicker">SYNTHESIS</p>
 
 # 偽の太字・斜体を、黙らせる
 
@@ -778,8 +684,6 @@ layout: section
 
 ---
 
-<p class="kicker">IFT</p>
-
 # Incremental Font Transfer
 
 <p>
@@ -796,8 +700,6 @@ layout: section
 ```
 
 ---
-
-<p class="kicker">SUPPORT</p>
 
 # 対応の有無で、ファイルを分ける
 
@@ -820,8 +722,6 @@ layout: section
 layout: key
 ---
 
-<p class="kicker">WHY IT MATTERS</p>
-
 # 日本語の「全部入り」を<br><span class="marker">前提にしなくてよくなる</span>
 
 <p class="muted">
@@ -840,8 +740,6 @@ layout: section
 layout: statement
 ---
 
-<p class="kicker">TAKEAWAY 01</p>
-
 # 重い・ずれるは<br><span class="marker">設計で止められる</span>
 
 <p class="muted">配信と描画を分けて考える。ウェブフォントは目の敵ではなく、制御対象です。</p>
@@ -850,8 +748,6 @@ layout: statement
 layout: statement
 ---
 
-<p class="kicker">TAKEAWAY 02</p>
-
 # 書体は<br><span class="marker">印象の設計</span>である
 
 <p class="muted">好みだけで選ばない。可読性・著作権・本数まで含めて決めます。</p>
@@ -859,8 +755,6 @@ layout: statement
 ---
 layout: statement
 ---
-
-<p class="kicker">TAKEAWAY 03</p>
 
 # <span class="marker">2026年の道具</span>を使う
 
@@ -875,8 +769,6 @@ layout: accent
 ---
 layout: cover
 ---
-
-<p class="kicker">THANK YOU</p>
 
 # ありがとうございました
 
