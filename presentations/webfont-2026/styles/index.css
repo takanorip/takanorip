@@ -2,14 +2,14 @@
 
 :root {
   --paper: #ffffff;
-  --ink: #001319;
-  --ink-2: #4a5f67;
-  --ink-3: #7d8f96;
-  --key: #0064ca;
+  --ink: #000000;
+  --ink-2: #000000;
+  --ink-3: #000000;
+  --key: #000000;
   --accent: #fdc400;
-  --rule: #dfe4e6;
-  --rule-soft: #eef1f2;
-  --fill: #f2f6f8;
+  --rule: #000000;
+  --rule-soft: #000000;
+  --fill: #ffffff;
 
   --pad-x: 76px;
   --pad-top: 86px;
@@ -258,8 +258,8 @@ body,
 }
 
 .card {
-  background: var(--fill);
-  border: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
   border-radius: 16px;
   padding: 22px 24px;
   height: 100%;
@@ -278,8 +278,8 @@ body,
 }
 
 .figure {
-  background: var(--fill);
-  border: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
   border-radius: 20px;
   padding: 28px 30px;
 }
@@ -295,8 +295,8 @@ body,
 
 .flow .box {
   flex: 1;
-  background: var(--fill);
-  border: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
   border-radius: 12px;
   padding: 18px 10px;
   text-align: center;
@@ -314,15 +314,16 @@ body,
 .slidev-layout code {
   font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.86em;
-  color: var(--key);
-  background: rgba(0, 100, 202, 0.07);
+  color: var(--ink);
+  background: transparent;
   padding: 0.1em 0.34em;
+  border: 1px solid var(--rule);
   border-radius: 4px;
 }
 
 .slidev-layout pre {
-  background: var(--fill) !important;
-  border: 0;
+  background: var(--paper) !important;
+  border: 1px solid var(--rule);
   border-radius: 16px;
   padding: 22px 24px !important;
   font-size: 15px !important;

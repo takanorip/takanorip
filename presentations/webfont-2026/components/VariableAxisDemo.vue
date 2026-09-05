@@ -38,7 +38,7 @@ const opsz = ref(48)
   font-size: 40px;
   line-height: 1.4;
   margin: 0;
-  color: #001319;
+  color: #000;
 }
 
 .vf-en {
@@ -47,7 +47,7 @@ const opsz = ref(48)
   font-size: 34px;
   line-height: 1.3;
   margin: 0 0 22px;
-  color: #0064ca;
+  color: #000;
 }
 
 .vf-controls {
@@ -64,11 +64,11 @@ const opsz = ref(48)
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: #4a5f67;
+  color: #000;
 }
 
 .vf-controls input {
   width: 100%;
-  accent-color: #0064ca;
+  accent-color: #000;
 }
 </style>

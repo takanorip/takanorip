@@ -35,7 +35,7 @@ const sample = 'ウェブフォント2026'
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #0064ca;
+  color: #000;
   margin: 0 0 12px;
 }
 
@@ -63,7 +63,7 @@ const sample = 'ウェブフォント2026'
 .web {
   font-family: 'LINE Seed JP', sans-serif;
   font-weight: 800;
-  color: #001319;
+  color: #000;
 }
 
 .web.adjusted {
@@ -74,6 +74,6 @@ const sample = 'ウェブフォント2026'
   margin: 12px 0 0;
   font-size: 14px;
   line-height: 1.7;
-  color: #4a5f67;
+  color: #000;
 }
 </style>

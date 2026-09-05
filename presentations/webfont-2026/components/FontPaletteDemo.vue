@@ -68,8 +68,8 @@ const current = ref('brand')
 
 .pal-btns button {
   background: #fff;
-  color: #4a5f67;
-  border: 1px solid #dfe4e6;
+  color: #000;
+  border: 1px solid #000;
   border-radius: 999px;
   padding: 7px 18px;
   font-family: inherit;
@@ -80,8 +80,8 @@ const current = ref('brand')
 }
 
 .pal-btns button.on {
-  background: #0064ca;
-  border-color: #0064ca;
+  background: #000;
+  border-color: #000;
   color: #fff;
 }
 </style>
