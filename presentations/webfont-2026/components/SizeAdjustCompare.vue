@@ -6,7 +6,7 @@ const sample = 'ウェブフォント2026'
   <div class="cmp">
     <div class="col">
       <p class="label">size-adjust なし</p>
-      <div class="stage">
+      <div class="stage figure">
         <span class="fallback">{{ sample }}</span>
         <span class="web">{{ sample }}</span>
       </div>
@@ -14,7 +14,7 @@ const sample = 'ウェブフォント2026'
     </div>
     <div class="col">
       <p class="label">size-adjust: 92%</p>
-      <div class="stage">
+      <div class="stage figure">
         <span class="fallback">{{ sample }}</span>
         <span class="web adjusted">{{ sample }}</span>
       </div>
@@ -27,53 +27,53 @@ const sample = 'ウェブフォント2026'
 .cmp {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-top: 12px;
+  gap: 26px;
+  margin-top: 4px;
 }
 
 .label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  color: #fdc400;
+  letter-spacing: 0.1em;
+  color: #0064ca;
   margin: 0 0 12px;
 }
 
 .stage {
   position: relative;
-  height: 88px;
-  background: rgba(230, 238, 242, 0.04);
-  border: 1px solid rgba(230, 238, 242, 0.12);
-  border-radius: 8px;
+  height: 92px;
+  padding: 0;
   overflow: hidden;
 }
 
 .stage span {
   position: absolute;
-  left: 20px;
-  top: 22px;
-  font-size: 36px;
+  left: 22px;
+  top: 26px;
+  font-size: 32px;
   line-height: 1.2;
   white-space: nowrap;
 }
 
 .fallback {
   font-family: Georgia, 'Times New Roman', serif;
-  color: rgba(253, 196, 0, 0.55);
+  color: rgba(253, 196, 0, 0.95);
 }
 
 .web {
   font-family: 'LINE Seed JP', sans-serif;
   font-weight: 800;
-  color: #e6eef2;
+  color: #001319;
 }
 
 .web.adjusted {
-  font-size: calc(36px * 0.92);
+  font-size: calc(32px * 0.92);
 }
 
 .cap {
   margin: 12px 0 0;
   font-size: 14px;
-  color: rgba(230, 238, 242, 0.58);
+  line-height: 1.7;
+  color: #4a5f67;
 }
 </style>

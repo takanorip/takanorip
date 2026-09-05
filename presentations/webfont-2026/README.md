@@ -20,14 +20,17 @@ npm run dev
 
 ## デザイン
 
-| トークン | 値 |
-|---------|---|
-| 背景 | `#001319` |
-| キーカラー | `#0064ca` |
-| アクセント | `#fdc400` |
-| 書体 | [LINE Seed JP](https://fonts.google.com/specimen/LINE+Seed+JP)（Google Fonts） |
+| トークン | 値 | 使いどころ |
+|---------|---|-----------|
+| 背景 | `#ffffff` | 全ページ共通の紙面 |
+| インク | `#001319` | 見出しと本文 |
+| キーカラー | `#0064ca` | キッカー、章番号、コード、罫線の点 |
+| アクセント | `#fdc400` | 蛍光ペン風のマーカー（`.marker`） |
+| 書体 | [LINE Seed JP](https://fonts.google.com/specimen/LINE+Seed+JP)（Google Fonts） | 見出し・本文とも |
 
-構成のリズムは [ABEMAの進化（CADC2024）](https://speakerdeck.com/cyberagentdevelopers/abema-ui-improve) を参考にしている。ブランドは使っていない。
+白基調・左揃え・上下の罫線・広い行間という紙面の作りは [デザインシステムの力（Spindle）](https://speakerdeck.com/spindle/the-power-of-design-system) を参考にしている。ブランドは使っていない。
+
+上下の罫線とラベルは `global-top.vue` が全ページに描画する（表紙のみ非表示）。
 
 ## 構成
 

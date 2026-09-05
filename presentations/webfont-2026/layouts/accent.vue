@@ -1,5 +1,5 @@
 <template>
-  <div class="slidev-layout statement accent-slide" style="background:#fdc400!important;color:#001319;">
+  <div class="slidev-layout statement accent-slide">
     <slot />
   </div>
 </template>

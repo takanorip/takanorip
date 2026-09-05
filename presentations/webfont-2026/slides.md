@@ -8,7 +8,7 @@ drawings:
   persist: false
 transition: fade-out
 mdc: true
-colorSchema: dark
+colorSchema: light
 canvasWidth: 980
 fonts:
   sans: LINE Seed JP
@@ -23,7 +23,7 @@ layout: cover
 
 # 今さら理解する<br>ウェブフォント<span class="hl">2026</span>
 
-<p class="muted" style="margin-top: 28px;">
+<p class="muted">
 takanorip — Kanmu, inc. Design Manager
 </p>
 
@@ -31,23 +31,22 @@ takanorip — Kanmu, inc. Design Manager
 
 <p class="kicker">WHO</p>
 
-# takanorip<br><span class="muted" style="font-size: 0.45em; font-weight: 700;">大木 尊紀</span>
+# takanorip ／ 大木 尊紀
 
-<div class="cols" style="margin-top: 36px;">
-<div>
-<p style="margin: 0; font-size: 0.85em; font-weight: 700;">Kanmu, inc.</p>
-<p class="muted">デザインマネージャー</p>
+<div class="cols">
+<div class="card">
+<h3>Kanmu, inc.</h3>
+<p>デザインマネージャー。デザインと実装のあいだを行き来している。</p>
 </div>
-<div>
-<p style="margin: 0; font-size: 0.85em; font-weight: 700;">デザインと実装のあいだ</p>
-<p class="muted">フォントとデザインシステムが好き</p>
+<div class="card">
+<h3>好きなもの</h3>
+<p>フォント、デザインシステム、アクセシビリティ。</p>
 </div>
 </div>
 
 ---
 layout: statement
 ---
-
 
 <p class="kicker">QUESTION</p>
 
@@ -57,19 +56,17 @@ layout: statement
 layout: key
 ---
 
-
 <p class="kicker">よくある評判</p>
 
-# 重い。<br>ずれる。<br>目の敵。
+# 重い。ずれる。<br><span class="marker">目の敵にされやすい。</span>
 
 ---
 layout: statement
 ---
 
-
 <p class="kicker">でも</p>
 
-# 技術的にも<br>デザイン的にも<br><span class="hl">とっても面白い</span>
+# 技術的にもデザイン的にも<br><span class="marker">とっても面白い</span>
 
 ---
 
@@ -80,23 +77,23 @@ layout: statement
 <div class="cols">
 <div class="card">
 <h3>技術</h3>
-<p>配信の仕組み、CLS、バリアブル、CSS Fonts 4、W3Cの新しい転送</p>
+<p>配信の仕組み、CLS、バリアブル、CSS Fonts Level 4、W3Cで検討中の転送方式。</p>
 </div>
 <div class="card">
 <h3>デザイン</h3>
-<p>書体を選べることの価値、選び方、UDの誤解、著作権</p>
+<p>書体を選べることの価値、選び方、UDフォントの誤解、著作権。</p>
 </div>
 </div>
 
 ---
+layout: section
+---
 
-<p class="kicker">HISTORY</p>
+<p class="chap">00</p>
 
-# 書体を「選べる」ように<br>なるまでの道
+# 書体を「選べる」ようになるまで
 
-<p class="muted" style="margin-top: 24px;">
-ウェブフォントの話をする前に、印刷の歴史を少しだけ。
-</p>
+<p class="muted">ウェブフォントの話をする前に、印刷の歴史を少しだけ。</p>
 
 ---
 
@@ -104,47 +101,47 @@ layout: statement
 
 # 書体は、金属の在庫だった
 
-<p style="margin-top: 28px; max-width: 16em;">
-活字は物理的な駒。種類は少なく、取り替えること自体が工数。
-文字の形を決めることは、制作の根幹だった。
+<p>
+活字は物理的な駒。棚にある分しか組めず、種類を増やすこと自体が投資でした。
+<span class="marker">文字の形を決めることは、制作の根幹</span>だったのです。
 </p>
 
 ---
 
 <p class="kicker">02 — 写植</p>
 
-# 書体指定が、<br>デザイン行為になる
+# 書体指定が、デザイン行為になる
 
-<p style="margin-top: 28px; max-width: 18em;">
-写研、モリサワ。日本語グラフィックで選択肢が一気に増える。
-石井明朝やゴナのように、どの書体を指定するかがデザインそのものになった。
+<p>
+写研、モリサワ。日本語グラフィックで選択肢が一気に増えます。
+石井明朝やゴナのように、<span class="marker">どの書体を指定するかがデザインそのもの</span>になりました。
 </p>
 
 ---
 
 <p class="kicker">03 — DTP</p>
 
-# フォントが<br>ソフトウェアになる
+# フォントがソフトウェアになる
 
-<p style="margin-top: 28px; max-width: 16em;">
+<p>
 画面上で選び、組んで、出力する。
-書体は在庫ではなく、ファイルになった。
+書体は棚の在庫ではなく、コピーできるファイルになりました。
 </p>
 
 ---
 
 <p class="kicker">04 — 初期のWeb</p>
 
-# 印刷では当たり前だった<br>選択が、できなかった
+# 印刷では当たり前だった選択が、<br>できなかった
 
 <div class="cols">
 <div class="card">
-<h3>指定できるもの</h3>
-<p>MSPゴシック、メイリオ、ヒラギノ。<br>「近いもの」を並べるだけ。</p>
+<h3>指定できたもの</h3>
+<p>MSPゴシック、メイリオ、ヒラギノ。手元にある書体から「近いもの」を並べるだけ。</p>
 </div>
 <div class="card">
 <h3>起きていたこと</h3>
-<p>OSが違えば別人のサイト。<br>デザイナーの意図は環境に負ける。</p>
+<p>OSが違えば別人のサイト。デザイナーの意図は、いつも環境に負けていました。</p>
 </div>
 </div>
 
@@ -152,33 +149,23 @@ layout: statement
 layout: accent
 ---
 
-
 <p class="kicker">05 — ウェブフォント</p>
 
-# 選択できること自体が、<br>デザインの回復である
+# 選択できること自体が、<br><span class="marker">デザインの回復</span>である
 
 ---
 
 <p class="kicker">VALUE</p>
 
-# 書体は、紙・余白・色と<br>同じ設計変数
+# 書体は、紙・余白・色と同じ設計変数
 
-<p style="margin-top: 28px; max-width: 18em;">
-トーン、ブランド、情報階層、読みやすさは書体で決まる。
-「なんとなくゴシック」は、写植以前の制約に戻ることと同じ。
+<p>
+トーン、ブランド、情報階層、読みやすさ。そのすべてに書体が効きます。
+Webは文字が主のメディアなので、影響はむしろ印刷より大きい。
 </p>
 
----
-layout: statement
----
-
-
-<p class="kicker">WEB</p>
-
-# Webは<br>文字が主のメディア
-
-<p class="muted" style="margin-top: 20px; font-size: 0.42em; font-weight: 400;">
-サイトもアプリも、印象の大半は文字が作る。
+<p class="note">
+「なんとなくゴシック」で済ませるのは、写植以前の制約に自分から戻ることと同じです。
 </p>
 
 ---
@@ -190,32 +177,29 @@ layout: statement
 <div class="cols-3">
 <div class="card">
 <h3>読みやすさ</h3>
-<p>字面・ウェイト・サイズが読了と理解を助ける</p>
+<p>字面・ウェイト・サイズの設計が、読了と理解を助ける。</p>
 </div>
 <div class="card">
 <h3>一貫した体験</h3>
-<p>OSを問わず同じ書体。別人のサイト感を減らす</p>
+<p>OSを問わず同じ書体が出る。環境差による「別人のサイト」感が減る。</p>
 </div>
 <div class="card">
 <h3>信頼と印象</h3>
-<p>トーンと書体が一致すると、情報の信頼性につながる</p>
+<p>内容と書体のトーンが一致すると、情報そのものが信頼されやすい。</p>
 </div>
 </div>
 
-<p class="muted" style="margin-top: 28px;">
-読みやすい骨格は負担を下げうる。ただし「UDなら万人に読みやすい」ではない。後で否定する。
+<p class="note">
+※ 読みやすい骨格は負担を下げうる。ただし「UDフォントなら万人に読みやすい」ではありません。後半で否定します。
 </p>
 
 ---
 layout: key
 ---
 
+# 見過ごされがちだが、<br>選べることには<span class="marker">価値がある</span>。
 
-# 見過ごされがちだが、<br>選べることには価値がある。
-
-<p style="margin-top: 24px; font-size: 0.42em; font-weight: 700; opacity: 0.9;">
-だから技術とデザインの両方を見る。
-</p>
+<p class="muted">だから、技術とデザインの両方を見ます。</p>
 
 ---
 
@@ -236,7 +220,6 @@ layout: key
 layout: section
 ---
 
-
 <p class="chap">01</p>
 
 # 配信の仕組み
@@ -247,8 +230,8 @@ layout: section
 
 # ウェブフォントとは
 
-<p style="margin-top: 20px; max-width: 18em;">
-サーバー上のフォントデータを、ユーザーのブラウザが取得して描画する仕組み。
+<p>
+サーバー上のフォントデータを、ユーザーのブラウザが取得して描画する仕組みです。
 </p>
 
 <div class="flow">
@@ -270,7 +253,7 @@ layout: section
 <div class="cols">
 <div class="card">
 <h3>文字数が多い</h3>
-<p>ラテンは数百。日本語は数千〜数万グリフ。ファイルがそのまま大きい。</p>
+<p>ラテンは数百字。日本語は数千から数万グリフ。ファイルがそのまま大きくなる。</p>
 </div>
 <div class="card">
 <h3>グリフが複雑</h3>
@@ -292,8 +275,8 @@ layout: section
 }
 ```
 
-<p class="muted" style="margin-top: 20px;">
-2026年、新規で TTF や WOFF を配る理由はほぼない。WOFF2 が前提。
+<p class="note">
+2026年、新規で TTF や WOFF を配る理由はほぼありません。WOFF2 が前提です。
 </p>
 
 ---
@@ -315,8 +298,8 @@ layout: section
 }
 ```
 
-<p class="muted" style="margin-top: 16px;">
-静的サブセットと、閲覧文字だけを返すダイナミックサブセット。日本語では後者が効く。
+<p class="note">
+静的サブセットと、閲覧文字だけを返すダイナミックサブセット。日本語では後者がよく効きます。
 </p>
 
 ---
@@ -328,22 +311,21 @@ layout: section
 <div class="cols-3">
 <div class="card">
 <h3>配信サービス</h3>
-<p>Google Fonts、Adobe Fonts、FONTPLUS、TypeSquare。ライセンスとサブセットを任せる。</p>
+<p>Google Fonts、Adobe Fonts、FONTPLUS、TypeSquare。ライセンスとサブセットを任せられる。</p>
 </div>
 <div class="card">
-<h3>ノーコード</h3>
-<p>サイトツール側がフォントを抱える。手早いが、制御は薄い。</p>
+<h3>ノーコードツール</h3>
+<p>サイトツール側がフォントを抱える。手早いが、制御はどうしても薄くなる。</p>
 </div>
 <div class="card">
 <h3>セルフホスト</h3>
-<p>キャッシュもサブセットも自分で設計できる。許諾されたファイルだけ。</p>
+<p>キャッシュもサブセットも自分で設計できる。ただしウェブ用に許諾されたファイルだけ。</p>
 </div>
 </div>
 
 ---
 layout: section
 ---
-
 
 <p class="chap">02</p>
 
@@ -358,7 +340,7 @@ layout: section
 <div class="cols">
 <div class="card">
 <h3>FOIT</h3>
-<p>Flash of Invisible Text。フォント待ちで文字が消える。読めない時間。</p>
+<p>Flash of Invisible Text。フォント待ちで文字が消える。読めない時間が生まれる。</p>
 </div>
 <div class="card">
 <h3>FOUT</h3>
@@ -366,20 +348,20 @@ layout: section
 </div>
 </div>
 
-<p style="margin-top: 28px;">
-張り替えのとき、幅と高さが違うと <strong>CLS</strong> になる。
+<p class="note">
+張り替えのとき、幅と高さが違うと <span class="marker">CLS（レイアウトシフト）</span>になります。
 </p>
 
 ---
 
 <p class="kicker">DISPLAY</p>
 
-# `font-display` で待ち方を決める
+# font-display で待ち方を決める
 
 | 値 | 見えるまで | 向く場面 |
 |---|---|---|
 | `swap` | すぐフォールバック | 本文。読めない時間を作らない |
-| `optional` | 間に合わなければ使わない | ブランドより安定 |
+| `optional` | 間に合わなければ使わない | ブランドより安定を取る |
 | `fallback` | 短い待ちのあと swap | 見出しと本文のあいだ |
 | `block` | 隠して待つ | ほぼ使わない |
 
@@ -389,9 +371,9 @@ layout: section
 
 # ずれるのは、字形ではなく寸法
 
-<p style="margin-top: 16px; max-width: 20em;">
-ascent / descent / 平均字幅が違うと、行の高さや折り返しが変わる。
-`size-adjust` と metric override で、フォールバック側の寸法を寄せる。
+<p>
+ascent / descent / 平均字幅が違うと、行の高さや折り返しが変わります。
+<span class="marker">size-adjust と metric override</span> で、寸法のほうを寄せます。
 </p>
 
 ```css
@@ -401,7 +383,6 @@ ascent / descent / 平均字幅が違うと、行の高さや折り返しが変�
   size-adjust: 92%;
   ascent-override: 90%;
   descent-override: 22%;
-  line-gap-override: 0%;
 }
 ```
 
@@ -423,23 +404,21 @@ ascent / descent / 平均字幅が違うと、行の高さや折り返しが変�
 <link rel="preload" href="/fonts/display.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
-<p class="muted" style="margin-top: 20px;">
-全部 preload しない。LCP に効く書体、最初の画面に必要な1〜2ファイルだけ。
+<p class="note">
+全部を preload しないこと。LCP に効く書体、最初の画面に必要な1〜2ファイルだけに絞ります。
 </p>
 
 ---
 layout: statement
 ---
 
-
 <p class="kicker">POINT</p>
 
-# 重い・ずれるは<br><span class="hl">設計で止められる</span>
+# 重い・ずれるは<br><span class="marker">設計で止められる</span>
 
 ---
 layout: section
 ---
-
 
 <p class="chap">03</p>
 
@@ -454,20 +433,20 @@ layout: section
 <div class="cols-3">
 <div class="card">
 <h3>ゴシック</h3>
-<p>硬い、現代、UI向き</p>
+<p>硬い、現代的、UI向き。情報量が多い画面に強い。</p>
 </div>
 <div class="card">
 <h3>明朝</h3>
-<p>繊細、編集、信頼</p>
+<p>繊細で編集的。長文と、落ち着いた信頼の演出に。</p>
 </div>
 <div class="card">
 <h3>ディスプレイ</h3>
-<p>強い、短い見出し専用</p>
+<p>強い個性。短い見出し専用で、本文には使わない。</p>
 </div>
 </div>
 
-<p class="muted" style="margin-top: 28px;">
-どの印象を足すかを先に決める。フォントから入らない。
+<p class="note">
+どの印象を足したいかを先に決める。フォント名から入らないこと。
 </p>
 
 ---
@@ -476,28 +455,24 @@ layout: section
 
 # サイトで使う系統は、最大2つ
 
-<p style="margin-top: 20px; max-width: 18em;">
-本文と見出し。それ以上は、読み込みも世界観も散る。
-飾りのための3本目は、だいたい要らない。
+<p>
+本文と見出し。それ以上に増やすと、読み込みも世界観も散ります。
+飾りのための3本目は、だいたい要りません。
 </p>
 
 ---
 layout: key
 ---
 
-
 <p class="kicker">UD FONT</p>
 
-# UDフォント =<br>誰にとっても<br>読みやすいフォント
+# UDフォント＝<br>誰にとっても読みやすいフォント
 
-<p style="margin-top: 20px; font-size: 0.4em; font-weight: 700;">
-と思われがち。
-</p>
+<p class="muted">……と、思われがちです。</p>
 
 ---
 layout: accent
 ---
-
 
 # それは、違う。
 
@@ -505,28 +480,27 @@ layout: accent
 
 <p class="kicker">WHAT UD IS</p>
 
-# 特定の読みにくさを<br>想定した設計
+# 特定の読みにくさを想定した設計
 
-<p style="margin-top: 24px; max-width: 20em;">
+<p>
 弱視、加齢、類似字形の混同（6 / 8 / 0、シ / ツ、ー / 一）。
-その条件下での読みやすさを狙った書体であって、「全人類に最適」ではない。
+<span class="marker">その条件下での読みやすさ</span>を狙った書体であって、「全人類に最適」という意味ではありません。
 </p>
 
 ---
 
 <p class="kicker">CONTEXT</p>
 
-# 読みやすさは、<br>人・サイズ・媒体で変わる
+# 読みやすさは、人・サイズ・媒体で変わる
 
-<p style="margin-top: 24px; max-width: 20em;">
-ある人に開いて見やすい形が、別の人には緩く、遅く感じることがある。
-名前の「ユニバーサル」を、全員に読みやすい保証だと読まない。
+<p>
+ある人に開いて見やすい形が、別の人には緩く、遅く感じることがあります。
+名前の「ユニバーサル」を、全員に読みやすい保証だと読まないこと。
 </p>
 
 ---
 layout: statement
 ---
-
 
 <p class="kicker">UD</p>
 
@@ -538,8 +512,9 @@ layout: statement
 
 # フォントには、著作権がある
 
-<p class="muted" style="margin-top: 20px;">
-ライセンスは注意書き1行では終わらない。
+<p>
+ライセンスの話は、注意書き1行では終わりません。
+ここだけは、数枚使って確認します。
 </p>
 
 ---
@@ -551,7 +526,7 @@ layout: statement
 <div class="cols">
 <div class="card">
 <h3>書体（デザイン）</h3>
-<p>日本では字形のデザイン自体は、著作物になりにくい。</p>
+<p>日本では、字形のデザインそれ自体は著作物になりにくいとされる。</p>
 </div>
 <div class="card">
 <h3>フォント（プログラム）</h3>
@@ -563,7 +538,6 @@ layout: statement
 layout: statement
 ---
 
-
 <p class="kicker">LICENSE</p>
 
 # デスクトップライセンス<br>≠ ウェブライセンス
@@ -572,21 +546,21 @@ layout: statement
 
 <p class="kicker">WHY WEB IS SPECIAL</p>
 
-# ウェブフォントは<br>改変と再配布が前提
+# ウェブフォントは改変と再配布が前提
 
 <div class="cols">
 <div class="card">
-<h3>サブセット化</h3>
-<p>改変。EULA が改変を禁じていれば、自分で削れない。</p>
+<h3>サブセット化 = 改変</h3>
+<p>EULA が改変を禁じていれば、自分で削ることはできない。</p>
 </div>
 <div class="card">
-<h3>サーバー配信</h3>
-<p>再配布。画面に「表示する」ことと、ファイルを「配る」ことは別行為。</p>
+<h3>サーバー配信 = 再配布</h3>
+<p>画面に「表示する」ことと、ファイルを「配る」ことは別の行為。</p>
 </div>
 </div>
 
-<p style="margin-top: 28px; font-size: 0.85em;">
-買ったフォント、マシンに入っているフォントを <code>@font-face</code> するのは、多くの場合アウト。
+<p class="note">
+買ったフォント、マシンに入っているフォントを <code>@font-face</code> で配るのは、多くの場合アウトです。
 </p>
 
 ---
@@ -602,7 +576,7 @@ layout: statement
 </div>
 <div class="card">
 <h3>明示された許諾</h3>
-<p>OFL や、ウェブ利用が書いてある商用契約</p>
+<p>OFL、またはウェブ利用が書いてある商用契約</p>
 </div>
 <div class="card">
 <h3>セルフホスト</h3>
@@ -616,12 +590,12 @@ layout: statement
 
 # よくある事故
 
-1. **OS同梱フォント**をサーバーに上げる
+1. **OS同梱フォント**をそのままサーバーに上げる
 2. **印刷用パッケージ**をWebに流用する
-3. 画像に埋め込むことと、**ファイルを配信すること**を混同する
+3. 画像に焼き込むことと、**ファイルを配信すること**を混同する
 
-<p class="muted" style="margin-top: 24px;">
-「画面に出せる」と「ファイルを配ってよい」は、同じではない。
+<p class="note">
+「画面に出せる」と「ファイルを配ってよい」は、まったく別の話です。
 </p>
 
 ---
@@ -645,7 +619,6 @@ layout: statement
 layout: section
 ---
 
-
 <p class="chap">04</p>
 
 # バリアブルフォント
@@ -656,9 +629,9 @@ layout: section
 
 # 1ファイルで、複数の声
 
-<p style="margin-top: 20px; max-width: 18em;">
-Regular / Medium / Bold を3本配る代わりに、軸を1本持たせる。
-日本語でも、ウェイトのファイル数を減らせる。
+<p>
+Regular / Medium / Bold を3本配る代わりに、軸を1本持たせます。
+日本語でも、ウェイトごとのファイル数を減らせます。
 </p>
 
 ---
@@ -670,15 +643,15 @@ Regular / Medium / Bold を3本配る代わりに、軸を1本持たせる。
 <div class="cols-3">
 <div class="card">
 <h3>wght</h3>
-<p>ウェイト。100から900まで連続。</p>
+<p>ウェイト。100から900まで連続で動かせる。</p>
 </div>
 <div class="card">
 <h3>wdth</h3>
-<p>字幅。狭いUIと、ゆったりした見出し。</p>
+<p>字幅。狭いUIと、ゆったりした見出しを1本でまかなう。</p>
 </div>
 <div class="card">
 <h3>opsz</h3>
-<p>オプティカルサイズ。小さい文字ほど骨格を開く。</p>
+<p>オプティカルサイズ。小さい文字ほど骨格を開いて読みやすくする。</p>
 </div>
 </div>
 
@@ -696,15 +669,14 @@ Regular / Medium / Bold を3本配る代わりに、軸を1本持たせる。
 
 # 日本語は、まだ慎重でいい
 
-<p style="margin-top: 20px; max-width: 20em;">
-対応ファミリーは増えた。でも、全グリフのバリアブルは重いことがある。
-本文を静的1ウェイト、見出しだけバリアブル、という分け方も設計。
+<p>
+対応ファミリーは増えました。でも、全グリフ入りのバリアブルは重いことがあります。
+本文は静的1ウェイト、見出しだけバリアブル。そういう分け方も設計のうちです。
 </p>
 
 ---
 layout: section
 ---
-
 
 <p class="chap">05</p>
 
@@ -717,20 +689,18 @@ layout: section
 # フォントを、もっと細かく制御する
 
 <div class="cols">
-<div>
-- `font-palette`
-- `font-optical-sizing`
-- `font-variation-settings`
+<div class="card">
+<h3>見た目を触る</h3>
+<p><code>font-palette</code><br><code>font-optical-sizing</code><br><code>font-variation-settings</code></p>
 </div>
-<div>
-- `font-tech()` / `format()`
-- `font-synthesis-*`
-- OpenType の feature
+<div class="card">
+<h3>配り方を分ける</h3>
+<p><code>tech()</code> / <code>format()</code><br><code>font-synthesis-*</code><br>OpenType feature</p>
 </div>
 </div>
 
-<p class="muted" style="margin-top: 28px;">
-仕様は Working Draft（2026）。主要ブラウザは、使えるものがすでに多い。
+<p class="note">
+仕様は Working Draft（2026）。ただし主要ブラウザで、すでに使えるものが多くあります。
 </p>
 
 ---
@@ -759,8 +729,8 @@ small {
 }
 ```
 
-<p class="muted" style="margin-top: 16px;">
-同じファミリーでも、見出しと注釈で骨格を変えてよい。
+<p class="note">
+同じファミリーでも、見出しと注釈で骨格を変えてよいのです。
 </p>
 
 ---
@@ -777,8 +747,8 @@ small {
 }
 ```
 
-<p class="muted" style="margin-top: 16px;">
-`format()` と `tech()` で、色・バリエーション・IFT を条件分岐できる。
+<p class="note">
+<code>format()</code> と <code>tech()</code> で、色・バリエーション・IFT を条件分岐できます。
 </p>
 
 ---
@@ -794,18 +764,17 @@ body {
 }
 ```
 
-<p class="muted" style="margin-top: 20px;">
-ブラウザが勝手に傾けるより、持っていないウェイトは持っていない、と明示する。
+<p class="note">
+ブラウザに勝手に傾けさせるより、持っていないウェイトは持っていないと明示するほうが安全です。
 </p>
 
 ---
 layout: section
 ---
 
-
 <p class="chap">06</p>
 
-# W3Cの新しい仕組み
+# W3Cで検討中の仕組み
 
 ---
 
@@ -813,9 +782,9 @@ layout: section
 
 # Incremental Font Transfer
 
-<p style="margin-top: 16px; max-width: 22em;">
-最初は必要なグリフだけ送り、あとからパッチで足す。
-`unicode-range` より細かく、ページをまたいで増えていける。
+<p>
+最初は必要なグリフだけ送り、あとからパッチで足していく方式です。
+<code>unicode-range</code> より細かく、ページをまたいで増やせます。
 </p>
 
 ```css
@@ -851,20 +820,17 @@ layout: section
 layout: key
 ---
 
-
 <p class="kicker">WHY IT MATTERS</p>
 
-# 日本語の「全部入り」を<br>前提にしなくてよくなる
+# 日本語の「全部入り」を<br><span class="marker">前提にしなくてよくなる</span>
 
-<p style="margin-top: 24px; max-width: 20em; font-size: 0.85em;">
-数千グリフを最初から配る必要が薄れる。
-ウェブフォントが目の敵にされる最大の理由——日本語の初期転送——に、仕様側から穴が開きつつある。
+<p class="muted">
+ウェブフォントが目の敵にされる最大の理由——日本語の初期転送——に、仕様の側から穴が開きつつあります。
 </p>
 
 ---
 layout: section
 ---
-
 
 <p class="chap">07</p>
 
@@ -874,47 +840,37 @@ layout: section
 layout: statement
 ---
 
+<p class="kicker">TAKEAWAY 01</p>
 
-<p class="kicker">01</p>
+# 重い・ずれるは<br><span class="marker">設計で止められる</span>
 
-# 重い・ずれるは<br><span class="hl">設計で止められる</span>
-
-<p class="muted" style="margin-top: 20px; font-size: 0.38em; font-weight: 400;">
-配信と描画を分けて考える。ウェブフォントは制御対象。
-</p>
+<p class="muted">配信と描画を分けて考える。ウェブフォントは目の敵ではなく、制御対象です。</p>
 
 ---
 layout: statement
 ---
 
+<p class="kicker">TAKEAWAY 02</p>
 
-<p class="kicker">02</p>
+# 書体は<br><span class="marker">印象の設計</span>である
 
-# 書体は<br><span class="hl">印象の設計</span>である
-
-<p class="muted" style="margin-top: 20px; font-size: 0.38em; font-weight: 400;">
-好みだけで選ばない。可読性・著作権・本数まで含めて決める。
-</p>
+<p class="muted">好みだけで選ばない。可読性・著作権・本数まで含めて決めます。</p>
 
 ---
 layout: statement
 ---
 
+<p class="kicker">TAKEAWAY 03</p>
 
-<p class="kicker">03</p>
+# <span class="marker">2026年の道具</span>を使う
 
-# <span class="hl">2026年の道具</span>を使う
-
-<p class="muted" style="margin-top: 20px; font-size: 0.38em; font-weight: 400;">
-バリアブル、CSS Fonts Level 4、Incremental Font Transfer。
-</p>
+<p class="muted">バリアブル、CSS Fonts Level 4、Incremental Font Transfer。基礎の延長に最新があります。</p>
 
 ---
 layout: accent
 ---
 
-
-# ウェブフォントについて<br>詳しくなって、<br>フロントエンドを<br>もっと楽しもう。
+# ウェブフォントについて詳しくなって、<br>フロントエンド開発を<span class="marker">もっと楽しみましょう</span>。
 
 ---
 layout: cover
@@ -924,10 +880,7 @@ layout: cover
 
 # ありがとうございました
 
-<p style="margin-top: 28px; font-weight: 700;">
-takanorip
-</p>
 <p class="muted">
-Kanmu, inc. Design Manager<br>
+takanorip — Kanmu, inc. Design Manager<br>
 フロントエンドカンファレンス関西2026
 </p>

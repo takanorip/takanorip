@@ -4,14 +4,14 @@ import { ref } from 'vue'
 const palettes = [
   { id: 'base', label: 'default' },
   { id: 'brand', label: 'brand' },
-  { id: 'night', label: 'night' },
+  { id: 'ink', label: 'ink' },
 ]
 
 const current = ref('brand')
 </script>
 
 <template>
-  <div class="pal">
+  <div class="pal figure">
     <p class="pal-sample" :class="current">FONT</p>
     <div class="pal-btns">
       <button
@@ -24,8 +24,8 @@ const current = ref('brand')
         {{ p.label }}
       </button>
     </div>
-    <p class="pal-caption">Nabla（COLRv1）— <code>font-palette</code> と <code>@font-palette-values</code></p>
   </div>
+  <p class="note">Nabla（COLRv1）— <code>font-palette</code> と <code>@font-palette-values</code></p>
 </template>
 
 <style scoped>
@@ -37,19 +37,19 @@ const current = ref('brand')
     2 #001319;
 }
 
-@font-palette-values --night {
+@font-palette-values --ink {
   font-family: Nabla;
   override-colors:
-    0 #e6eef2,
+    0 #001319,
     1 #0064ca,
-    2 #001319;
+    2 #7d8f96;
 }
 
 .pal-sample {
   font-family: Nabla, 'LINE Seed JP', sans-serif;
-  font-size: 108px;
-  line-height: 1;
-  margin: 8px 0 24px;
+  font-size: 92px;
+  line-height: 1.1;
+  margin: 0 0 20px;
   letter-spacing: 0.04em;
 }
 
@@ -57,40 +57,31 @@ const current = ref('brand')
   font-palette: --brand;
 }
 
-.pal-sample.night {
-  font-palette: --night;
+.pal-sample.ink {
+  font-palette: --ink;
 }
 
 .pal-btns {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .pal-btns button {
-  background: transparent;
-  color: #e6eef2;
-  border: 1px solid rgba(230, 238, 242, 0.22);
+  background: #fff;
+  color: #4a5f67;
+  border: 1px solid #dfe4e6;
   border-radius: 999px;
-  padding: 6px 16px;
+  padding: 7px 18px;
   font-family: inherit;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
   cursor: pointer;
 }
 
 .pal-btns button.on {
   background: #0064ca;
   border-color: #0064ca;
-  color: #e6eef2;
-}
-
-.pal-caption {
-  margin: 18px 0 0;
-  font-size: 14px;
-  color: rgba(230, 238, 242, 0.58);
-}
-
-.pal-caption code {
-  font-size: 13px;
+  color: #fff;
 }
 </style>

@@ -6,13 +6,8 @@ const opsz = ref(48)
 </script>
 
 <template>
-  <div class="vf">
-    <p
-      class="vf-jp"
-      :style="{ fontWeight: wght }"
-    >
-      今さら理解するウェブフォント
-    </p>
+  <div class="vf figure">
+    <p class="vf-jp" :style="{ fontWeight: wght }">今さら理解するウェブフォント</p>
     <p
       class="vf-en"
       :style="{ fontVariationSettings: `'wght' ${wght}, 'opsz' ${opsz}` }"
@@ -29,8 +24,8 @@ const opsz = ref(48)
         <input v-model.number="opsz" type="range" min="8" max="144" step="1" />
       </label>
     </div>
-    <p class="vf-caption">上: Noto Sans JP Variable（wght） / 下: Roboto Flex（wght + opsz）</p>
   </div>
+  <p class="note">上: Noto Sans JP Variable（wght） / 下: Roboto Flex（wght + opsz）</p>
 </template>
 
 <style scoped>
@@ -40,45 +35,40 @@ const opsz = ref(48)
 
 .vf-jp {
   font-family: 'Noto Sans JP', 'LINE Seed JP', sans-serif;
-  font-size: 44px;
-  line-height: 1.25;
-  letter-spacing: -0.04em;
-  margin: 0 0 4px;
+  font-size: 40px;
+  line-height: 1.4;
+  margin: 0;
+  color: #001319;
 }
 
 .vf-en {
   font-family: 'Roboto Flex', sans-serif;
   font-optical-sizing: none;
-  font-size: 40px;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  font-size: 34px;
+  line-height: 1.3;
   margin: 0 0 22px;
-  color: #fdc400;
+  color: #0064ca;
 }
 
 .vf-controls {
   display: grid;
   gap: 12px;
+  max-width: 30em;
 }
 
 .vf-controls label {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 118px 1fr;
   align-items: center;
-  gap: 16px;
-  font-size: 16px;
+  gap: 14px;
+  font-size: 14px;
   font-weight: 700;
-  color: #fdc400;
+  letter-spacing: 0.06em;
+  color: #4a5f67;
 }
 
 .vf-controls input {
   width: 100%;
   accent-color: #0064ca;
-}
-
-.vf-caption {
-  margin: 16px 0 0;
-  font-size: 14px;
-  color: rgba(230, 238, 242, 0.58);
 }
 </style>
