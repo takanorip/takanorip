@@ -100,20 +100,24 @@ async function paint(el) {
   renderer.outputColorSpace = THREE.SRGBColorSpace
   el.appendChild(renderer.domElement)
 
-  const material = new THREE.MeshPhysicalMaterial({
-    color: 0xffe8e2,
-    roughness: 0.42,
-    metalness: 0.02,
-    clearcoat: 0.48,
-    clearcoatRoughness: 0.32,
-    sheen: 0.28,
-    sheenColor: new THREE.Color(0xffb0b8),
-    sheenRoughness: 0.55,
+  const blue = new THREE.MeshPhysicalMaterial({
+    color: 0x0064ca,
+    roughness: 0.38,
+    metalness: 0.04,
+    clearcoat: 0.42,
+    clearcoatRoughness: 0.28,
+  })
+  const black = new THREE.MeshPhysicalMaterial({
+    color: 0x001319,
+    roughness: 0.36,
+    metalness: 0.08,
+    clearcoat: 0.3,
+    clearcoatRoughness: 0.4,
   })
 
   const font = await loadFont()
-  const hiragana = meshFromGlyph(font, 'あ', material)
-  const latin = meshFromGlyph(font, 'A', material)
+  const hiragana = meshFromGlyph(font, 'あ', blue)
+  const latin = meshFromGlyph(font, 'A', black)
   layoutPair(hiragana, latin)
 
   const letters = new THREE.Group()
@@ -122,18 +126,18 @@ async function paint(el) {
   letters.rotation.set(-0.14, 0.32, -0.05)
   scene.add(letters)
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.58))
-  scene.add(new THREE.HemisphereLight(0xffffff, 0xff6a4a, 0.68))
+  scene.add(new THREE.AmbientLight(0xffffff, 0.62))
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x9aa3ad, 0.55))
 
-  const key = new THREE.DirectionalLight(0xffffff, 1.28)
+  const key = new THREE.DirectionalLight(0xffffff, 1.22)
   key.position.set(-3.2, 4.2, 3.6)
   scene.add(key)
 
-  const fill = new THREE.DirectionalLight(0xff8fa3, 0.5)
+  const fill = new THREE.DirectionalLight(0x0064ca, 0.32)
   fill.position.set(3.4, -1.2, 2.2)
   scene.add(fill)
 
-  const rim = new THREE.DirectionalLight(0xffd0c4, 0.38)
+  const rim = new THREE.DirectionalLight(0xd7e4f2, 0.42)
   rim.position.set(0.4, 1.4, -3.2)
   scene.add(rim)
 
@@ -209,15 +213,5 @@ onUnmounted(() => {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-.stage::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.22;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 </style>
