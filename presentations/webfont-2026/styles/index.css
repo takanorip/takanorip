@@ -234,6 +234,10 @@ body,
   align-items: stretch;
 }
 
+.cols-mid {
+  align-items: center;
+}
+
 .cols p,
 .cols-3 p,
 .card p {
@@ -309,15 +313,10 @@ body,
   background: var(--paper) !important;
   border: 1px solid var(--rule);
   border-radius: 16px;
-  padding: 22px 24px !important;
+  padding: 20px 20px !important;
   font-size: 15px !important;
-  line-height: 175% !important;
-  max-height: 280px;
-  overflow: auto;
-}
-
-.slidev-layout .slidev-code-wrapper {
-  max-height: 280px;
+  line-height: 150% !important;
+  /* max-height: 240px; */
   overflow: auto;
 }
 

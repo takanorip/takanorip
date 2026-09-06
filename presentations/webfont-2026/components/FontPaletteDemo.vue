@@ -25,7 +25,6 @@ const current = ref('brand')
       </button>
     </div>
   </div>
-  <p class="note">Nabla（COLRv1）— <code>font-palette</code> と <code>@font-palette-values</code></p>
 </template>
 
 <style scoped>

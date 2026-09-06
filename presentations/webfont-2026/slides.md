@@ -567,9 +567,20 @@ layout: section
 
 ---
 
-# 色付きフォントの色を、CSSで持ち替える
+<div class="cols cols-mid">
+<div>
+
+# 色付きフォントの色を、<br>CSSで持ち替える
+
+<p>
+Nabla（COLRv1）。<code>font-palette</code> で色を差し替える。
+</p>
+</div>
+<div>
 
 <FontPaletteDemo />
+</div>
+</div>
 
 ---
 
