@@ -8,6 +8,7 @@ drawings:
   persist: false
 transition: none
 mdc: true
+highlighter: shiki
 colorSchema: light
 canvasWidth: 980
 fonts:
