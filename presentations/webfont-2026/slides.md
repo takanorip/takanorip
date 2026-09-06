@@ -275,7 +275,49 @@ layout: section
 }
 ```
 
-<p class="note">日本語では、ダイナミックサブセットがよく効く。</p>
+<p class="note">日本語では、ダイナミックサブセットがよく効く。Google Fonts の CJK は、これを極端に細かくやる。</p>
+
+---
+
+# Google Fonts は、頻度で切る
+
+<div class="cols-3">
+<div class="card">
+<h3>実測</h3>
+<p>よく使う字は少なく、あとは長い尻尾</p>
+</div>
+<div class="card">
+<h3>日本語</h3>
+<p>頻出3000字を20スライスに分ける</p>
+</div>
+<div class="card">
+<h3>効果</h3>
+<p>全体を送るより、だいたい8割減</p>
+</div>
+</div>
+
+<p class="note">2018年、日本語対応を始めるときの公開値。</p>
+
+---
+
+# ブラウザが、必要なスライスだけ取る
+
+<div class="cols-3">
+<div class="card">
+<h3>unicode-range</h3>
+<p>ページに出た文字のファイルだけ取る</p>
+</div>
+<div class="card">
+<h3>WOFF2</h3>
+<p>スライス自体を小さくする</p>
+</div>
+<div class="card">
+<h3>HTTP/2</h3>
+<p>細かいファイルを、同時に取りにいける</p>
+</div>
+</div>
+
+<p class="note">CSS が目次。fonts.googleapis.com が大量の @font-face を返す。</p>
 
 ---
 
