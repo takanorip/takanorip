@@ -16,15 +16,13 @@ fonts:
   weights: '400,700,800'
 ---
 
-<!--
+---
 layout: cover
--->
+---
 
 # 今さら理解する<br>ウェブフォント<span class="hl">2026</span>
 
-<p class="muted">
-takanorip — Kanmu, inc. Design Manager
-</p>
+<p class="muted">takanorip — Kanmu, inc. Design Manager</p>
 
 ---
 
@@ -86,25 +84,19 @@ layout: section
 
 # 書体は、金属の在庫だった
 
-<p>
-活字は棚にある分だけ。<span class="marker">形を決めること自体が制作</span>だった。
-</p>
+<p>活字は棚にある分だけ。<span class="marker">形を決めること自体が制作</span>だった。</p>
 
 ---
 
 # 書体指定が、デザイン行為になる
 
-<p>
-写研、モリサワ。<span class="marker">どの書体を指定するかがデザイン</span>になった。
-</p>
+<p>写研、モリサワ。<span class="marker">どの書体を指定するかがデザイン</span>になった。</p>
 
 ---
 
 # フォントがソフトウェアになる
 
-<p>
-書体は在庫ではなく、ファイルになった。
-</p>
+<p>書体は在庫ではなく、ファイルになった。</p>
 
 ---
 
@@ -131,9 +123,7 @@ layout: accent
 
 # 書体は、紙・余白・色と同じ設計変数
 
-<p>
-トーン、階層、読みやすさ。Webは文字が主なので、影響は大きい。
-</p>
+<p>トーン、階層、読みやすさ。Webは文字が主なので、影響は大きい。</p>
 
 ---
 
@@ -302,9 +292,7 @@ layout: section
 
 # ずれるのは、字形ではなく寸法
 
-<p>
-<span class="marker">size-adjust</span> で、フォールバックの寸法を寄せる。
-</p>
+<p><span class="marker">size-adjust</span> で、フォールバックの寸法を寄せる。</p>
 
 ```css
 @font-face {
@@ -369,9 +357,7 @@ layout: section
 
 # サイトで使う系統は、最大2つ
 
-<p>
-本文と見出し。3本目は、だいたい要らない。
-</p>
+<p>本文と見出し。3本目は、だいたい要らない。</p>
 
 ---
 layout: key
@@ -391,17 +377,13 @@ layout: accent
 
 # 特定の読みにくさを想定した設計
 
-<p>
-弱視、加齢、類似字形の混同。<span class="marker">その条件向け</span>であって、万人向けではない。
-</p>
+<p>弱視、加齢、類似字形の混同。<span class="marker">その条件向け</span>であって、万人向けではない。</p>
 
 ---
 
 # 読みやすさは、人・サイズ・媒体で変わる
 
-<p>
-「ユニバーサル」を、全員に読みやすい保証だと読まない。
-</p>
+<p>「ユニバーサル」を、全員に読みやすい保証だと読まない。</p>
 
 ---
 layout: statement
@@ -505,9 +487,7 @@ layout: section
 
 # 1ファイルで、複数の声
 
-<p>
-3ウェイトを配る代わりに、軸を1本持たせる。
-</p>
+<p>3ウェイトを配る代わりに、軸を1本持たせる。</p>
 
 ---
 
@@ -538,9 +518,7 @@ layout: section
 
 # 日本語は、まだ慎重でいい
 
-<p>
-本文は静的1ウェイト、見出しだけバリアブル、でもいい。
-</p>
+<p>本文は静的1ウェイト、見出しだけバリアブル、でもいい。</p>
 
 ---
 layout: section
@@ -571,13 +549,9 @@ layout: section
 
 <div class="cols">
 <div>
-
-<p>
-Nabla（COLRv1）。<code>font-palette</code> で色を差し替える。
-</p>
+<p>Nabla（COLRv1）。<code>font-palette</code> で色を差し替える。</p>
 </div>
 <div>
-
 <FontPaletteDemo />
 </div>
 </div>
@@ -633,9 +607,7 @@ layout: section
 
 # Incremental Font Transfer
 
-<p>
-最初は必要なグリフだけ送り、あとから足す。
-</p>
+<p>最初は必要なグリフだけ送り、あとから足す。</p>
 
 ```css
 @font-face {
@@ -708,6 +680,4 @@ layout: cover
 
 # ありがとうございました
 
-<p class="muted">
-takanorip — Kanmu, inc. Design Manager
-</p>
+<p class="muted">takanorip — Kanmu, inc. Design Manager</p>
