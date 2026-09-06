@@ -17,9 +17,16 @@ fonts:
 layout: cover
 ---
 
+<div class="cover-row">
+<div>
+
 # 今さら理解する<br>ウェブフォント<span class="hl">2026</span>
 
 <p class="muted">takanorip — Kanmu, inc. Design Manager</p>
+</div>
+
+<CoverGlyph />
+</div>
 
 ---
 
