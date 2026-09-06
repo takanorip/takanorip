@@ -25,10 +25,11 @@ const layers = 16
 
 <style scoped>
 .stage {
-  width: 400px;
-  height: 360px;
-  perspective: 1100px;
+  width: 560px;
+  height: 500px;
+  perspective: 1200px;
   flex-shrink: 0;
+  margin-right: -40px;
 }
 
 .cluster {
@@ -44,15 +45,15 @@ const layers = 16
   font-family: 'LINE Seed JP', sans-serif;
   font-weight: 800;
   line-height: 100%;
-  transform: translateZ(calc(var(--i) * -5px));
+  transform: translateZ(calc(var(--i) * -6px));
   user-select: none;
   pointer-events: none;
 }
 
 .ja {
-  left: 8px;
-  top: 48px;
-  font-size: 220px;
+  left: 0;
+  top: 28px;
+  font-size: 310px;
   color: #00356c;
 }
 
@@ -61,9 +62,9 @@ const layers = 16
 }
 
 .en {
-  left: 168px;
-  top: 92px;
-  font-size: 168px;
+  left: 220px;
+  top: 88px;
+  font-size: 236px;
   color: #c29400;
 }
 

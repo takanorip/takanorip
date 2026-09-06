@@ -368,7 +368,7 @@ body,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 8px;
   width: 100%;
 }
 
