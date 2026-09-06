@@ -683,7 +683,7 @@ layout: statement
 <div class="cols-3">
 <div class="card">
 <h3>配信サービス</h3>
-<p>Google Fonts、Adobe Fonts など。利用条件がページに書いてある。その経路のまま使う。</p>
+<p>Google Fonts、Adobe Fonts、Morisawa Fonts など。利用条件がページに書いてある。その経路のまま使う。</p>
 </div>
 <div class="card">
 <h3>明示された許諾</h3>
