@@ -1,28 +1,69 @@
-<script setup>
-const layers = 26
-</script>
-
 <template>
   <div class="stage" aria-hidden="true">
-    <div class="cluster">
-      <span
-        v-for="i in layers"
-        :key="`ja-${i}`"
-        class="g ja"
-        :style="{ '--i': i - 1, '--t': (i - 1) / (layers - 1) }"
-      >あ</span>
-      <span class="g ja face">あ</span>
-      <span class="g ja shine">あ</span>
+    <svg class="mark" viewBox="0 0 420 340" fill="none">
+      <defs>
+        <linearGradient id="ja-body" x1="40" y1="20" x2="200" y2="300">
+          <stop offset="0%" stop-color="#c5e4ff" />
+          <stop offset="28%" stop-color="#4ea6f5" />
+          <stop offset="62%" stop-color="#0064ca" />
+          <stop offset="100%" stop-color="#00325f" />
+        </linearGradient>
+        <linearGradient id="en-body" x1="230" y1="40" x2="400" y2="300">
+          <stop offset="0%" stop-color="#fff4b0" />
+          <stop offset="28%" stop-color="#ffd84a" />
+          <stop offset="62%" stop-color="#fdc400" />
+          <stop offset="100%" stop-color="#8a5d00" />
+        </linearGradient>
+        <radialGradient id="ja-shine" cx="32%" cy="22%" r="38%">
+          <stop offset="0%" stop-color="#fff" stop-opacity="0.9" />
+          <stop offset="42%" stop-color="#fff" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="en-shine" cx="34%" cy="20%" r="36%">
+          <stop offset="0%" stop-color="#fff" stop-opacity="0.95" />
+          <stop offset="40%" stop-color="#fff" stop-opacity="0.28" />
+          <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+        </radialGradient>
+        <filter id="soft" x="-20%" y="-20%" width="140%" height="150%">
+          <feDropShadow dx="10" dy="18" stdDeviation="10" flood-color="#001319" flood-opacity="0.18" />
+        </filter>
+      </defs>
 
-      <span
-        v-for="i in layers"
-        :key="`en-${i}`"
-        class="g en"
-        :style="{ '--i': i - 1, '--t': (i - 1) / (layers - 1) }"
-      >A</span>
-      <span class="g en face">A</span>
-      <span class="g en shine">A</span>
-    </div>
+      <g filter="url(#soft)" class="tilt">
+        <g class="ja">
+          <path
+            class="tube"
+            d="M36 78 C72 52 168 52 204 78"
+            stroke="url(#ja-body)"
+          />
+          <path
+            class="tube"
+            d="M78 72 C58 128 70 188 108 232 C132 256 126 210 112 188"
+            stroke="url(#ja-body)"
+          />
+          <path
+            class="tube"
+            d="M86 118 C150 108 198 128 204 198 C206 236 176 252 154 228"
+            stroke="url(#ja-body)"
+          />
+          <ellipse cx="78" cy="86" rx="34" ry="22" fill="url(#ja-shine)" transform="rotate(-18 78 86)" />
+        </g>
+
+        <g class="en">
+          <path
+            class="tube"
+            d="M262 236 L312 72 L362 236"
+            stroke="url(#en-body)"
+          />
+          <path
+            class="tube bar"
+            d="M286 168 H338"
+            stroke="url(#en-body)"
+          />
+          <ellipse cx="308" cy="96" rx="28" ry="18" fill="url(#en-shine)" transform="rotate(-16 308 96)" />
+        </g>
+      </g>
+    </svg>
   </div>
 </template>
 
@@ -30,108 +71,30 @@ const layers = 26
 .stage {
   width: 430px;
   height: 340px;
-  perspective: 1200px;
   flex-shrink: 0;
   margin-right: -16px;
 }
 
-.cluster {
-  position: relative;
+.mark {
   width: 100%;
   height: 100%;
-  transform: rotateX(16deg) rotateY(-30deg);
-  transform-style: preserve-3d;
+  overflow: visible;
 }
 
-.g {
-  position: absolute;
-  font-family: 'LINE Seed JP', sans-serif;
-  font-weight: 800;
-  line-height: 100%;
-  -webkit-text-stroke: 34px currentColor;
-  paint-order: stroke fill;
-  user-select: none;
-  pointer-events: none;
+.tilt {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: perspective(700px) rotateX(14deg) rotateY(-18deg);
 }
 
-.ja,
-.en {
-  transform:
-    translateZ(calc(var(--i) * -5px))
-    scale(calc(1.18 - var(--t) * 0.16));
-  filter: drop-shadow(0 0 10px currentColor);
+.tube {
+  fill: none;
+  stroke-width: 54;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.ja {
-  left: 0;
-  top: 24px;
-  font-size: 250px;
-  color: color-mix(in srgb, #0064ca 100%, #001018 calc(var(--t) * 70%));
-}
-
-.en {
-  left: 178px;
-  top: 72px;
-  font-size: 190px;
-  color: color-mix(in srgb, #fdc400 100%, #5c3a00 calc(var(--t) * 70%));
-}
-
-.face {
-  -webkit-text-stroke: 34px transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  filter: none;
-  transform: translateZ(4px) scale(1.18);
-}
-
-.ja.face {
-  background-image: linear-gradient(
-    152deg,
-    #e7f3ff 0%,
-    #7ec2ff 22%,
-    #1a86ee 48%,
-    #0064ca 72%,
-    #003d7a 100%
-  );
-}
-
-.en.face {
-  background-image: linear-gradient(
-    152deg,
-    #fff6c4 0%,
-    #ffe56a 22%,
-    #fdc400 50%,
-    #e0a800 74%,
-    #9a6f00 100%
-  );
-}
-
-.shine {
-  -webkit-text-stroke: 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  filter: none;
-  mix-blend-mode: screen;
-  transform: translateZ(8px) scale(1.18);
-}
-
-.ja.shine {
-  background-image: linear-gradient(
-    132deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.35) 18%,
-    transparent 36%
-  );
-}
-
-.en.shine {
-  background-image: linear-gradient(
-    132deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 255, 255, 0.4) 16%,
-    transparent 34%
-  );
+.bar {
+  stroke-width: 46;
 }
 </style>
