@@ -191,6 +191,46 @@ layout: section
 
 ---
 
+# 最初は、配る形式が割れていた
+
+<div class="cols-3">
+<div class="card">
+<h3>EOT</h3>
+<p>IE専用。先行したが、広がらなかった</p>
+</div>
+<div class="card">
+<h3>TTF / OTF</h3>
+<p>そのまま配ると、デスクトップに入りやすい</p>
+</div>
+<div class="card">
+<h3>求めていたもの</h3>
+<p>Web用の包み。新しい字形形式ではない</p>
+</div>
+</div>
+
+---
+
+# WOFF は、2012年の合意
+
+<div class="cols-3">
+<div class="card">
+<h3>2009</h3>
+<p>Mozilla ほかが草案。ブラウザとフォント会社の接点</p>
+</div>
+<div class="card">
+<h3>2012</h3>
+<p>W3C Recommendation。配る形式が一つに揃う</p>
+</div>
+<div class="card">
+<h3>中身</h3>
+<p>sfnt を gzip で包む。メタデータを付けられる</p>
+</div>
+</div>
+
+<p class="note">新しいアウトライン形式ではない。既存フォントのコンテナ。</p>
+
+---
+
 # 日本語が重い、理由は単純
 
 <div class="cols">
@@ -216,7 +256,7 @@ layout: section
 }
 ```
 
-<p class="note">新規で TTF / WOFF を配る理由は、ほぼない。</p>
+<p class="note">2018年勧告。Brotli で、WOFF よりだいたい3割小さい。新規で TTF / WOFF を配る理由は、ほぼない。</p>
 
 ---
 
