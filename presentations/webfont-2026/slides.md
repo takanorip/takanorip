@@ -569,7 +569,7 @@ layout: section
 
 # 色付きフォントの色を、CSSで持ち替える
 
-<div class="cols cols-mid">
+<div class="cols">
 <div>
 
 <p>

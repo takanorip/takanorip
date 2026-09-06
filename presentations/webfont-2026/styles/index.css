@@ -234,10 +234,6 @@ body,
   align-items: stretch;
 }
 
-.cols-mid {
-  align-items: center;
-}
-
 .cols p,
 .cols-3 p,
 .card p {
