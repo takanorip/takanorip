@@ -25,47 +25,52 @@ function tube(points, radius, material) {
 function buildLetters(material, radius) {
   const letters = new THREE.Group()
 
-  const a = new THREE.Group()
-  a.add(
+  const hiragana = new THREE.Group()
+  hiragana.add(
     tube([
-      new THREE.Vector3(-1.55, 0.95, 0.05),
-      new THREE.Vector3(-0.35, 1.22, 0.18),
-      new THREE.Vector3(0.95, 0.92, 0),
+      new THREE.Vector3(-1.15, 0.92, 0),
+      new THREE.Vector3(-0.15, 1.08, 0.06),
+      new THREE.Vector3(1.12, 0.88, 0),
     ], radius, material),
     tube([
-      new THREE.Vector3(-0.85, 1.0, 0.08),
-      new THREE.Vector3(-1.15, 0.15, 0.22),
-      new THREE.Vector3(-0.7, -0.85, 0.05),
-      new THREE.Vector3(-0.15, -1.25, 0),
+      new THREE.Vector3(-0.42, 0.96, 0.04),
+      new THREE.Vector3(-0.58, 0.28, 0.08),
+      new THREE.Vector3(-0.42, -0.55, 0.04),
+      new THREE.Vector3(-0.18, -1.12, 0),
+      new THREE.Vector3(0.08, -0.88, 0.02),
     ], radius, material),
     tube([
-      new THREE.Vector3(-0.55, 0.35, 0.16),
-      new THREE.Vector3(0.45, 0.28, 0.28),
-      new THREE.Vector3(1.05, -0.45, 0.1),
-      new THREE.Vector3(0.55, -1.2, 0),
+      new THREE.Vector3(-0.28, 0.32, 0.08),
+      new THREE.Vector3(0.42, 0.22, 0.12),
+      new THREE.Vector3(0.92, 0.05, 0.08),
+      new THREE.Vector3(1.02, -0.52, 0.04),
+      new THREE.Vector3(0.62, -1.05, 0),
+      new THREE.Vector3(0.12, -1.18, 0),
     ], radius, material),
   )
-  a.position.set(-0.55, 0, 0)
+  hiragana.position.set(-1.45, 0, 0)
 
-  const A = new THREE.Group()
-  A.add(
+  const latin = new THREE.Group()
+  latin.add(
     tube([
-      new THREE.Vector3(-0.85, -1.25, 0),
-      new THREE.Vector3(0.05, 1.28, 0.18),
+      new THREE.Vector3(-0.92, -1.18, 0),
+      new THREE.Vector3(-0.48, 0.05, 0.06),
+      new THREE.Vector3(0, 1.22, 0.1),
     ], radius, material),
     tube([
-      new THREE.Vector3(0.05, 1.28, 0.18),
-      new THREE.Vector3(0.95, -1.25, 0),
+      new THREE.Vector3(0, 1.22, 0.1),
+      new THREE.Vector3(0.48, 0.05, 0.06),
+      new THREE.Vector3(0.92, -1.18, 0),
     ], radius, material),
     tube([
-      new THREE.Vector3(-0.48, 0.08, 0.2),
-      new THREE.Vector3(0.58, 0.08, 0.2),
-    ], radius * 0.95, material),
+      new THREE.Vector3(-0.46, 0.08, 0.12),
+      new THREE.Vector3(0.46, 0.08, 0.12),
+    ], radius, material),
   )
-  A.position.set(1.15, -0.05, 0.15)
+  latin.position.set(1.55, 0, 0.08)
 
-  letters.add(a, A)
-  letters.rotation.set(-0.18, 0.42, -0.12)
+  letters.add(hiragana, latin)
+  letters.rotation.set(-0.06, 0.16, -0.04)
   return letters
 }
 
@@ -75,8 +80,8 @@ function paint(el) {
 
   scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(28, width / height, 0.1, 40)
-  camera.position.set(0.15, 0.35, 8.2)
-  camera.lookAt(0.15, 0, 0)
+  camera.position.set(0, 0.12, 7.4)
+  camera.lookAt(0, 0, 0)
 
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2))
@@ -92,7 +97,7 @@ function paint(el) {
     envMapIntensity: 0.4,
   })
 
-  scene.add(buildLetters(material, 0.4))
+  scene.add(buildLetters(material, 0.24))
 
   scene.add(new THREE.AmbientLight(0xffffff, 0.55))
   scene.add(new THREE.HemisphereLight(0xffffff, 0xff6a4a, 0.7))
