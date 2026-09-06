@@ -96,11 +96,10 @@ body,
 }
 
 .slidev-layout h1 {
-  font-size: 38px;
+  font-size: 40px;
   font-weight: 800;
   line-height: 145% !important;
-  letter-spacing: 0.005em;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .slidev-layout h2 {
@@ -124,9 +123,7 @@ body,
 }
 
 .slidev-layout p {
-  margin: 0 0 1em;
-  max-width: 34em;
-  line-height: 195% !important;
+  line-height: 175% !important;
 }
 
 .slidev-layout p:last-child {
@@ -194,9 +191,11 @@ body,
 }
 
 .agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   list-style: none;
   padding: 0;
-  margin: 4px 0 0;
   max-width: 30em;
 }
 
@@ -205,8 +204,6 @@ body,
   grid-template-columns: 62px 1fr;
   gap: 10px;
   align-items: baseline;
-  padding: 13px 0;
-  border-bottom: 1px solid var(--rule-soft);
   font-size: 20px;
   font-weight: 700;
   line-height: 150%;
@@ -378,14 +375,12 @@ body,
   justify-content: center !important;
 }
 
-.chap {
-  font-family: 'Roboto Flex', 'LINE Seed JP', sans-serif;
-  font-size: 82px;
+.slidev-layout p.chap {
+  font-size: 124px;
   font-weight: 800;
   color: #0064ca;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  margin: 0 0 6px;
+  line-height: 100% !important;
+  margin: 0 0 3rem !important;
   max-width: none;
 }
 
