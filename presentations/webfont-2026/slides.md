@@ -321,7 +321,7 @@ layout: section
 }
 ```
 
-<p class="note">日本語では、使う漢字だけを都度入れるダイナミックサブセットもよく効く。Google Fonts の CJK は、これを極端に細かくやる。</p>
+<p class="note">日本語では、使う漢字だけを都度入れるダイナミックサブセットもよく効く。Google Fonts は事前スライス、TypeSquare はページの文字で都度切る。</p>
 
 ---
 
@@ -371,6 +371,69 @@ layout: section
 
 ---
 
+# TypeSquare は、ページの文字で切る
+
+<p>モリサワは2012年、TypeSquare でダイナミックサブセットを商用化した。日本語1本が数MB〜10MBになる問題を、画面に出ている字だけ送ることで解いた。</p>
+
+<div class="cols-3">
+<div class="card">
+<h3>スキャン</h3>
+<p>JavaScript がページの文字を読む。あとから増えた文字列も、API で取り直せる。</p>
+</div>
+<div class="card">
+<h3>生成</h3>
+<p>その文字列をサーバーへ送る。サーバーが、そのグリフだけのサブセットをその場で作る。</p>
+</div>
+<div class="card">
+<h3>配信</h3>
+<p>WOFF を返す。埋め込みは script と CSS の書体名。API では data URL の <code>@font-face</code> にもできる。</p>
+</div>
+</div>
+
+<p class="note">静的なサブセットは、公開後に文言が変わらないページ向き。ニュースや CMS は、都度切る必要がある。</p>
+
+---
+
+# 事前に切るか、都度つくるか
+
+<p>同じ「使わない字は送らない」でも、切り方が違う。Google Fonts はあらかじめ切ったファイルをブラウザが選ぶ。TypeSquare は、そのページ専用のファイルをサーバーがつくる。</p>
+
+<div class="cols">
+<div class="card">
+<h3>Google Fonts</h3>
+<p>頻度でスライスした WOFF2 を置き、<code>unicode-range</code> で取る。キャッシュが効きやすい。ページに無い字のスライスは来ないが、スライス内の余剰は残る。</p>
+</div>
+<div class="card">
+<h3>TypeSquare</h3>
+<p>ページの文字集合に合わせてサブセットを生成する。余剰は少ない。代わりに、初回はサーバー生成と JS の読み取りが乗る。全文ファイルを配らないので、ライセンス上も都合がよい。</p>
+</div>
+</div>
+
+---
+
+# Morisawa Fonts は、先にスタイルを登録する
+
+<p>TypeSquare は後継の Morisawa Fonts に役割を移している。Webフォントでは、使うスタイルを先に登録し、そのファイルだけを配る方式に変わった。モリサワは、TypeSquare より速い、と説明している。</p>
+
+<div class="cols-3">
+<div class="card">
+<h3>事前登録</h3>
+<p>サイトで使うウェイトやスタイルを決めておく。全部入りのファミリーを、その場で切らない。</p>
+</div>
+<div class="card">
+<h3>エッジ</h3>
+<p>初回は配信サーバーから取り、以降はエッジから返す。閲覧回数の集計も、ここで行う。</p>
+</div>
+<div class="card">
+<h3>移行</h3>
+<p>TypeSquare の新規は2025年11月で止まり、更新は2027年11月まで。新規は Morisawa Fonts 側。</p>
+</div>
+</div>
+
+<p class="note">日本語の「全部入りを配らない」は同じで、切るタイミングが事前か、ページ表示時か、登録時か、が違う。</p>
+
+---
+
 # 届ける経路は、だいたい3つ
 
 <p>どこからファイルを取るかで、許諾、キャッシュ、制御の細かさが変わる。見た目が同じでも、運用の責任は違う。</p>
@@ -378,7 +441,7 @@ layout: section
 <div class="cols-3">
 <div class="card">
 <h3>配信サービス</h3>
-<p>Google Fonts、Adobe Fonts、FONTPLUS など。スライスやキャッシュを先方が持つ。手早いが、ドメインと落ち方は相手次第。</p>
+<p>Google Fonts、Adobe Fonts、Morisawa Fonts（TypeSquare）、FONTPLUS など。スライスやキャッシュを先方が持つ。手早いが、ドメインと落ち方は相手次第。</p>
 </div>
 <div class="card">
 <h3>ノーコード</h3>
