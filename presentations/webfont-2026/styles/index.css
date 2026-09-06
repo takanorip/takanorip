@@ -304,13 +304,19 @@ body,
   border-radius: 4px;
 }
 
-.slidev-layout pre {
+.slidev-layout pre,
+.slidev-layout .slidev-code {
   background: var(--paper) !important;
   border: 1px solid var(--rule);
   border-radius: 16px;
   padding: 22px 24px !important;
   font-size: 15px !important;
   line-height: 175% !important;
+  max-height: 280px;
+  overflow: auto;
+}
+
+.slidev-layout .slidev-code-wrapper {
   max-height: 280px;
   overflow: auto;
 }
