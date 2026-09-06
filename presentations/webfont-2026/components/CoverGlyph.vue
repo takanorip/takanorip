@@ -5,20 +5,26 @@ const layers = 16
 <template>
   <div class="stage" aria-hidden="true">
     <div class="cluster">
-      <span
-        v-for="i in layers"
-        :key="`ja-${i}`"
-        class="g ja"
-        :class="{ front: i === 1 }"
-        :style="{ '--i': i - 1 }"
-      >あ</span>
-      <span
-        v-for="i in layers"
-        :key="`en-${i}`"
-        class="g en"
-        :class="{ front: i === 1 }"
-        :style="{ '--i': i - 1 }"
-      >A</span>
+      <div class="block ja">
+        <i
+          v-for="i in layers"
+          :key="`ja-${i}`"
+          class="slab"
+          :class="{ front: i === 1 }"
+          :style="{ '--i': i - 1 }"
+        />
+        <span class="glyph">あ</span>
+      </div>
+      <div class="block en">
+        <i
+          v-for="i in layers"
+          :key="`en-${i}`"
+          class="slab"
+          :class="{ front: i === 1 }"
+          :style="{ '--i': i - 1 }"
+        />
+        <span class="glyph">A</span>
+      </div>
     </div>
   </div>
 </template>
@@ -40,35 +46,69 @@ const layers = 16
   transform-style: preserve-3d;
 }
 
-.g {
+.block {
   position: absolute;
+  transform-style: preserve-3d;
+}
+
+.block.ja {
+  left: 8px;
+  top: 28px;
+  width: 236px;
+  height: 248px;
+}
+
+.block.en {
+  left: 196px;
+  top: 72px;
+  width: 188px;
+  height: 200px;
+}
+
+.slab {
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  transform: translateZ(calc(var(--i) * -6px));
+}
+
+.ja .slab {
+  background: #00356c;
+}
+
+.ja .slab.front {
+  background: #0064ca;
+}
+
+.en .slab {
+  background: #c29400;
+}
+
+.en .slab.front {
+  background: #fdc400;
+}
+
+.glyph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'LINE Seed JP', sans-serif;
   font-weight: 800;
   line-height: 100%;
-  transform: translateZ(calc(var(--i) * -6px));
+  color: #fff;
+  transform: translateZ(2px);
   user-select: none;
   pointer-events: none;
 }
 
-.ja {
-  left: 0;
-  top: 24px;
-  font-size: 250px;
-  color: #00356c;
+.ja .glyph {
+  font-size: 168px;
 }
 
-.ja.front {
-  color: #0064ca;
-}
-
-.en {
-  left: 178px;
-  top: 72px;
-  font-size: 190px;
-  color: #c29400;
-}
-
-.en.front {
-  color: #fdc400;
+.en .glyph {
+  font-size: 140px;
+  color: #001319;
 }
 </style>
