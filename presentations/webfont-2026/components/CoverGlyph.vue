@@ -113,8 +113,10 @@ function paint(el) {
 }
 
 onMounted(() => {
-  if (root.value)
-    paint(root.value)
+  requestAnimationFrame(() => {
+    if (root.value)
+      paint(root.value)
+  })
 })
 
 onUnmounted(() => {
