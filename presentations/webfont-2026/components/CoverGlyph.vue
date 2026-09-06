@@ -47,8 +47,8 @@ function shapesFromGlyph(font, char) {
 }
 
 function enlargeHoles(shapes) {
-  const target = 16
-  const maxScale = 1.48
+  const target = 24
+  const maxScale = 1.85
   for (const shape of shapes) {
     for (const hole of shape.holes) {
       const pts = hole.getPoints()
@@ -71,7 +71,7 @@ function enlargeHoles(shapes) {
       cx /= pts.length
       cy /= pts.length
       const minDim = Math.min(maxX - minX, maxY - minY)
-      const scale = Math.min(maxScale, Math.max(1.18, target / minDim))
+      const scale = Math.min(maxScale, Math.max(1.28, target / minDim))
       const origin = new THREE.Vector2(cx, cy)
       for (const curve of hole.curves) {
         for (const key of Object.keys(curve)) {
@@ -87,11 +87,11 @@ function enlargeHoles(shapes) {
 function meshFromGlyph(font, char, material) {
   const shapes = shapesFromGlyph(font, char)
   const geometry = new THREE.ExtrudeGeometry(shapes, {
-    depth: 20,
+    depth: 16,
     bevelEnabled: true,
-    bevelThickness: 4,
-    bevelSize: 2,
-    bevelSegments: 4,
+    bevelThickness: 3.2,
+    bevelSize: 1.4,
+    bevelSegments: 3,
     curveSegments: 10,
   })
   geometry.center()
@@ -163,21 +163,25 @@ async function paint(el) {
   const letters = new THREE.Group()
   letters.add(hiragana, latin)
   fitGroup(letters)
-  letters.rotation.set(-0.1, 0.18, -0.03)
+  letters.rotation.set(-0.08, 0.12, -0.02)
   scene.add(letters)
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.62))
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x9aa3ad, 0.55))
+  scene.add(new THREE.AmbientLight(0xffffff, 0.78))
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xb8c0c8, 0.62))
 
-  const key = new THREE.DirectionalLight(0xffffff, 1.22)
+  const key = new THREE.DirectionalLight(0xffffff, 1.15)
   key.position.set(-3.2, 4.2, 3.6)
   scene.add(key)
 
-  const fill = new THREE.DirectionalLight(0x0064ca, 0.32)
+  const front = new THREE.DirectionalLight(0xffffff, 0.55)
+  front.position.set(0.2, 0.4, 6)
+  scene.add(front)
+
+  const fill = new THREE.DirectionalLight(0x0064ca, 0.22)
   fill.position.set(3.4, -1.2, 2.2)
   scene.add(fill)
 
-  const rim = new THREE.DirectionalLight(0xd7e4f2, 0.42)
+  const rim = new THREE.DirectionalLight(0xd7e4f2, 0.38)
   rim.position.set(0.4, 1.4, -3.2)
   scene.add(rim)
 
@@ -185,8 +189,8 @@ async function paint(el) {
   const tick = () => {
     frame = requestAnimationFrame(tick)
     const t = clock.getElapsedTime()
-    letters.rotation.y = 0.18 + Math.sin(t * 0.34) * 0.06
-    letters.rotation.x = -0.1 + Math.sin(t * 0.26) * 0.03
+    letters.rotation.y = 0.12 + Math.sin(t * 0.34) * 0.05
+    letters.rotation.x = -0.08 + Math.sin(t * 0.26) * 0.025
     renderer.render(scene, camera)
   }
   tick()
