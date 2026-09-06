@@ -71,7 +71,8 @@ function enlargeHoles(shapes) {
       cx /= pts.length
       cy /= pts.length
       const minDim = Math.min(maxX - minX, maxY - minY)
-      const scale = Math.min(maxScale, Math.max(1.28, target / minDim))
+      const floor = minDim > 14 ? 1.62 : 1.28
+      const scale = Math.min(maxScale, Math.max(floor, target / minDim))
       const origin = new THREE.Vector2(cx, cy)
       for (const curve of hole.curves) {
         for (const key of Object.keys(curve)) {
@@ -87,10 +88,10 @@ function enlargeHoles(shapes) {
 function meshFromGlyph(font, char, material) {
   const shapes = shapesFromGlyph(font, char)
   const geometry = new THREE.ExtrudeGeometry(shapes, {
-    depth: 16,
+    depth: 11,
     bevelEnabled: true,
-    bevelThickness: 3.2,
-    bevelSize: 1.4,
+    bevelThickness: 2.6,
+    bevelSize: 1.1,
     bevelSegments: 3,
     curveSegments: 10,
   })
@@ -163,10 +164,10 @@ async function paint(el) {
   const letters = new THREE.Group()
   letters.add(hiragana, latin)
   fitGroup(letters)
-  letters.rotation.set(-0.08, 0.12, -0.02)
+  letters.rotation.set(-0.05, 0.08, -0.02)
   scene.add(letters)
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.78))
+  scene.add(new THREE.AmbientLight(0xffffff, 0.88))
   scene.add(new THREE.HemisphereLight(0xffffff, 0xb8c0c8, 0.62))
 
   const key = new THREE.DirectionalLight(0xffffff, 1.15)
@@ -189,8 +190,8 @@ async function paint(el) {
   const tick = () => {
     frame = requestAnimationFrame(tick)
     const t = clock.getElapsedTime()
-    letters.rotation.y = 0.12 + Math.sin(t * 0.34) * 0.05
-    letters.rotation.x = -0.08 + Math.sin(t * 0.26) * 0.025
+    letters.rotation.y = 0.08 + Math.sin(t * 0.34) * 0.03
+    letters.rotation.x = -0.05 + Math.sin(t * 0.26) * 0.02
     renderer.render(scene, camera)
   }
   tick()
