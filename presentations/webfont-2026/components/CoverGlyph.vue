@@ -41,58 +41,17 @@ function pathToShapePath(path) {
 function shapesFromGlyph(font, char) {
   const path = font.getPath(char, 0, 0, FONT_SIZE)
   // OpenType は Y-up。反転後は時計回りが外形になる
-  const shapes = pathToShapePath(path).toShapes(false)
-  enlargeHoles(shapes)
-  return shapes
-}
-
-function enlargeHoles(shapes) {
-  const target = 24
-  const maxScale = 1.85
-  for (const shape of shapes) {
-    for (const hole of shape.holes) {
-      const pts = hole.getPoints()
-      if (pts.length < 3)
-        continue
-      let minX = Infinity
-      let minY = Infinity
-      let maxX = -Infinity
-      let maxY = -Infinity
-      let cx = 0
-      let cy = 0
-      for (const p of pts) {
-        cx += p.x
-        cy += p.y
-        minX = Math.min(minX, p.x)
-        minY = Math.min(minY, p.y)
-        maxX = Math.max(maxX, p.x)
-        maxY = Math.max(maxY, p.y)
-      }
-      cx /= pts.length
-      cy /= pts.length
-      const minDim = Math.min(maxX - minX, maxY - minY)
-      const floor = minDim > 14 ? 1.62 : 1.28
-      const scale = Math.min(maxScale, Math.max(floor, target / minDim))
-      const origin = new THREE.Vector2(cx, cy)
-      for (const curve of hole.curves) {
-        for (const key of Object.keys(curve)) {
-          const v = curve[key]
-          if (v && v.isVector2)
-            v.sub(origin).multiplyScalar(scale).add(origin)
-        }
-      }
-    }
-  }
+  return pathToShapePath(path).toShapes(false)
 }
 
 function meshFromGlyph(font, char, material) {
   const shapes = shapesFromGlyph(font, char)
   const geometry = new THREE.ExtrudeGeometry(shapes, {
-    depth: 11,
+    depth: 22,
     bevelEnabled: true,
-    bevelThickness: 2.6,
-    bevelSize: 1.1,
-    bevelSegments: 3,
+    bevelThickness: 7,
+    bevelSize: 5,
+    bevelSegments: 5,
     curveSegments: 10,
   })
   geometry.center()
@@ -164,25 +123,21 @@ async function paint(el) {
   const letters = new THREE.Group()
   letters.add(hiragana, latin)
   fitGroup(letters)
-  letters.rotation.set(-0.05, 0.08, -0.02)
+  letters.rotation.set(-0.14, 0.32, -0.05)
   scene.add(letters)
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.88))
-  scene.add(new THREE.HemisphereLight(0xffffff, 0xb8c0c8, 0.62))
+  scene.add(new THREE.AmbientLight(0xffffff, 0.62))
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x9aa3ad, 0.55))
 
-  const key = new THREE.DirectionalLight(0xffffff, 1.15)
+  const key = new THREE.DirectionalLight(0xffffff, 1.22)
   key.position.set(-3.2, 4.2, 3.6)
   scene.add(key)
 
-  const front = new THREE.DirectionalLight(0xffffff, 0.55)
-  front.position.set(0.2, 0.4, 6)
-  scene.add(front)
-
-  const fill = new THREE.DirectionalLight(0x0064ca, 0.22)
+  const fill = new THREE.DirectionalLight(0x0064ca, 0.32)
   fill.position.set(3.4, -1.2, 2.2)
   scene.add(fill)
 
-  const rim = new THREE.DirectionalLight(0xd7e4f2, 0.38)
+  const rim = new THREE.DirectionalLight(0xd7e4f2, 0.42)
   rim.position.set(0.4, 1.4, -3.2)
   scene.add(rim)
 
@@ -190,8 +145,8 @@ async function paint(el) {
   const tick = () => {
     frame = requestAnimationFrame(tick)
     const t = clock.getElapsedTime()
-    letters.rotation.y = 0.08 + Math.sin(t * 0.34) * 0.03
-    letters.rotation.x = -0.05 + Math.sin(t * 0.26) * 0.02
+    letters.rotation.y = 0.32 + Math.sin(t * 0.34) * 0.1
+    letters.rotation.x = -0.14 + Math.sin(t * 0.26) * 0.035
     renderer.render(scene, camera)
   }
   tick()
