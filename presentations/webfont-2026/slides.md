@@ -14,9 +14,6 @@ canvasWidth: 980
 fonts:
   sans: LINE Seed JP
   weights: '400,700,800'
----
-
----
 layout: cover
 ---
 
@@ -509,8 +506,6 @@ layout: section
 </div>
 
 ---
-
-# 動かして見る
 
 <VariableAxisDemo />
 
