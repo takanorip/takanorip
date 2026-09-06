@@ -368,7 +368,7 @@ body,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 24px;
   width: 100%;
 }
 
@@ -377,11 +377,12 @@ body,
 }
 
 .slidev-layout.cover h1 {
-  font-size: 48px;
+  font-size: 64px;
   font-weight: 800;
-  line-height: 132% !important;
+  line-height: 130% !important;
   letter-spacing: 0.01em;
-  margin-bottom: 26px;
+  margin-top: 0;
+  margin-bottom: 24px;
 }
 
 .slidev-layout.section {

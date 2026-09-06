@@ -30,7 +30,7 @@ const opsz = ref(48)
 
 <style scoped>
 .vf {
-  margin-top: 4px;
+  margin-top: 64px;
 }
 
 .vf-jp {
