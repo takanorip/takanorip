@@ -25,11 +25,11 @@ const layers = 16
 
 <style scoped>
 .stage {
-  width: 560px;
-  height: 500px;
+  width: 430px;
+  height: 340px;
   perspective: 1200px;
   flex-shrink: 0;
-  margin-right: -40px;
+  margin-right: -16px;
 }
 
 .cluster {
@@ -52,8 +52,8 @@ const layers = 16
 
 .ja {
   left: 0;
-  top: 28px;
-  font-size: 310px;
+  top: 24px;
+  font-size: 250px;
   color: #00356c;
 }
 
@@ -62,9 +62,9 @@ const layers = 16
 }
 
 .en {
-  left: 220px;
-  top: 88px;
-  font-size: 236px;
+  left: 178px;
+  top: 72px;
+  font-size: 190px;
   color: #c29400;
 }
 
