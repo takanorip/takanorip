@@ -10,6 +10,7 @@
   "dependencies": {
     "@slidev/cli": "^52.11.5",
     "@slidev/theme-default": "latest",
+    "opentype.js": "^2.0.0",
     "three": "^0.170.0",
     "vue": "^3.5.22"
   }

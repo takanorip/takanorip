@@ -1,86 +1,96 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
+import { parse } from 'opentype.js'
 import * as THREE from 'three'
+
+const FONT_URL = '/fonts/cover-glyphs.ttf'
+const FONT_SIZE = 100
 
 const root = ref(null)
 
 let renderer
 let scene
+let camera
 let frame
+let resizeObserver
 
-function tube(points, radius, material) {
-  const curve = new THREE.CatmullRomCurve3(points, false, 'catmullrom', 0.15)
-  const geometry = new THREE.TubeGeometry(curve, 96, radius, 28, false)
-  const mesh = new THREE.Mesh(geometry, material)
-  const cap = new THREE.SphereGeometry(radius, 28, 20)
-  const start = new THREE.Mesh(cap, material)
-  const end = new THREE.Mesh(cap, material)
-  start.position.copy(points[0])
-  end.position.copy(points[points.length - 1])
-  const group = new THREE.Group()
-  group.add(mesh, start, end)
-  return group
+function pathToShapePath(path) {
+  const shapePath = new THREE.ShapePath()
+  for (const cmd of path.commands) {
+    switch (cmd.type) {
+      case 'M':
+        shapePath.moveTo(cmd.x, -cmd.y)
+        break
+      case 'L':
+        shapePath.lineTo(cmd.x, -cmd.y)
+        break
+      case 'C':
+        shapePath.bezierCurveTo(cmd.x1, -cmd.y1, cmd.x2, -cmd.y2, cmd.x, -cmd.y)
+        break
+      case 'Q':
+        shapePath.quadraticCurveTo(cmd.x1, -cmd.y1, cmd.x, -cmd.y)
+        break
+      case 'Z':
+        shapePath.currentPath?.closePath()
+        break
+    }
+  }
+  return shapePath
 }
 
-function buildLetters(material, radius) {
-  const letters = new THREE.Group()
-
-  const hiragana = new THREE.Group()
-  hiragana.add(
-    tube([
-      new THREE.Vector3(-1.15, 0.92, 0),
-      new THREE.Vector3(-0.15, 1.08, 0.06),
-      new THREE.Vector3(1.12, 0.88, 0),
-    ], radius, material),
-    tube([
-      new THREE.Vector3(-0.42, 0.96, 0.04),
-      new THREE.Vector3(-0.58, 0.28, 0.08),
-      new THREE.Vector3(-0.42, -0.55, 0.04),
-      new THREE.Vector3(-0.18, -1.12, 0),
-      new THREE.Vector3(0.08, -0.88, 0.02),
-    ], radius, material),
-    tube([
-      new THREE.Vector3(-0.28, 0.32, 0.08),
-      new THREE.Vector3(0.42, 0.22, 0.12),
-      new THREE.Vector3(0.92, 0.05, 0.08),
-      new THREE.Vector3(1.02, -0.52, 0.04),
-      new THREE.Vector3(0.62, -1.05, 0),
-      new THREE.Vector3(0.12, -1.18, 0),
-    ], radius, material),
-  )
-  hiragana.position.set(-1.45, 0, 0)
-
-  const latin = new THREE.Group()
-  latin.add(
-    tube([
-      new THREE.Vector3(-0.92, -1.18, 0),
-      new THREE.Vector3(-0.48, 0.05, 0.06),
-      new THREE.Vector3(0, 1.22, 0.1),
-    ], radius, material),
-    tube([
-      new THREE.Vector3(0, 1.22, 0.1),
-      new THREE.Vector3(0.48, 0.05, 0.06),
-      new THREE.Vector3(0.92, -1.18, 0),
-    ], radius, material),
-    tube([
-      new THREE.Vector3(-0.46, 0.08, 0.12),
-      new THREE.Vector3(0.46, 0.08, 0.12),
-    ], radius, material),
-  )
-  latin.position.set(1.55, 0, 0.08)
-
-  letters.add(hiragana, latin)
-  letters.rotation.set(-0.06, 0.16, -0.04)
-  return letters
+function shapesFromGlyph(font, char) {
+  const path = font.getPath(char, 0, 0, FONT_SIZE)
+  // OpenType は Y-up。反転後は時計回りが外形になる
+  return pathToShapePath(path).toShapes(false)
 }
 
-function paint(el) {
+function meshFromGlyph(font, char, material) {
+  const shapes = shapesFromGlyph(font, char)
+  const geometry = new THREE.ExtrudeGeometry(shapes, {
+    depth: 22,
+    bevelEnabled: true,
+    bevelThickness: 7,
+    bevelSize: 5,
+    bevelSegments: 5,
+    curveSegments: 10,
+  })
+  geometry.center()
+  return new THREE.Mesh(geometry, material)
+}
+
+function layoutPair(left, right, gap = 18) {
+  left.geometry.computeBoundingBox()
+  right.geometry.computeBoundingBox()
+  const leftWidth = left.geometry.boundingBox.max.x - left.geometry.boundingBox.min.x
+  const rightWidth = right.geometry.boundingBox.max.x - right.geometry.boundingBox.min.x
+  left.position.x = -(leftWidth / 2 + gap / 2)
+  right.position.x = rightWidth / 2 + gap / 2
+}
+
+function fitGroup(group, target = 3.35) {
+  const box = new THREE.Box3().setFromObject(group)
+  const size = box.getSize(new THREE.Vector3())
+  group.scale.setScalar(target / Math.max(size.x, size.y))
+  const centered = new THREE.Box3().setFromObject(group)
+  const center = centered.getCenter(new THREE.Vector3())
+  group.position.sub(center)
+}
+
+async function loadFont() {
+  const response = await fetch(FONT_URL)
+  const buffer = await response.arrayBuffer()
+  return parse(buffer)
+}
+
+async function paint(el) {
   const width = el.clientWidth
   const height = el.clientHeight
+  if (!width || !height)
+    return
 
   scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(28, width / height, 0.1, 40)
-  camera.position.set(0, 0.12, 7.4)
+  camera = new THREE.PerspectiveCamera(28, width / height, 0.1, 40)
+  camera.position.set(0, 0.08, 7.2)
   camera.lookAt(0, 0, 0)
 
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
@@ -90,42 +100,85 @@ function paint(el) {
   renderer.outputColorSpace = THREE.SRGBColorSpace
   el.appendChild(renderer.domElement)
 
-  const material = new THREE.MeshStandardMaterial({
+  const material = new THREE.MeshPhysicalMaterial({
     color: 0xffe8e2,
-    roughness: 0.82,
-    metalness: 0,
-    envMapIntensity: 0.4,
+    roughness: 0.42,
+    metalness: 0.02,
+    clearcoat: 0.48,
+    clearcoatRoughness: 0.32,
+    sheen: 0.28,
+    sheenColor: new THREE.Color(0xffb0b8),
+    sheenRoughness: 0.55,
   })
 
-  scene.add(buildLetters(material, 0.24))
+  const font = await loadFont()
+  const hiragana = meshFromGlyph(font, 'あ', material)
+  const latin = meshFromGlyph(font, 'A', material)
+  layoutPair(hiragana, latin)
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.55))
-  scene.add(new THREE.HemisphereLight(0xffffff, 0xff6a4a, 0.7))
+  const letters = new THREE.Group()
+  letters.add(hiragana, latin)
+  fitGroup(letters)
+  letters.rotation.set(-0.14, 0.32, -0.05)
+  scene.add(letters)
 
-  const key = new THREE.DirectionalLight(0xffffff, 1.35)
+  scene.add(new THREE.AmbientLight(0xffffff, 0.58))
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xff6a4a, 0.68))
+
+  const key = new THREE.DirectionalLight(0xffffff, 1.28)
   key.position.set(-3.2, 4.2, 3.6)
   scene.add(key)
 
-  const fill = new THREE.DirectionalLight(0xff8fa3, 0.55)
+  const fill = new THREE.DirectionalLight(0xff8fa3, 0.5)
   fill.position.set(3.4, -1.2, 2.2)
   scene.add(fill)
 
-  const rim = new THREE.DirectionalLight(0xffd0c4, 0.35)
+  const rim = new THREE.DirectionalLight(0xffd0c4, 0.38)
   rim.position.set(0.4, 1.4, -3.2)
   scene.add(rim)
 
-  renderer.render(scene, camera)
+  const clock = new THREE.Clock()
+  const tick = () => {
+    frame = requestAnimationFrame(tick)
+    const t = clock.getElapsedTime()
+    letters.rotation.y = 0.32 + Math.sin(t * 0.34) * 0.1
+    letters.rotation.x = -0.14 + Math.sin(t * 0.26) * 0.035
+    renderer.render(scene, camera)
+  }
+  tick()
+  el.dataset.ready = 'true'
 }
 
 onMounted(() => {
-  requestAnimationFrame(() => {
-    if (root.value)
-      paint(root.value)
+  requestAnimationFrame(async () => {
+    if (!root.value)
+      return
+    try {
+      await paint(root.value)
+    }
+    catch (error) {
+      console.error('[CoverGlyph] failed to build 3D glyphs', error)
+    }
   })
+
+  resizeObserver = new ResizeObserver(() => {
+    if (!renderer || !camera || !root.value)
+      return
+    const width = root.value.clientWidth
+    const height = root.value.clientHeight
+    if (!width || !height)
+      return
+    camera.aspect = width / height
+    camera.updateProjectionMatrix()
+    renderer.setSize(width, height, false)
+  })
+  if (root.value)
+    resizeObserver.observe(root.value)
 })
 
 onUnmounted(() => {
   cancelAnimationFrame(frame)
+  resizeObserver?.disconnect()
   if (renderer) {
     renderer.dispose()
     renderer.domElement.remove()
