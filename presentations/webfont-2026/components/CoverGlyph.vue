@@ -203,10 +203,10 @@ onUnmounted(() => {
 <style scoped>
 .stage {
   position: relative;
-  width: 480px;
-  height: 380px;
+  width: 340px;
+  height: 280px;
   flex-shrink: 0;
-  margin-right: -28px;
+  margin-right: 0;
 }
 
 .stage :deep(canvas) {
