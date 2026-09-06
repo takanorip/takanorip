@@ -11,9 +11,9 @@
   --rule-soft: #000000;
   --fill: #ffffff;
 
-  --pad-x: 76px;
-  --pad-top: 86px;
-  --pad-bottom: 78px;
+  --pad-x: 64px;
+  --pad-top: 88px;
+  --pad-bottom: 64px;
 }
 
 html,
@@ -53,35 +53,34 @@ body,
 }
 
 .deck-chrome .rule.top {
-  top: 52px;
+  top: 48px;
 }
 
 .deck-chrome .rule.bottom {
-  bottom: 50px;
+  bottom: 48px;
 }
 
 .deck-chrome .meta {
   position: absolute;
   font-size: 11px;
-  font-weight: 700;
   letter-spacing: 0.16em;
   color: var(--ink-3);
   white-space: nowrap;
 }
 
 .deck-chrome .meta.tl {
-  top: 26px;
+  top: 20px;
   left: var(--pad-x);
   color: var(--ink-2);
 }
 
 .deck-chrome .meta.tr {
-  top: 26px;
+  top: 20px;
   right: var(--pad-x);
 }
 
 .deck-chrome .meta.br {
-  bottom: 24px;
+  bottom: 16px;
   right: var(--pad-x);
 }
 
@@ -312,6 +311,8 @@ body,
   padding: 22px 24px !important;
   font-size: 15px !important;
   line-height: 175% !important;
+  max-height: 280px;
+  overflow: auto;
 }
 
 .slidev-layout pre code {
