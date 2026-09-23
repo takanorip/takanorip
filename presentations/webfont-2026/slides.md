@@ -45,6 +45,14 @@ takanorip — Kanmu, inc. Design Manager
 </div>
 
 ---
+layout: section
+---
+
+<p class="chap">01</p>
+
+# イントロダクション
+
+---
 layout: statement
 ---
 
@@ -214,20 +222,27 @@ layout: statement
 
 ---
 
-<p class="kicker">TODAY</p>
+<p class="kicker">AGENDA</p>
 
-# 今日は、7年分の差分を見る
+# 今日の道筋
 
-<div class="cols">
-<div class="card">
-<h3>技術</h3>
-<p>配信の仕組み、CLS、バリアブル、CSS Fonts 4、W3Cの新しい転送。2019年にはなかった道具を含む。</p>
-</div>
-<div class="card">
-<h3>デザイン</h3>
-<p>書体を選べることの価値、選び方、UDの誤解、著作権。当時「メリットしかない」で止めていた側。</p>
-</div>
-</div>
+<ol class="agenda-list">
+<li><span class="n">01</span>イントロダクション</li>
+<li><span class="n">02</span>ウェブフォントを使う意義</li>
+<li><span class="n">03</span>ウェブフォントの基礎知識</li>
+<li><span class="n">04</span>ウェブフォントを快適に使う</li>
+<li><span class="n">05</span>2026年の最新動向</li>
+<li><span class="n">06</span>まとめ</li>
+</ol>
+
+---
+layout: section
+---
+
+
+<p class="chap">02</p>
+
+# ウェブフォントを使う意義
 
 ---
 
@@ -236,7 +251,7 @@ layout: statement
 # 書体を「選べる」ように<br>なるまでの道
 
 <p class="muted" style="margin-top: 24px;">
-ウェブフォントの話をする前に、印刷の歴史を少しだけ。
+選べるようになるまでを、印刷から短く辿る。
 </p>
 
 ---
@@ -355,32 +370,110 @@ layout: key
 # 見過ごされがちだが、<br>選べることには価値がある。
 
 <p style="margin-top: 24px; font-size: 0.42em; font-weight: 700; opacity: 0.9;">
-だから技術とデザインの両方を見る。
+それが、ウェブフォントを使う意義。
 </p>
 
 ---
 
-<p class="kicker">AGENDA</p>
+<p class="kicker">IMPRESSION</p>
 
-# 今日の道筋
+# 書体は、印象の設計である
 
-<ol class="agenda-list">
-<li><span class="n">01</span>配信の仕組み</li>
-<li><span class="n">02</span>CLSを回避する</li>
-<li><span class="n">03</span>フォントの選び方</li>
-<li><span class="n">04</span>バリアブルフォント</li>
-<li><span class="n">05</span>CSS Fonts Level 4</li>
-<li><span class="n">06</span>W3Cで検討中の仕組み</li>
-</ol>
+<div class="cols-3">
+<div class="card">
+<h3>ゴシック</h3>
+<p>硬い、現代、UI向き</p>
+</div>
+<div class="card">
+<h3>明朝</h3>
+<p>繊細、編集、信頼</p>
+</div>
+<div class="card">
+<h3>ディスプレイ</h3>
+<p>強い、短い見出し専用</p>
+</div>
+</div>
+
+<p class="muted" style="margin-top: 28px;">
+どの印象を足すかを先に決める。フォントから入らない。
+</p>
+
+---
+layout: key
+---
+
+
+<p class="kicker">UD FONT</p>
+
+# UDフォント =<br>誰にとっても<br>読みやすいフォント
+
+<p style="margin-top: 20px; font-size: 0.4em; font-weight: 700;">
+と思われがち。
+</p>
+
+---
+layout: accent
+---
+
+
+# それは、違う。
+
+---
+
+<p class="kicker">WHAT UD IS</p>
+
+# 特定の読みにくさを<br>想定した設計
+
+<p style="margin-top: 24px; max-width: 20em;">
+弱視、加齢、類似字形の混同（6 / 8 / 0、シ / ツ、ー / 一）。
+その条件下での読みやすさを狙った書体であって、「全人類に最適」ではない。
+</p>
+
+---
+
+<p class="kicker">CONTEXT</p>
+
+# 読みやすさは、<br>人・サイズ・媒体で変わる
+
+<p style="margin-top: 24px; max-width: 20em;">
+ある人に開いて見やすい形が、別の人には緩く、遅く感じることがある。
+名前の「ユニバーサル」を、全員に読みやすい保証だと読まない。
+</p>
+
+---
+layout: statement
+---
+
+
+<p class="kicker">UD</p>
+
+# 万人向けの<br>正解書体ではない
+
+---
+
+<p class="kicker">WHEN</p>
+
+# 使う／使わない
+
+<div class="cols">
+<div class="card">
+<h3>使った方がいい</h3>
+<p>ブランドの声を固定したい。OS差を消したい。本文の可読性を設計したい。</p>
+</div>
+<div class="card">
+<h3>使わなくていい</h3>
+<p>システムUIで足りる。通信を一点も増やせない。許諾が取れない。</p>
+</div>
+</div>
 
 ---
 layout: section
 ---
 
 
-<p class="chap">01</p>
+<p class="chap">03</p>
 
-# 配信の仕組み
+# ウェブフォントの基礎知識
 
 ---
 
@@ -482,198 +575,6 @@ layout: section
 </div>
 
 ---
-layout: section
----
-
-
-<p class="chap">02</p>
-
-# CLSを回避する
-
----
-
-<p class="kicker">TWO FAILURES</p>
-
-# 見えないか、張り替わるか
-
-<div class="cols">
-<div class="card">
-<h3>FOIT</h3>
-<p>Flash of Invisible Text。フォント待ちで文字が消える。読めない時間。</p>
-</div>
-<div class="card">
-<h3>FOUT</h3>
-<p>Flash of Unstyled Text。先にフォールバックが出て、後から張り替わる。</p>
-</div>
-</div>
-
-<p style="margin-top: 28px;">
-張り替えのとき、幅と高さが違うと <strong>CLS</strong> になる。
-</p>
-
----
-
-<p class="kicker">DISPLAY</p>
-
-# `font-display` で待ち方を決める
-
-| 値 | 見えるまで | 向く場面 |
-|---|---|---|
-| `swap` | すぐフォールバック | 本文。読めない時間を作らない |
-| `optional` | 間に合わなければ使わない | ブランドより安定 |
-| `fallback` | 短い待ちのあと swap | 見出しと本文のあいだ |
-| `block` | 隠して待つ | ほぼ使わない |
-
----
-
-<p class="kicker">METRICS</p>
-
-# ずれるのは、字形ではなく寸法
-
-<p style="margin-top: 16px; max-width: 20em;">
-ascent / descent / 平均字幅が違うと、行の高さや折り返しが変わる。
-`size-adjust` と metric override で、フォールバック側の寸法を寄せる。
-</p>
-
-```css
-@font-face {
-  font-family: 'Display JP';
-  src: url('/fonts/display.woff2') format('woff2');
-  size-adjust: 92%;
-  ascent-override: 90%;
-  descent-override: 22%;
-  line-gap-override: 0%;
-}
-```
-
----
-
-<p class="kicker">LIVE</p>
-
-# 寸法を寄せると、重なりが変わる
-
-<SizeAdjustCompare />
-
----
-
-<p class="kicker">PRELOAD</p>
-
-# クリティカルな1本は、先に取りにいく
-
-```html
-<link rel="preload" href="/fonts/display.woff2" as="font" type="font/woff2" crossorigin>
-```
-
-<p class="muted" style="margin-top: 20px;">
-全部 preload しない。LCP に効く書体、最初の画面に必要な1〜2ファイルだけ。
-</p>
-
----
-layout: statement
----
-
-
-<p class="kicker">POINT</p>
-
-# 重い・ずれるは<br><span class="hl">設計で止められる</span>
-
----
-layout: section
----
-
-
-<p class="chap">03</p>
-
-# フォントの選び方
-
----
-
-<p class="kicker">IMPRESSION</p>
-
-# 書体は、印象の設計である
-
-<div class="cols-3">
-<div class="card">
-<h3>ゴシック</h3>
-<p>硬い、現代、UI向き</p>
-</div>
-<div class="card">
-<h3>明朝</h3>
-<p>繊細、編集、信頼</p>
-</div>
-<div class="card">
-<h3>ディスプレイ</h3>
-<p>強い、短い見出し専用</p>
-</div>
-</div>
-
-<p class="muted" style="margin-top: 28px;">
-どの印象を足すかを先に決める。フォントから入らない。
-</p>
-
----
-
-<p class="kicker">BUDGET</p>
-
-# サイトで使う系統は、最大2つ
-
-<p style="margin-top: 20px; max-width: 18em;">
-本文と見出し。それ以上は、読み込みも世界観も散る。
-飾りのための3本目は、だいたい要らない。
-</p>
-
----
-layout: key
----
-
-
-<p class="kicker">UD FONT</p>
-
-# UDフォント =<br>誰にとっても<br>読みやすいフォント
-
-<p style="margin-top: 20px; font-size: 0.4em; font-weight: 700;">
-と思われがち。
-</p>
-
----
-layout: accent
----
-
-
-# それは、違う。
-
----
-
-<p class="kicker">WHAT UD IS</p>
-
-# 特定の読みにくさを<br>想定した設計
-
-<p style="margin-top: 24px; max-width: 20em;">
-弱視、加齢、類似字形の混同（6 / 8 / 0、シ / ツ、ー / 一）。
-その条件下での読みやすさを狙った書体であって、「全人類に最適」ではない。
-</p>
-
----
-
-<p class="kicker">CONTEXT</p>
-
-# 読みやすさは、<br>人・サイズ・媒体で変わる
-
-<p style="margin-top: 24px; max-width: 20em;">
-ある人に開いて見やすい形が、別の人には緩く、遅く感じることがある。
-名前の「ユニバーサル」を、全員に読みやすい保証だと読まない。
-</p>
-
----
-layout: statement
----
-
-
-<p class="kicker">UD</p>
-
-# 万人向けの<br>正解書体ではない
-
----
 
 <p class="kicker">COPYRIGHT</p>
 
@@ -766,34 +667,124 @@ layout: statement
 </p>
 
 ---
-
-<p class="kicker">WHEN</p>
-
-# 使う／使わない
-
-<div class="cols">
-<div class="card">
-<h3>使った方がいい</h3>
-<p>ブランドの声を固定したい。OS差を消したい。本文の可読性を設計したい。</p>
-</div>
-<div class="card">
-<h3>使わなくていい</h3>
-<p>システムUIで足りる。通信を一点も増やせない。許諾が取れない。</p>
-</div>
-</div>
-
----
 layout: section
 ---
 
 
 <p class="chap">04</p>
 
-# バリアブルフォント
+# ウェブフォントを快適に使う
 
 ---
 
-<p class="kicker">ONE FILE</p>
+<p class="kicker">TWO FAILURES</p>
+
+# 見えないか、張り替わるか
+
+<div class="cols">
+<div class="card">
+<h3>FOIT</h3>
+<p>Flash of Invisible Text。フォント待ちで文字が消える。読めない時間。</p>
+</div>
+<div class="card">
+<h3>FOUT</h3>
+<p>Flash of Unstyled Text。先にフォールバックが出て、後から張り替わる。</p>
+</div>
+</div>
+
+<p style="margin-top: 28px;">
+張り替えのとき、幅と高さが違うと <strong>CLS</strong> になる。
+</p>
+
+---
+
+<p class="kicker">DISPLAY</p>
+
+# `font-display` で待ち方を決める
+
+| 値 | 見えるまで | 向く場面 |
+|---|---|---|
+| `swap` | すぐフォールバック | 本文。読めない時間を作らない |
+| `optional` | 間に合わなければ使わない | ブランドより安定 |
+| `fallback` | 短い待ちのあと swap | 見出しと本文のあいだ |
+| `block` | 隠して待つ | ほぼ使わない |
+
+---
+
+<p class="kicker">METRICS</p>
+
+# ずれるのは、字形ではなく寸法
+
+<p style="margin-top: 16px; max-width: 20em;">
+ascent / descent / 平均字幅が違うと、行の高さや折り返しが変わる。
+`size-adjust` と metric override で、フォールバック側の寸法を寄せる。
+</p>
+
+```css
+@font-face {
+  font-family: 'Display JP';
+  src: url('/fonts/display.woff2') format('woff2');
+  size-adjust: 92%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+```
+
+---
+
+<p class="kicker">LIVE</p>
+
+# 寸法を寄せると、重なりが変わる
+
+<SizeAdjustCompare />
+
+---
+
+<p class="kicker">PRELOAD</p>
+
+# クリティカルな1本は、先に取りにいく
+
+```html
+<link rel="preload" href="/fonts/display.woff2" as="font" type="font/woff2" crossorigin>
+```
+
+<p class="muted" style="margin-top: 20px;">
+全部 preload しない。LCP に効く書体、最初の画面に必要な1〜2ファイルだけ。
+</p>
+
+---
+
+<p class="kicker">BUDGET</p>
+
+# サイトで使う系統は、最大2つ
+
+<p style="margin-top: 20px; max-width: 18em;">
+本文と見出し。それ以上は、読み込みも世界観も散る。
+飾りのための3本目は、だいたい要らない。
+</p>
+
+---
+layout: statement
+---
+
+
+<p class="kicker">POINT</p>
+
+# 重い・ずれるは<br><span class="hl">設計で止められる</span>
+
+---
+layout: section
+---
+
+
+<p class="chap">05</p>
+
+# 2026年の最新動向
+
+---
+
+<p class="kicker">バリアブル</p>
 
 # 1ファイルで、複数の声
 
@@ -847,7 +838,7 @@ layout: section
 ---
 
 
-<p class="chap">05</p>
+<p class="kicker">2026</p>
 
 # CSS Fonts Level 4
 
@@ -940,15 +931,6 @@ body {
 </p>
 
 ---
-layout: section
----
-
-
-<p class="chap">06</p>
-
-# W3Cの新しい仕組み
-
----
 
 <p class="kicker">IFT</p>
 
@@ -1007,16 +989,42 @@ layout: section
 ---
 
 
-<p class="chap">07</p>
+<p class="chap">06</p>
 
-# 持ち帰り
+# まとめ
 
 ---
 layout: statement
 ---
 
 
-<p class="kicker">01</p>
+<p class="kicker">01 — 意義</p>
+
+# 書体は<br><span class="hl">印象の設計</span>である
+
+<p class="muted" style="margin-top: 20px; font-size: 0.38em; font-weight: 400;">
+選べることが価値。好みだけで選ばない。
+</p>
+
+---
+layout: statement
+---
+
+
+<p class="kicker">02 — 基礎</p>
+
+# 配る前に、<br><span class="hl">仕組みと許諾</span>
+
+<p class="muted" style="margin-top: 20px; font-size: 0.38em; font-weight: 400;">
+WOFF2、サブセット、経路。デスクトップのファイルを、そのまま配らない。
+</p>
+
+---
+layout: statement
+---
+
+
+<p class="kicker">03 — 快適</p>
 
 # 重い・ずれるは<br><span class="hl">設計で止められる</span>
 
@@ -1029,20 +1037,7 @@ layout: statement
 ---
 
 
-<p class="kicker">02</p>
-
-# 書体は<br><span class="hl">印象の設計</span>である
-
-<p class="muted" style="margin-top: 20px; font-size: 0.38em; font-weight: 400;">
-好みだけで選ばない。可読性・著作権・本数まで含めて決める。
-</p>
-
----
-layout: statement
----
-
-
-<p class="kicker">03</p>
+<p class="kicker">04 — 2026</p>
 
 # <span class="hl">2026年の道具</span>を使う
 
