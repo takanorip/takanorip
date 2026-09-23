@@ -93,15 +93,15 @@ layout: key
 
 <div class="cols-3">
 <div class="card">
-<h3>重いけど、軽くできる</h3>
+<h3>軽量化</h3>
 <p>WOFF2、サブセット、font-display。日本語は重いが、実装で回避できるようになっていた。</p>
 </div>
 <div class="card">
-<h3>日本語の顔が増えた</h3>
+<h3>書体の増加</h3>
 <p>Google Fonts、Adobe Fonts、TypeSquare、FONTPLUS。配信サービスが一気に揃った直後だった。</p>
 </div>
 <div class="card">
-<h3>視点は3つ</h3>
+<h3>3つの視点</h3>
 <p>ユーザー、デザイナー、エンジニア。遅さ・選択・実装を、同じ話として扱っていた。</p>
 </div>
 </div>
@@ -132,15 +132,15 @@ layout: key
 
 <div class="cols-3">
 <div class="card">
-<h3>CLS が指標になった</h3>
+<h3>CLS が指標に</h3>
 <p>2019年は「ちらつく」。2020年以降は Core Web Vitals。ずれは見た目の不満ではなく、計測対象。</p>
 </div>
 <div class="card">
-<h3>寸法を上書きできる</h3>
+<h3>寸法の上書き</h3>
 <p>size-adjust、ascent-override。フォールバックとの差を、CSSで潰せるようになった。</p>
 </div>
 <div class="card">
-<h3>font-display は前提</h3>
+<h3>display は前提</h3>
 <p>当時は新しいプロパティだった。2026年、swap を書かない方が説明が要る。</p>
 </div>
 </div>
@@ -153,16 +153,16 @@ layout: key
 
 <div class="cols-3">
 <div class="card">
-<h3>バリアブルと Fonts 4</h3>
-<p>1ファイルでウェイトを動かす。palette、tech()。書体が「静的なファイル」ではなくなった。</p>
+<h3>バリアブル</h3>
+<p>1ファイルでウェイトを動かす。palette、tech()。書体が固定ファイルではなくなった。</p>
 </div>
 <div class="card">
-<h3>TypeSquare の後継</h3>
+<h3>配信の後継</h3>
 <p>動的サブセットの TypeSquare から、Morisawa Fonts へ。日本語配信の切り方が変わった。</p>
 </div>
 <div class="card">
-<h3>日本語が、普通になった</h3>
-<p>Google Fonts に日本語があるのが前提。このスライドの LINE Seed JP も、その延長。</p>
+<h3>日本語が普通に</h3>
+<p>Google Fonts に日本語があるのが前提。この資料の本文も、その延長。</p>
 </div>
 </div>
 
