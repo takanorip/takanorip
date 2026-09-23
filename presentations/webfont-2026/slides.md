@@ -54,13 +54,154 @@ layout: statement
 # みなさん、<br>ウェブフォント<br>使ってますか？
 
 ---
+
+<p class="kicker">2019</p>
+
+# 7年前、福岡でも<br>同じ話をしていた
+
+<p style="margin-top: 28px; max-width: 20em;">
+フロントエンドカンファレンス福岡2019。<br>
+タイトルは「ウェブフォント今昔物語」。
+</p>
+
+<p class="muted" style="margin-top: 20px;">
+当時の結論は、ひとつだけ。<br>
+ウェブフォントは、こわくない。
+</p>
+
+<!--
+2019.11.16 フロントエンドカンファレンス福岡
+https://speakerdeck.com/takanorip/uebuhuontojin-xi-wu-yu
+ユーザー / デザイナー / エンジニアの3視点。
+WOFF2、ユニコード/ダイナミックサブセット、Font Loading API、font-display、SWキャッシュ。
+-->
+
+---
 layout: key
 ---
 
 
-<p class="kicker">よくある評判</p>
+<p class="kicker">2019年の結論</p>
 
-# 重い。<br>ずれる。<br>目の敵。
+# ウェブフォントは<br>こわくない。
+
+---
+
+<p class="kicker">THEN</p>
+
+# 当時、すでに見えていたこと
+
+<div class="cols-3">
+<div class="card">
+<h3>重いけど、軽くできる</h3>
+<p>WOFF2、サブセット、font-display。日本語は重いが、実装で回避できるようになっていた。</p>
+</div>
+<div class="card">
+<h3>日本語の顔が増えた</h3>
+<p>Google Fonts、Adobe Fonts、TypeSquare、FONTPLUS。配信サービスが一気に揃った直後だった。</p>
+</div>
+<div class="card">
+<h3>視点は3つ</h3>
+<p>ユーザー、デザイナー、エンジニア。遅さ・選択・実装を、同じ話として扱っていた。</p>
+</div>
+</div>
+
+---
+layout: statement
+---
+
+
+<p class="kicker">2026</p>
+
+# あれから、<br>7年。
+
+---
+layout: key
+---
+
+
+<p class="kicker">変わったこと</p>
+
+# 怖さの中身が、<br>変わった。
+
+---
+
+<p class="kicker">7年で増えたもの</p>
+
+# 指標と、道具と、選択肢
+
+<div class="cols-3">
+<div class="card">
+<h3>CLS が指標になった</h3>
+<p>2019年は「ちらつく」。2020年以降は Core Web Vitals。ずれは見た目の不満ではなく、計測対象。</p>
+</div>
+<div class="card">
+<h3>寸法を上書きできる</h3>
+<p>size-adjust、ascent-override。フォールバックとの差を、CSSで潰せるようになった。</p>
+</div>
+<div class="card">
+<h3>font-display は前提</h3>
+<p>当時は新しいプロパティだった。2026年、swap を書かない方が説明が要る。</p>
+</div>
+</div>
+
+---
+
+<p class="kicker">7年で増えたもの</p>
+
+# 書体側も、配信側も進んだ
+
+<div class="cols-3">
+<div class="card">
+<h3>バリアブルと Fonts 4</h3>
+<p>1ファイルでウェイトを動かす。palette、tech()。書体が「静的なファイル」ではなくなった。</p>
+</div>
+<div class="card">
+<h3>TypeSquare の後継</h3>
+<p>動的サブセットの TypeSquare から、Morisawa Fonts へ。日本語配信の切り方が変わった。</p>
+</div>
+<div class="card">
+<h3>日本語が、普通になった</h3>
+<p>Google Fonts に日本語があるのが前提。このスライドの LINE Seed JP も、その延長。</p>
+</div>
+</div>
+
+---
+
+<p class="kicker">まだ先がある</p>
+
+# Incremental Font Transfer
+
+<p style="margin-top: 28px; max-width: 18em;">
+必要なグリフだけを、転送の途中から足す。W3Cで仕様化が進んでいる。
+</p>
+
+<p class="muted" style="margin-top: 20px;">
+2019年の「全部送るか、サブセットするか」の先にある話。
+</p>
+
+---
+layout: accent
+---
+
+
+<p class="kicker">変わらないこと</p>
+
+# 重い。<br>ずれる。
+
+---
+
+<p class="kicker">だから「今さら」</p>
+
+# こわくない、は嘘ではない。<br>終わってもいない。
+
+<p style="margin-top: 28px; max-width: 20em;">
+日本語はまだ重い。フォールバックとの寸法差はまだ出る。ライセンスも、選び方も、まだ難しい。
+</p>
+
+<p class="muted" style="margin-top: 20px;">
+7年で増えたのは、怖さを消す方法ではなく、怖さを設計する道具だった。
+</p>
 
 ---
 layout: statement
@@ -69,22 +210,22 @@ layout: statement
 
 <p class="kicker">でも</p>
 
-# 技術的にも<br>デザイン的にも<br><span class="hl">とっても面白い</span>
+# 技術的にも<br>デザイン的にも<br><span class="hl">もっと面白い</span>
 
 ---
 
 <p class="kicker">TODAY</p>
 
-# 今日は両面から見る
+# 今日は、7年分の差分を見る
 
 <div class="cols">
 <div class="card">
 <h3>技術</h3>
-<p>配信の仕組み、CLS、バリアブル、CSS Fonts 4、W3Cの新しい転送</p>
+<p>配信の仕組み、CLS、バリアブル、CSS Fonts 4、W3Cの新しい転送。2019年にはなかった道具を含む。</p>
 </div>
 <div class="card">
 <h3>デザイン</h3>
-<p>書体を選べることの価値、選び方、UDの誤解、著作権</p>
+<p>書体を選べることの価値、選び方、UDの誤解、著作権。当時「メリットしかない」で止めていた側。</p>
 </div>
 </div>
 
