@@ -10,12 +10,21 @@ Kanmu, inc. Design Manager **takanorip** 向けの登壇スライド一式です
 
 | ファイル | 内容 |
 |---------|------|
-| `slides.md` | Slidev 形式の本編スライド（33枚） |
+| `slides.md` | Slidev 形式の本編スライド（34枚） |
 | `DESIGN.md` | このスライド自身のデザイン仕様（判断基準） |
 | `styles/index.css` | カスタムテーマ「墨と朱」 |
+| `public/ai-slop-example.html` | 「AIスロップなUI」を意図的に再現した展示用LP |
+| `public/ai-slop-example.png` | 上記のスクリーンショット（スライドで使用） |
 | `package.json` | Slidev CLI とスクリプト |
 | `speaker-notes.md` | 登壇者ノート |
 | `fingerprint-checklist.md` | 出荷前チェックリスト |
+
+## スロップ例のデモ
+
+`public/ai-slop-example.html` は、スロップの指紋（Inter / 紫グラデ / ガラスカード / 3等分カード / 絵文字アイコン / 抽象コピー / 低コントラストCTA）を意図的に全部盛りした反面教師の展示物です。
+
+- Slidev 起動中: http://localhost:3030/ai-slop-example.html で動くデモを開ける
+- ファイル単体でもブラウザで開ける（依存なしの1ファイルHTML）
 
 ## プレビュー
 

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--
+  ai-slop-example.html
+  登壇用の展示物: 「AIスロップなUI」を意図的に再現したランディングページ。
+  スロップの指紋を全部盛りにしてある（Inter / 紫グラデ / ガラスカード /
+  3等分カード / 絵文字アイコン / 抽象コピー / 低コントラストCTA / 過剰な角丸）。
+  これは反面教師であり、真似しないこと。DESIGN.md の Avoid そのもの。
+
+  Slidev 起動中は http://localhost:3030/ai-slop-example.html で開ける。
+-->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synapse AI — 次世代のシームレスな体験</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0f0f23;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  .glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glow-orb.one { width: 600px; height: 600px; background: #7c3aed; top: -200px; left: -100px; }
+  .glow-orb.two { width: 500px; height: 500px; background: #4f46e5; top: 300px; right: -150px; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 0;
+  }
+  .logo {
+    font-weight: 800; font-size: 1.4rem;
+    background: linear-gradient(135deg, #a78bfa, #6366f1);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .nav-cta {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: #ffffffcc;
+    border: none; border-radius: 9999px;
+    padding: 10px 28px; font-weight: 600; font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .nav-cta:hover { transform: scale(1.08); }
+
+  .hero { text-align: center; padding: 100px 0 80px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 9999px;
+    padding: 8px 20px; font-size: 0.85rem; color: #a78bfa;
+    margin-bottom: 32px;
+    animation: bounce 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .hero h1 {
+    font-size: 4rem; font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.03em; margin-bottom: 24px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #a78bfa 50%, #6366f1 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p {
+    font-size: 1.2rem; color: #94a3b8; max-width: 640px;
+    margin: 0 auto 40px; line-height: 1.7;
+  }
+  .hero-buttons { display: flex; gap: 16px; justify-content: center; }
+  .btn-primary {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: rgba(255, 255, 255, 0.75);
+    border: none; border-radius: 9999px;
+    padding: 16px 40px; font-weight: 700; font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6), 0 8px 32px rgba(99, 102, 241, 0.4);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .btn-primary:hover { transform: translateY(-4px) scale(1.05); }
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+    padding: 16px 40px; font-weight: 600; font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .section-title { text-align: center; margin-bottom: 16px; }
+  .section-title h2 {
+    font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #e0e7ff, #a78bfa);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .section-sub {
+    text-align: center; color: #94a3b8; font-size: 1.05rem;
+    max-width: 560px; margin: 0 auto 56px;
+  }
+
+  .features {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    padding: 40px 0 100px;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(139, 92, 246, 0.08);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-align: center;
+  }
+  .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), 0 0 80px rgba(139, 92, 246, 0.25);
+  }
+  .card .icon {
+    font-size: 2.6rem; margin-bottom: 20px;
+    display: inline-block;
+  }
+  .card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #e0e7ff; }
+  .card p { color: #94a3b8; font-size: 0.95rem; line-height: 1.7; }
+
+  .testimonial {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    padding: 48px;
+    text-align: center;
+    max-width: 720px; margin: 0 auto 100px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  .testimonial .stars { color: #a78bfa; font-size: 1.3rem; margin-bottom: 16px; }
+  .testimonial blockquote { font-size: 1.15rem; color: #cbd5e1; line-height: 1.8; margin-bottom: 20px; }
+  .testimonial cite { color: #64748b; font-style: normal; font-size: 0.9rem; }
+
+  .final-cta {
+    text-align: center; padding: 0 0 120px;
+  }
+  .final-cta .box {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(99, 102, 241, 0.2));
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 32px;
+    padding: 72px 48px;
+    box-shadow: 0 0 80px rgba(139, 92, 246, 0.2);
+  }
+  .final-cta h2 {
+    font-size: 2.6rem; font-weight: 800; margin-bottom: 16px;
+    background: linear-gradient(135deg, #e0e7ff, #a78bfa, #6366f1);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .final-cta p { color: #94a3b8; margin-bottom: 36px; }
+
+  footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 32px 0; text-align: center;
+    color: #475569; font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+  <div class="glow-orb one"></div>
+  <div class="glow-orb two"></div>
+
+  <div class="container">
+    <nav>
+      <div class="logo">✨ Synapse AI</div>
+      <button class="nav-cta">無料で始める</button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-badge">🚀 次世代AIプラットフォーム、ついに登場</div>
+      <h1>あなたのワークフローを<br>革新的に変える</h1>
+      <p>Synapse AIは、最先端のテクノロジーでシームレスな体験を提供します。直感的なインターフェースで、チームの生産性を最大化しましょう。</p>
+      <div class="hero-buttons">
+        <button class="btn-primary">今すぐ無料で始める →</button>
+        <button class="btn-secondary">デモを見る</button>
+      </div>
+    </section>
+
+    <div class="section-title"><h2>パワフルな機能</h2></div>
+    <p class="section-sub">あらゆるニーズに応える、洗練されたソリューション</p>
+
+    <section class="features">
+      <div class="card">
+        <span class="icon">✨</span>
+        <h3>AI搭載の自動化</h3>
+        <p>革新的なAIテクノロジーが、面倒な作業をシームレスに自動化。あなたは本当に大切なことに集中できます。</p>
+      </div>
+      <div class="card">
+        <span class="icon">🚀</span>
+        <h3>圧倒的なスピード</h3>
+        <p>次世代のインフラストラクチャで、かつてない速度を実現。ストレスフリーな体験をお届けします。</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔒</span>
+        <h3>エンタープライズ級のセキュリティ</h3>
+        <p>最先端の暗号化技術で、あなたの大切なデータを完全に保護。安心してご利用いただけます。</p>
+      </div>
+    </section>
+
+    <div class="section-title"><h2>お客様の声</h2></div>
+    <p class="section-sub">世界中のチームに選ばれています</p>
+
+    <section class="testimonial">
+      <div class="stars">★★★★★</div>
+      <blockquote>「Synapse AIを導入してから、チームの生産性が劇的に向上しました。もう以前のワークフローには戻れません。まさにゲームチェンジャーです。」</blockquote>
+      <cite>田中 太郎 — 株式会社サンプル CEO</cite>
+    </section>
+
+    <section class="final-cta">
+      <div class="box">
+        <h2>さあ、未来を始めよう</h2>
+        <p>クレジットカード不要。わずか30秒でセットアップ完了。</p>
+        <button class="btn-primary">無料トライアルを開始 ✨</button>
+      </div>
+    </section>
+
+    <footer>© 2026 Synapse AI — すべての体験を、シームレスに。</footer>
+  </div>
+</body>
+</html>

@@ -363,3 +363,24 @@
 .highlight-box strong {
   color: var(--shu-tint);
 }
+
+/* 展示物（スロップ例などのスクリーンショット）。枠は資料側の設えで縁取る */
+.slop-shot {
+  margin: 0.4em 0 0;
+}
+
+.slop-shot img {
+  display: block;
+  max-height: 350px;
+  margin: 0 auto;
+  border: 1px solid var(--line-on-ink);
+}
+
+.slop-shot figcaption {
+  font-family: 'M PLUS 1 Code', monospace;
+  font-size: 0.62em;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  text-align: center;
+  margin-top: 0.9em;
+}
