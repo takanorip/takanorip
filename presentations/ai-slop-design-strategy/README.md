@@ -21,7 +21,7 @@ Kanmu, inc. Design Manager **takanorip** 向けの登壇スライド一式です
 
 ## スロップ例のデモ
 
-`public/ai-slop-example.html` は、スロップの指紋（Inter / 紫グラデ / ガラスカード / 3等分カード / 絵文字アイコン / 抽象コピー / 低コントラストCTA）を意図的に全部盛りした反面教師の展示物です。
+`public/ai-slop-example.html` は、スロップの指紋（Inter / 紫グラデ / ガラスカード / 3等分カード / 絵文字アイコン / 抽象コピー / 低コントラストCTA）に加え、告知バー・バッジ・浮遊カード・カウントダウン・ロゴ帯・料金表・通知トースト・チャット・Cookieバナーまで詰め込んだ反面教師の展示物です。
 
 - Slidev 起動中: http://localhost:3030/ai-slop-example.html で動くデモを開ける
 - ファイル単体でもブラウザで開ける（依存なしの1ファイルHTML）

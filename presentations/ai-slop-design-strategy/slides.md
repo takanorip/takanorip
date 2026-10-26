@@ -69,7 +69,7 @@ AIスロップを「紫グラデーション」や「角丸カード」の問題
 
 <figure class="slop-shot">
   <img src="/ai-slop-example.png" alt="AIスロップなUIの例 — 紫グラデーション、ガラスカード、絵文字アイコン、抽象コピー" />
-  <figcaption>Inter / 紫グラデ / ガラスカード / 3等分 / 絵文字アイコン / 「革新的」——指紋の全部盛り（意図的に再現した例）</figcaption>
+  <figcaption>紫グラデ / グラデ文字 / バッジ3連 / 浮遊カード / カウントダウン / 通知トースト / チャット / Cookie——全部盛り（意図的に再現した例）</figcaption>
 </figure>
 
 <!-- 動くデモ: Slidev起動中に /ai-slop-example.html を開く -->
