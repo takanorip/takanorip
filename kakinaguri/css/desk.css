@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "Zen Kurenaido";
+  src: url("../fonts/ZenKurenaido-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Shippori Mincho";
+  src: url("../fonts/ShipporiMincho-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --desk: #cfc0a6;
+  --paper: #f4efe6;
+  --ink: #1b212b;
+  --muted: #4d4339;
+  --pencil: #7a6f61;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--desk);
+  color: var(--ink);
+  font-family: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-weight: 500;
+}
+
+body {
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+#world {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+body:not(.ready) #sheet,
+body:not(.ready) .mark,
+body:not(.ready) .hint {
+  visibility: hidden;
+}
+
+.mark {
+  position: fixed;
+  z-index: 2;
+  top: 22px;
+  left: 28px;
+  margin: 0;
+  pointer-events: none;
+}
+
+.name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+
+.note {
+  margin: 4px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+#sheet {
+  position: absolute;
+  left: 0;
+  top: 0;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.hint {
+  position: fixed;
+  z-index: 2;
+  left: 28px;
+  bottom: 22px;
+  margin: 0;
+  max-width: 28em;
+  font-size: 12.5px;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.ear {
+  position: fixed;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: transparent;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  cursor: grab;
+  touch-action: none;
+}
+
+.ear:hover,
+.ear:active {
+  background: transparent;
+  color: transparent;
+  cursor: grabbing;
+}
+.ear:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.ear[hidden] { display: none !important; }
+
+.ear-tear {
+  width: 44px;
+  height: 92px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.ear-crumple {
+  width: 108px;
+  height: 44px;
+}
+
+.after {
+  position: fixed;
+  z-index: 4;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.after[hidden] { display: none !important; }
+
+.after p {
+  margin: 0 0 12px;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+}
+
+.after button {
+  pointer-events: auto;
+  margin: 0;
+  padding: 4px 2px 3px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: none;
+  color: var(--muted);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+}
+
+.after button:hover,
+.after button:focus-visible {
+  color: var(--ink);
+  border-bottom-color: currentColor;
+  outline: none;
+}
+
+#ink {
+  position: fixed;
+  z-index: 5;
+  width: 2px;
+  height: 1.4em;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+  pointer-events: none;
+  font-family: "Zen Kurenaido", "Yu Kyokasho", "Yu Mincho", serif;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .mark { top: 14px; left: 16px; }
+  .hint {
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    max-width: none;
+  }
+}
