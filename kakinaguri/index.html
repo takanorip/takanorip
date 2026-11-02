@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#cfc0a6">
+  <meta name="description" content="思っていることを紙に書いて、破るか、丸める。書いた文字はサーバーに送られない。">
+  <title>書き殴り</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%23cfc0a6' width='16' height='16'/%3E%3Crect x='4' y='2' width='8' height='12' fill='%23f4efe6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/desk.css">
+</head>
+<body>
+  <div id="world">
+    <header class="mark">
+      <h1 class="name">書き殴り</h1>
+      <p class="note">書いたら、破くか、丸める。</p>
+    </header>
+    <canvas id="sheet" width="800" height="600" aria-hidden="true"></canvas>
+    <p class="hint">右端を引っ張ると破ける。<br>下をつまむと丸まる。<br>この文字は、サーバーには送られない。</p>
+    <button type="button" class="ear ear-tear" id="tear" hidden>破く</button>
+    <button type="button" class="ear ear-crumple" id="crumple" hidden>丸める</button>
+    <div class="after" id="after" hidden>
+      <p>なくなった。</p>
+      <button type="button" id="again">もう一枚</button>
+    </div>
+    <textarea id="ink" rows="1" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="紙に書く"></textarea>
+    <div class="sr" id="live" aria-live="polite"></div>
+  </div>
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
